@@ -81,6 +81,35 @@ const urlPa = new URL('/pa' + (cleanPath === '/' ? '' : cleanPath), baseDomain).
         va.src = '/_vercel/insights/script.js';
         va.defer = true;
         document.head.appendChild(va);
+
+        // Global Event Delegation to automatically track button and link clicks
+        document.addEventListener('click', (event) => {
+          const target = (event.target as HTMLElement).closest('a, button');
+          if (!target) return;
+
+          const text = target.textContent ? target.textContent.trim() : '';
+          const href = target.getAttribute('href') || '';
+          const id = target.id || '';
+          const classes = target.className || '';
+
+          let category = 'button_click';
+          if (target.tagName.toLowerCase() === 'a') {
+            category = href.startsWith('http') && !href.includes(window.location.hostname)
+              ? 'outbound_link_click'
+              : 'internal_link_click';
+          }
+
+          if ((window as any).gtag) {
+            (window as any).gtag('event', 'click_interaction', {
+              'element_text': text || target.getAttribute('aria-label') || id || 'unlabeled',
+              'element_type': target.tagName.toLowerCase(),
+              'element_id': id,
+              'element_class': classes,
+              'destination_url': href,
+              'event_category': category
+            });
+          }
+        });
       });
     </script>
 
