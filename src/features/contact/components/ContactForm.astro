@@ -184,6 +184,79 @@ const t = useTranslations(lang);
 
     if (!form || !formContainer || !successContainer) return;
 
+    const VAULT_KEY = 'kasi_offline_lead_vault';
+
+    // Save lead to local storage vault
+    function saveToVault(lead: any) {
+      try {
+        const vault = JSON.parse(localStorage.getItem(VAULT_KEY) || '[]');
+        const leadId = Date.now().toString();
+        const leadWithMeta = {
+          ...lead,
+          id: leadId,
+          timestamp: new Date().toISOString()
+        };
+        vault.push(leadWithMeta);
+        localStorage.setItem(VAULT_KEY, JSON.stringify(vault));
+        console.log('Lead saved to offline vault:', leadId);
+        return leadId;
+      } catch (e) {
+        console.error('Failed to save lead to vault:', e);
+        return null;
+      }
+    }
+
+    // Remove lead from vault after successful submission
+    function removeFromVault(leadId: string) {
+      try {
+        const vault = JSON.parse(localStorage.getItem(VAULT_KEY) || '[]');
+        const updatedVault = vault.filter((item: any) => item.id !== leadId);
+        localStorage.setItem(VAULT_KEY, JSON.stringify(updatedVault));
+        console.log('Lead removed from vault:', leadId);
+      } catch (e) {
+        console.error('Failed to remove lead from vault:', e);
+      }
+    }
+
+    // Sync vault leads to the email endpoint when online
+    function syncVault() {
+      if (!navigator.onLine) return;
+      try {
+        const vault = JSON.parse(localStorage.getItem(VAULT_KEY) || '[]');
+        if (vault.length === 0) return;
+
+        console.log(`Syncing ${vault.length} pending lead(s) from vault...`);
+
+        vault.forEach((lead: any) => {
+          fetch('https://formsubmit.co/ajax/luisninoliving@gmail.com', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              name: lead.name,
+              email: lead.email,
+              company: lead.company,
+              service: lead.service,
+              message: lead.message,
+              _subject: `[OFFLINE SYNC] Lead from ${lead.name}`
+            })
+          })
+          .then((response) => {
+            if (response.ok) {
+              removeFromVault(lead.id);
+            }
+          })
+          .catch((err) => {
+            console.error(`Failed to sync lead ${lead.id}:`, err);
+          });
+        });
+      } catch (e) {
+        console.error('Error syncing vault:', e);
+      }
+    }
+
     // Check query params for service pre-selection
     const params = new URLSearchParams(window.location.search);
     const serviceParam = params.get('service') || params.get('ref');
@@ -200,6 +273,12 @@ const t = useTranslations(lang);
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
+      const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.5';
+      }
+
       // Get form data
       const formData = new FormData(form);
       const data = {
@@ -212,6 +291,9 @@ const t = useTranslations(lang);
 
       console.log('Intake submission captured:', data);
       
+      // Save lead to offline vault first
+      const leadId = saveToVault(data);
+
       // Send conversion event to Google Analytics
       if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('event', 'generate_lead', {
@@ -223,16 +305,46 @@ const t = useTranslations(lang);
         });
       }
       
-      // Simulate API submission
-      formContainer.classList.add('hidden');
-      successContainer.classList.remove('hidden');
+      // Submit data via AJAX to FormSubmit
+      fetch('https://formsubmit.co/ajax/luisninoliving@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(() => {
+        // Successful submission -> remove from vault
+        if (leadId) removeFromVault(leadId);
 
-      // Scroll to top of section for visibility
-      const section = document.querySelector('.contact-section');
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-      }
+        // Show success screen
+        formContainer.classList.add('hidden');
+        successContainer.classList.remove('hidden');
+
+        // Scroll to top of section for visibility
+        const section = document.querySelector('.contact-section');
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      })
+      .catch((error) => {
+        console.error('Error submitting form:', error);
+        // We keep it in the vault and still show the success screen to avoid blocking the user flow
+        formContainer.classList.add('hidden');
+        successContainer.classList.remove('hidden');
+      })
+      .finally(() => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = '1';
+        }
+      });
     });
+
+    // Auto-sync listeners
+    window.addEventListener('online', syncVault);
+    syncVault();
   }
 
   document.addEventListener('astro:page-load', handleForm);
