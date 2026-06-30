@@ -9,8 +9,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [Unreleased]
 
 ### Added
+*   **Google Fonts Parallel Loading & Render-Blocking Mitigation:** Migrated Google Fonts loading stylesheet from CSS `@import` inside `global.css` to `<link>` element imports in `Layout.astro` head, avoiding render-blocking chains and speeding up mobile paint times.
+*   **International SEO Hreflang Tags:** Implemented dynamic `<link rel="alternate" hreflang="...">` tags in the `<head>` of `Layout.astro` covering English (`en`, `x-default`), Spanish (`es`), Chinese (`zh`), and Punjabi (`pa`).
+*   **Astro Sitemap & Robots.txt Integration:** Configured `@astrojs/sitemap` integration in `astro.config.mjs` and generated `public/robots.txt` pointing to the sitemap to optimize crawlability.
 *   **Decoupled Multilingual i18n Support:** Configured Astro built-in subpath i18n routing (`en`, `es`, `zh`, `pa`). Implemented translation helpers (`utils.ts`) and a comprehensive copy dictionary (`translations.ts`) compiling all pages and UI strings across English, Spanish, Mandarin Chinese, and Gurmukhi Punjabi. Decoupled page content from layout designs by importing parent pages directly under localized routes (`src/pages/{es,zh,pa}/*.astro`).
 *   **Language Switcher Integration:** Added visual flags and custom vector icons in the navigation bar (`Navbar.astro`) and footers (`Footer.astro`) to switch between languages on desktop and mobile.
+
+### Changed
+*   **Heading Hierarchy & Image Layout Dimensions:** Restored sequential heading hierarchy (`<h4>` to `<h3>` in `about.astro` timeline) and declared `width` and `height` dimensions on Navbar and Footer logo images, mitigating Cumulative Layout Shift (CLS) in Lighthouse audits.
+*   **Mobile Navigation Menu Layout:** Fixed mobile menu styling in `Navbar.astro` to restore vertical layout structure (`flex-direction: column` and `align-items: flex-start` at the mobile breakpoint).
+*   **Unit Test Coverage Alignment:** Refactored `Navbar.test.ts` and `Footer.test.ts` assertions to target translation dictionary lookup keys (e.g. `t(...)`) rather than static English strings, restoring unit test suite passing status post-i18n migration.
 
 ### Changed
 *   **Navbar Desktop Spacing & Alignment (V3):** Enwrapped the desktop navigation links block inside a pill-shaped glassmorphic capsule container (`.nav-menu`) matching the language switcher style. Configured navigation items as rounded pill buttons (`.nav-link`) with `6px` gaps and padding, highlighting the active route with the primary gradient background (`.nav-link.active`) and shadow to create a unified design system. Restored original navigation links order (`Home`, `Services`, `AI Systems`, `Cases`, `About Us`). Overrode `.nav-container` `max-width` to `1440px` and reduced horizontal padding on menu links (`6px 12px`) and language selector buttons (`6px 10px`) to prevent crowding and maintain elegant visual spacing between the logo, capsule menu, and the `English` flag control. Applied `white-space: nowrap` to prevent text wrapping. Added responsive CSS rules to collapse language labels and display only flags/icons on viewports below `1360px`. Adjusted max-width media query breakpoint to `1080px` and reset capsule styles on mobile layouts.

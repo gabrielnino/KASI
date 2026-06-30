@@ -15,16 +15,16 @@ describe('Navbar.astro Component', () => {
   });
 
   it('should contain CTA button for free consultation', () => {
-    expect(fileContent).toContain('Free Consultation');
+    expect(fileContent).toContain("t('nav.consultation')");
     expect(fileContent).toContain('/contact');
   });
 
-  it('should contain primary navigation sections in English', () => {
-    expect(fileContent).toContain('Home');
-    expect(fileContent).toContain('Services');
-    expect(fileContent).toContain('AI Systems');
-    expect(fileContent).toContain('Cases');
-    expect(fileContent).toContain('About Us');
+  it('should contain primary navigation sections with translation keys', () => {
+    expect(fileContent).toContain("t('nav.home')");
+    expect(fileContent).toContain("t('nav.services')");
+    expect(fileContent).toContain("t('nav.solutions')");
+    expect(fileContent).toContain("t('nav.cases')");
+    expect(fileContent).toContain("t('nav.about')");
   });
 
   it('should possess responsive structure classes and elements', () => {

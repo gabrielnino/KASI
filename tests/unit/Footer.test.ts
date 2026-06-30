@@ -19,10 +19,8 @@ describe('Footer.astro Component', () => {
     expect(fileContent).toContain('new Date().getFullYear()');
   });
 
-  it('should reflect corporate headquarters location in Vancouver, BC, Canada', () => {
-    expect(fileContent).toContain('Vancouver');
-    expect(fileContent).toContain('BC');
-    expect(fileContent).toContain('Canada');
+  it('should reflect corporate headquarters location via translation lookup', () => {
+    expect(fileContent).toContain("t('footer.location')");
   });
 
   it('should display the bilingual corporate motto in English', () => {
