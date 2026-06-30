@@ -35,7 +35,8 @@ Any increment of code, component, or configuration that violates the following p
     4.  **Accessible Asset Descriptors:** Obligatorily declare meaningful and descriptive `alt` attributes on all images.
     5.  **Descriptive Anchor Links:** Do not use vague link text (such as "click here" or "read more"); always use descriptive anchor text.
     6.  **Structured Schema Markup:** Where appropriate, implement structured data using JSON-LD (Schema.org) to facilitate search engines understanding site context.
-    7.  **Minimal Client-Side JS:** Client-side JavaScript usage must tend to zero.
+    7.  **Canonical URLs:** Ensure that every page/section of the site dynamically constructs and declares its canonical URL to point to the production domain (`https://kasi.systems`), preventing search engine indexing of staging or preview URLs.
+    8.  **Minimal Client-Side JS:** Client-side JavaScript usage must tend to zero.
 *   **Complete Code Delivery:** The AI is strictly forbidden from generating code blocks with *placeholders*, elision comments (`// TODO: implement here`), or incomplete structures. Each delivery must be a functional, clean, and self-contained block.
 *   **Real Multi-Device Testing Focus:** Generic mock validations are not accepted. Tests must obligatorily emulate the rendering engines of the three target environments:
     1.  **Desktop:** Google Chrome (Blink).
@@ -64,12 +65,12 @@ The technology selection is designed to minimize operational costs, eliminate se
 ### Phase 1 Scope
 The scope is strictly limited to a **Positioning Website**. Interactive software components, complex databases, or SaaS-like dashboards are entirely excluded to reduce initial cognitive load.
 
-The site consists of exactly 5 sections:
-1.  **Home:** High-conversion business-oriented landing page.
-2.  **Services:** Catalog and description of the core offering.
-3.  **AI Systems:** Strategic space to position automation and swarm capabilities.
-4.  **Cases:** Case studies and technical success validations.
-5.  **About Us:** Brand identity, vision, and corporate backing.
+The site consists of exactly 5 sections (each requiring its own canonical URL pointing to the production domain):
+1.  Home: High-conversion business-oriented landing page.
+2.  Services: Catalog and description of the core offering.
+3.  AI Systems: Strategic space to position automation and swarm capabilities.
+4.  Cases: Case studies and technical success validations.
+5.  About Us: Brand identity, vision, and corporate backing.
 
 ### Code Organization: Feature-Driven
 The project will not use a purely global atomic structure. It will be organized **by feature (Feature-Driven)**. Each of the 5 sections will have its own isolated module with its specific components and layouts. Only cross-cutting elements (Header, Footer, Base Buttons) will reside in a shared folder (`shared`).
