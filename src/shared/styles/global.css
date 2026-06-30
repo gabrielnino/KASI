@@ -191,7 +191,7 @@ section {
   justify-content: center;
   background: var(--grad-primary);
   color: var(--color-white) !important;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 10px;
   padding: 14px 24px;
   font-weight: 700;
