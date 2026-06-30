@@ -20,6 +20,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 *   **Descriptive Anchor Links:** Replaced vague "Learn more →" links on the Home Page with highly descriptive anchor texts matching their target services (*Explore Website Redesign →*, *Explore AI Dispatch Assistant →*, *Explore Voice CRM →*, *Explore Calendar Sync →*) to satisfy SEO rules.
+*   **SEO Title & Description Optimization:** Adjusted all 6 page titles to be strictly under **60 characters** and descriptions under **160 characters** to prevent search engine result truncation. Simplified `Layout.astro` header to render the raw title directly.
 *   **Asset Standardization:** Renamed all root brand resources in `logo/` -> `logos/` and public assets in `public/assets/logo/` -> `public/assets/logos/` to follow a lowercase, snake_case convention.
 *   **Document Standardization:** Renamed business documents in `documents/` to follow a lowercase, kebab-case convention.
 *   **Contact Form Select Options:** Changed the dropdown choices to offer specialized trade services (*Website Redesign*, *AI Dispatch Assistant*, *Voice CRM*, *Tool Sync*, *SEO*, *Full Suite*).
