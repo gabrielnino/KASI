@@ -14,8 +14,15 @@ const {
 
 import { getLocaleFromUrl } from '../i18n/utils';
 
-const canonicalURL = new URL(Astro.url.pathname, 'https://kasi.systems').href;
+const baseDomain = 'https://kasi.systems';
+const canonicalURL = new URL(Astro.url.pathname, baseDomain).href;
 const lang = getLocaleFromUrl(Astro.url);
+
+const cleanPath = Astro.url.pathname.replace(/^\/(es|zh|pa)(?=\/|$)/, '');
+const urlEn = new URL(cleanPath, baseDomain).href;
+const urlEs = new URL('/es' + (cleanPath === '/' ? '' : cleanPath), baseDomain).href;
+const urlZh = new URL('/zh' + (cleanPath === '/' ? '' : cleanPath), baseDomain).href;
+const urlPa = new URL('/pa' + (cleanPath === '/' ? '' : cleanPath), baseDomain).href;
 ---
 
 <!doctype html>
@@ -25,6 +32,11 @@ const lang = getLocaleFromUrl(Astro.url);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang="en" href={urlEn} />
+    <link rel="alternate" hreflang="es" href={urlEs} />
+    <link rel="alternate" hreflang="zh" href={urlZh} />
+    <link rel="alternate" hreflang="pa" href={urlPa} />
+    <link rel="alternate" hreflang="x-default" href={urlEn} />
     <meta name="generator" content={Astro.generator} />
     
     <!-- Primary Meta Tags -->
