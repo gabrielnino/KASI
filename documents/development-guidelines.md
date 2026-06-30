@@ -28,7 +28,14 @@ Development is governed under a philosophy of **clean architecture, radical time
 
 Any increment of code, component, or configuration that violates the following points will be **automatically rejected** by the pipeline before its deployment:
 
-*   **SEO Hyper-Optimization and Absolute Speed:** The site must maintain a minimum score of **95/100** in *Performance* and *SEO* on Google PageSpeed Insights / Lighthouse. Client-side JavaScript usage must tend to zero.
+*   **SEO Hyper-Optimization, Clean Semantics, and Speed:** The site must maintain a minimum score of **95/100** in *Performance* and *SEO* on Google PageSpeed Insights / Lighthouse. To enforce this, the following practices are mandatory:
+    1.  **Semantic HTML Structure:** Use correct HTML5 structural tags (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`).
+    2.  **Strict Headings Hierarchy:** Maintain exactly **one `<h1>` tag per page** representing the primary title, with subordinate subtitles sequentially organized under `<h2>`, `<h3>`, etc.
+    3.  **Unique Titles & Descriptions:** Ensure unique `<title>` (under 60 characters) and `<meta description>` (under 160 characters) elements are configured per page.
+    4.  **Accessible Asset Descriptors:** Obligatorily declare meaningful and descriptive `alt` attributes on all images.
+    5.  **Descriptive Anchor Links:** Do not use vague link text (such as "click here" or "read more"); always use descriptive anchor text.
+    6.  **Structured Schema Markup:** Where appropriate, implement structured data using JSON-LD (Schema.org) to facilitate search engines understanding site context.
+    7.  **Minimal Client-Side JS:** Client-side JavaScript usage must tend to zero.
 *   **Complete Code Delivery:** The AI is strictly forbidden from generating code blocks with *placeholders*, elision comments (`// TODO: implement here`), or incomplete structures. Each delivery must be a functional, clean, and self-contained block.
 *   **Real Multi-Device Testing Focus:** Generic mock validations are not accepted. Tests must obligatorily emulate the rendering engines of the three target environments:
     1.  **Desktop:** Google Chrome (Blink).
