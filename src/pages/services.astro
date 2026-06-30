@@ -1,0 +1,374 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Servicios de Ingeniería de Software & Inteligencia Artificial" 
+  description="Explora nuestros servicios de desarrollo de software con Arquitectura Limpia, pipelines de extracción resilientes, integraciones de IA local y consultoría especializada en Vancouver, BC."
+>
+  <Navbar />
+
+  <!-- Mini Compact Hero -->
+  <section class="services-hero">
+    <div class="glow-blur glow-blue" style="top: 20%; left: 10%;"></div>
+    <div class="container hero-container-compact">
+      <span class="badge">Nuestra Especialidad</span>
+      <h1>Servicios de Ingeniería de Rango <span class="text-gradient">Industrial</span></h1>
+      <p class="large">
+        Diseñamos y programamos sistemas modulares, eficientes y tolerantes a fallos bajo principios rígidos de Clean Architecture.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Grid Section -->
+  <section class="services-grid-section">
+    <div class="container">
+      <div class="services-columns-grid">
+        
+        <!-- Service 1: AI Solutions -->
+        <div class="card service-page-card" id="ai-solutions">
+          <div class="card-top">
+            <div class="circular-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                <path d="M12 6v12M6 12h12M7.5 7.5l9 9M7.5 16.5l9-9"/>
+              </svg>
+            </div>
+            <h3>Soluciones AI & Agentes</h3>
+            <p>
+              Integración de LLMs de código abierto y agentes autónomos configurados localmente para automatizar flujos de análisis de documentos, clasificación semántica y respuestas contextuales sin fugas de datos.
+            </p>
+          </div>
+          <div class="card-bottom">
+            <ul class="bullet-tech">
+              <li>Local AI Models</li>
+              <li>Agentic Workflows</li>
+              <li>Semantic Data Matching</li>
+            </ul>
+            <a href="/contact?service=ai" class="btn-secondary compact-btn">Cotizar Solución</a>
+          </div>
+        </div>
+
+        <!-- Service 2: Development & Integration -->
+        <div class="card service-page-card" id="dev">
+          <div class="card-top">
+            <div class="circular-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                <path d="M16 18l6-6-6-6M8 6l-6 6 6 6M12 4l-4 16"/>
+              </svg>
+            </div>
+            <h3>Desarrollo & Integración</h3>
+            <p>
+              Construcción de backends robustos y middleware desacoplado utilizando lenguajes modernos de alta concurrencia. Conectamos APIs internas y heredadas bajo patrones de diseño de software mantenibles a largo plazo.
+            </p>
+          </div>
+          <div class="card-bottom">
+            <ul class="bullet-tech">
+              <li>Clean Architecture</li>
+              <li>Robust REST/gRPC APIs</li>
+              <li>Modular Codebases</li>
+            </ul>
+            <a href="/contact?service=dev" class="btn-secondary compact-btn">Cotizar Desarrollo</a>
+          </div>
+        </div>
+
+        <!-- Service 3: Cloud & Infrastructure -->
+        <div class="card service-page-card" id="cloud">
+          <div class="card-top">
+            <div class="circular-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                <path d="M17.5 19A5.5 5.5 0 0 0 18 8h-1.26a8 8 0 1 0-11.62 3.58"/>
+                <path d="M12 12v9M9 18l3 3 3-3"/>
+              </svg>
+            </div>
+            <h3>Cloud & DevOps</h3>
+            <p>
+              Orquestación de infraestructura elástica autorrecuperable en AWS y GCP. Automatizamos la compilación e integración continua (CI/CD) aplicando políticas de infraestructura como código (IaC).
+            </p>
+          </div>
+          <div class="card-bottom">
+            <ul class="bullet-tech">
+              <li>Terraform / IaC</li>
+              <li>Docker & Kubernetes</li>
+              <li>Serverless Auto-scaling</li>
+            </ul>
+            <a href="/contact?service=cloud" class="btn-secondary compact-btn">Cotizar Infraestructura</a>
+          </div>
+        </div>
+
+        <!-- Service 4: Automation Systems & Pipelines -->
+        <div class="card service-page-card" id="automation">
+          <div class="card-top">
+            <div class="circular-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                <path d="M2 17h20M2 12h20M2 7h20"/>
+                <circle cx="5" cy="7" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="17" r="1"/>
+              </svg>
+            </div>
+            <h3>Automatización & Pipelines</h3>
+            <p>
+              Desarrollo de motores de extracción web y ETLs de alta resiliencia capaces de superar captchas complejos, re-intentar fallos en red de manera dinámica y normalizar gigabytes de datos en segundos de forma estructurada.
+            </p>
+          </div>
+          <div class="card-bottom">
+            <ul class="bullet-tech">
+              <li>Resilient Data Crawling</li>
+              <li>ETL Pipeline Automation</li>
+              <li>Schema Validation</li>
+            </ul>
+            <a href="/contact?service=automation" class="btn-secondary compact-btn">Cotizar Automatización</a>
+          </div>
+        </div>
+
+        <!-- Service 5: Security & Resilience -->
+        <div class="card service-page-card" id="security">
+          <div class="card-top">
+            <div class="circular-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+            </div>
+            <h3>Seguridad & Resiliencia</h3>
+            <p>
+              Blindaje de endpoints críticos y auditorías estáticas de código para detectar vulnerabilidades OWASP. Configuramos sistemas de contención ante caídas de proveedores de servicios externos (circuit breakers).
+            </p>
+          </div>
+          <div class="card-bottom">
+            <ul class="bullet-tech">
+              <li>API Protection & WAF</li>
+              <li>OWASP Code Audit</li>
+              <li>Circuit Breaker Patterns</li>
+            </ul>
+            <a href="/contact?service=security" class="btn-secondary compact-btn">Cotizar Seguridad</a>
+          </div>
+        </div>
+
+        <!-- Service 6: Strategy & Consulting -->
+        <div class="card service-page-card" id="consulting">
+          <div class="card-top">
+            <div class="circular-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                <line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+            </div>
+            <h3>Estrategia & Consultoría</h3>
+            <p>
+              Evaluación profunda de sistemas legados ineficientes. Proporcionamos especificaciones de diseño detalladas y planes de migración estructurados para que tu equipo ejecute con mínima interrupción comercial.
+            </p>
+          </div>
+          <div class="card-bottom">
+            <ul class="bullet-tech">
+              <li>Legacy Code Audit</li>
+              <li>Architecture Spec Docs</li>
+              <li>Tech Feasibility Studies</li>
+            </ul>
+            <a href="/contact?service=consulting" class="btn-secondary compact-btn">Cotizar Consultoría</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Focus Banner: Minimal Friction -->
+  <section class="friction-banner-section">
+    <div class="container">
+      <div class="friction-box">
+        <div class="friction-content">
+          <h3>Ingeniería pensada para la velocidad comercial</h3>
+          <p>
+            Eliminamos las reuniones sin valor y los presupuestos inflados. Nos enfocamos directamente en código limpio que resuelve tus cuellos de botella hoy, documentado de tal manera que cualquier ingeniero calificado pueda mantenerlo en el futuro.
+          </p>
+        </div>
+        <div class="friction-action">
+          <a href="/contact" class="btn-primary">Iniciar Proyecto Sin Burocracia</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* Compact Hero */
+  .services-hero {
+    padding-top: calc(var(--space-12) + 40px);
+    padding-bottom: var(--space-8);
+    text-align: center;
+  }
+
+  .hero-container-compact {
+    max-width: 800px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  /* Grid of services */
+  .services-columns-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .service-page-card {
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--space-6);
+  }
+
+  .card-top {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .circular-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(0, 157, 255, 0.05);
+    border: 1px solid rgba(0, 157, 255, 0.2);
+    color: var(--color-electric-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-normal);
+  }
+
+  .service-page-card:hover .circular-icon {
+    background: var(--color-electric-blue);
+    color: var(--color-white);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 157, 255, 0.3);
+  }
+
+  .svg-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .service-page-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .service-page-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-silver-dark);
+  }
+
+  .card-bottom {
+    margin-top: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .bullet-tech {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .bullet-tech li {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--color-silver);
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(230, 231, 234, 0.08);
+  }
+
+  .compact-btn {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Friction Box */
+  .friction-banner-section {
+    padding-block: var(--space-8);
+  }
+
+  .friction-box {
+    background: linear-gradient(135deg, rgba(10, 45, 86, 0.2) 0%, rgba(2, 11, 24, 0.8) 100%);
+    border: 1px solid rgba(230, 231, 234, 0.08);
+    border-radius: 24px;
+    padding: var(--space-7) var(--space-8);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+  }
+
+  .friction-content {
+    flex: 1;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .friction-content h3 {
+    font-size: 1.75rem;
+  }
+
+  .friction-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-silver);
+  }
+
+  .friction-action {
+    flex-shrink: 0;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .services-columns-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .friction-box {
+      flex-direction: column;
+      text-align: center;
+      padding: var(--space-6);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .services-columns-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .service-page-card {
+      min-height: 220px;
+    }
+
+    .friction-action {
+      width: 100%;
+    }
+
+    .friction-action .btn-primary {
+      width: 100%;
+    }
+  }
+</style>

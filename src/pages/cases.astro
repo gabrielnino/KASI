@@ -1,0 +1,381 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+// Case Studies Data
+const cases = [
+  {
+    id: "case-1",
+    category: "automation",
+    categoryLabel: "Automatización & ETL",
+    title: "Procesamiento de Manifiestos en Puerto de Vancouver",
+    metrics: "+350% de rendimiento",
+    metricsSub: "Procesado en segundos, no horas",
+    desc: "Rediseño completo de la ingesta de manifiestos aduaneros para terminales portuarias. Implementamos un pipeline resiliente desacoplado de las fuentes.",
+    stack: ["Go", "RabbitMQ", "Python LLM", "Docker"],
+  },
+  {
+    id: "case-2",
+    category: "automation",
+    categoryLabel: "Extracción de Datos",
+    title: "Extracción Inmobiliaria Resiliente a Escala Nacional",
+    metrics: "12M+ registros diarios",
+    metricsSub: "Tolerancia del 100% a bloqueos de IP",
+    desc: "Desarrollo de un crawler distribuido para escanear registros y catastros públicos, incorporando simulación humana y resolución automatizada de CAPTCHAs.",
+    stack: ["Node.js", "Playwright", "Kubernetes", "Redis"],
+  },
+  {
+    id: "case-3",
+    category: "ai",
+    categoryLabel: "Inteligencia Artificial",
+    title: "Motor Semántico Local para Auditorías Médicas",
+    metrics: "100% On-Premises",
+    metricsSub: "Cero dependencias de APIs externas",
+    desc: "Despliegue de modelos Llama-3 locales para etiquetar y clasificar expedientes médicos confidenciales, cumpliendo estrictas leyes de protección de datos.",
+    stack: ["Llama-3", "PyTorch", "FastAPI", "PostgreSQL"],
+  },
+  {
+    id: "case-4",
+    category: "infrastructure",
+    categoryLabel: "Cloud & DevOps",
+    title: "Migración Serverless Rust para Plataforma Retail",
+    metrics: "-62% de costos en AWS",
+    metricsSub: "Soporte de 10k req/segundo",
+    desc: "Migración de una arquitectura legacy a AWS Lambda utilizando microservicios optimizados en Rust. Eliminamos costos fijos y tiempos muertos del servidor.",
+    stack: ["AWS Lambda", "Terraform", "Rust", "DynamoDB"],
+  },
+  {
+    id: "case-5",
+    category: "ai",
+    categoryLabel: "Inteligencia Artificial",
+    title: "Motor Conversacional RAG para Soporte Técnico API",
+    metrics: "-70% de tickets escalados",
+    metricsSub: "Integración directa con Vector DB",
+    desc: "Creación de un agente inteligente de soporte técnico capaz de responder dudas complejas sobre integraciones de API utilizando bases vectoriales actualizadas.",
+    stack: ["LangChain", "Pinecone", "TypeScript", "OpenAI"],
+  },
+  {
+    id: "case-6",
+    category: "infrastructure",
+    categoryLabel: "Seguridad & Resiliencia",
+    title: "Blindaje de Pasarela Financiera Multi-Proveedor",
+    metrics: "0 caídas de pasarela",
+    metricsSub: "Mitigación automática en 200ms",
+    desc: "Instrumentación de patrones circuit-breaker en pasarela de pagos, alternando dinámicamente entre proveedores bancarios caídos sin afectar la compra.",
+    stack: ["TypeScript", "Redis", "NGINX WAF", "Jest"],
+  }
+];
+---
+
+<Layout 
+  title="Casos de Éxito & Resultados de Ingeniería" 
+  description="Revisa los resultados medibles que hemos entregado a nuestros clientes. Automatización, Inteligencia Artificial e Infraestructura de alta disponibilidad."
+>
+  <Navbar />
+
+  <!-- Compact Hero -->
+  <section class="cases-hero">
+    <div class="glow-blur glow-blue" style="top: 15%; left: 5%;"></div>
+    <div class="container hero-container-compact">
+      <span class="badge">Nuestros Logros</span>
+      <h1>Código que entrega resultados <span class="text-gradient">medibles</span></h1>
+      <p class="large">
+        No nos basamos en especulaciones. Evaluamos nuestro éxito en base a la velocidad de tus procesos, la reducción de costos en la nube y la resiliencia de tus datos.
+      </p>
+    </div>
+  </section>
+
+  <!-- Interactive Filters & Case Studies Grid -->
+  <section class="cases-gallery-section">
+    <div class="container">
+      
+      <!-- Filter Bar -->
+      <div class="filter-bar-wrapper">
+        <div class="filter-bar" id="filter-bar">
+          <button class="filter-chip active" data-filter="all">Todos</button>
+          <button class="filter-chip" data-filter="automation">Automatización & ETL</button>
+          <button class="filter-chip" data-filter="ai">Inteligencia Artificial</button>
+          <button class="filter-chip" data-filter="infrastructure">Cloud & Resiliencia</button>
+        </div>
+      </div>
+
+      <!-- Grid of Cases -->
+      <div class="cases-grid grid-12" id="cases-grid">
+        {cases.map((c) => (
+          <div class="card case-card-item" data-category={c.category} id={c.id}>
+            <div class="case-card-header">
+              <span class="badge case-badge">{c.categoryLabel}</span>
+              <h3>{c.title}</h3>
+            </div>
+            
+            <div class="case-metrics-box">
+              <span class="case-metric-main">{c.metrics}</span>
+              <span class="case-metric-sub">{c.metricsSub}</span>
+            </div>
+
+            <p class="case-desc">{c.desc}</p>
+
+            <div class="case-footer">
+              <div class="case-stack">
+                {c.stack.map(tech => (
+                  <span class="tech-tag">{tech}</span>
+                ))}
+              </div>
+              <a href="/contact" class="case-action-link">Discutir solución similar →</a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Frictionless CTA -->
+  <section class="cases-cta-section">
+    <div class="container text-center">
+      <h2>¿Quieres ver resultados similares en tus sistemas?</h2>
+      <p class="large max-width-600">
+        Diseñamos un análisis preliminar de tus sistemas actuales sin compromiso de permanencia. Identificamos cuellos de botella de inmediato.
+      </p>
+      <a href="/contact?ref=cases" class="btn-primary">Iniciar Diagnóstico Gratuito</a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero */
+  .cases-hero {
+    padding-top: calc(var(--space-12) + 40px);
+    padding-bottom: var(--space-6);
+    text-align: center;
+  }
+
+  .hero-container-compact {
+    max-width: 800px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  /* Filters */
+  .filter-bar-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--space-7);
+    overflow-x: auto;
+    padding-bottom: var(--space-2);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filter-bar {
+    display: flex;
+    gap: var(--space-3);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(230, 231, 234, 0.08);
+    padding: 6px;
+    border-radius: 12px;
+    min-width: max-content;
+  }
+
+  .filter-chip {
+    background: transparent;
+    border: none;
+    color: var(--color-silver-dark);
+    padding: 10px 18px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    font-family: var(--font-primary);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all var(--transition-fast);
+  }
+
+  .filter-chip:hover {
+    color: var(--color-white);
+  }
+
+  .filter-chip.active {
+    background: rgba(0, 157, 255, 0.1);
+    color: var(--color-cyan-accent);
+    border: 1px solid rgba(0, 157, 255, 0.15);
+  }
+
+  /* Grid & Card Item */
+  .cases-grid {
+    gap: 32px;
+  }
+
+  .case-card-item {
+    grid-column: span 4;
+    min-height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--space-6);
+    transition: all var(--transition-normal);
+  }
+
+  /* When filtered out */
+  .case-card-item.hidden {
+    display: none;
+  }
+
+  .case-card-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .case-badge {
+    background: rgba(0, 200, 255, 0.06);
+    border-color: rgba(0, 200, 255, 0.15);
+    color: var(--color-cyan-accent);
+  }
+
+  .case-card-header h3 {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .case-metrics-box {
+    background: linear-gradient(90deg, rgba(0, 157, 255, 0.08), transparent);
+    border-left: 3px solid var(--color-electric-blue);
+    padding: 14px 18px;
+    border-radius: 0 12px 12px 0;
+    margin-block: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .case-metric-main {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-white);
+    line-height: 1.1;
+    font-family: var(--font-primary);
+  }
+
+  .case-metric-sub {
+    font-size: 0.8rem;
+    color: var(--color-silver-dark);
+    font-weight: 500;
+  }
+
+  .case-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+  }
+
+  .case-footer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    border-top: 1px solid rgba(230, 231, 234, 0.06);
+    padding-top: var(--space-4);
+  }
+
+  .case-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tech-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--color-silver-dark);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(230, 231, 234, 0.05);
+    padding: 3px 6px;
+    border-radius: 4px;
+  }
+
+  .case-action-link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-electric-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* CTA Section */
+  .cases-cta-section {
+    padding-block: var(--space-10);
+    border-top: 1px solid rgba(230, 231, 234, 0.08);
+  }
+
+  .text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    text-align: center;
+  }
+
+  .max-width-600 {
+    max-width: 600px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .case-card-item {
+      grid-column: span 6;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .filter-bar-wrapper {
+      justify-content: flex-start;
+      margin-inline: -20px;
+      padding-inline: 20px;
+    }
+
+    .case-card-item {
+      grid-column: span 12;
+      min-height: auto;
+    }
+
+    .cases-cta-section .btn-primary {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  function setupFilters() {
+    const filterChips = document.querySelectorAll('.filter-chip');
+    const cases = document.querySelectorAll('.case-card-item');
+
+    if (!filterChips.length || !cases.length) return;
+
+    filterChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        // Toggle active chip
+        filterChips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+
+        const filterValue = chip.getAttribute('data-filter');
+
+        cases.forEach(item => {
+          const itemCategory = item.getAttribute('data-category');
+
+          if (filterValue === 'all' || itemCategory === filterValue) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      });
+    });
+  }
+
+  // Bind immediately and on client-side route changes
+  document.addEventListener('astro:page-load', setupFilters);
+</script>

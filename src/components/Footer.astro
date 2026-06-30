@@ -1,0 +1,242 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo">
+        <img src="/assets/logo/KASI_white.png" alt="KASI Logo" />
+      </a>
+      <p class="brand-desc">
+        Kroma AI Systems Inc. diseña y despliega sistemas inteligentes, pipelines de datos de alta resiliencia y arquitecturas de software de nivel empresarial.
+      </p>
+      <div class="brand-location">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="loc-icon"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Vancouver, BC, Canadá</span>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4 class="footer-title">Navegación</h4>
+      <ul class="links-list">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/services">Servicios</a></li>
+        <li><a href="/solutions">Sistemas AI</a></li>
+        <li><a href="/cases">Casos de Éxito</a></li>
+        <li><a href="/about">Sobre KASI</a></li>
+        <li><a href="/contact">Contacto</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-solutions">
+      <h4 class="footer-title">Servicios Core</h4>
+      <ul class="links-list">
+        <li><a href="/services#ai-solutions">Soluciones AI Integradas</a></li>
+        <li><a href="/services#automation">Automatización & Pipelines</a></li>
+        <li><a href="/services#cloud">Infraestructura Cloud</a></li>
+        <li><a href="/services#security">Seguridad & Resiliencia</a></li>
+        <li><a href="/services#dev">Arquitectura de Software</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-socials">
+      <h4 class="footer-title">Conectividad</h4>
+      <p class="social-text">Síguenos en nuestros canales para ver nuestros análisis técnicos:</p>
+      <div class="social-icons">
+        <a href="#" aria-label="LinkedIn" class="social-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+        <a href="#" aria-label="X (Twitter)" class="social-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+        </a>
+        <a href="#" aria-label="YouTube" class="social-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M10 9l5 3-5 3v-6z"></path></svg>
+        </a>
+        <a href="#" aria-label="Instagram" class="social-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+      </div>
+      <div class="legal-disclaimer">
+        <span>Kroma AI Systems Inc. © {year}</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <div class="container bottom-flex">
+      <span class="motto-text">"No somos perfectos, pero KASI siempre lo logramos."</span>
+      <span class="legal-links"><a href="/privacy">Políticas</a> | <a href="/terms">Términos</a></span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--color-bg-dark);
+    border-top: 1px solid rgba(230, 231, 234, 0.08);
+    padding-top: var(--space-9);
+    margin-top: auto;
+    font-family: var(--font-secondary);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 1.5fr 2fr;
+    gap: var(--space-8);
+    padding-bottom: var(--space-8);
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .footer-logo img {
+    height: 48px;
+    width: auto;
+  }
+
+  .brand-desc {
+    font-size: 0.9rem;
+    color: var(--color-silver-dark);
+    line-height: 1.6;
+    max-width: 320px;
+  }
+
+  .brand-location {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 0.85rem;
+    color: var(--color-silver);
+  }
+
+  .loc-icon {
+    color: var(--color-cyan-accent);
+  }
+
+  .footer-title {
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    position: relative;
+    color: var(--color-white);
+  }
+
+  .links-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .links-list a {
+    color: var(--color-silver-dark);
+    font-size: 0.9rem;
+    transition: color var(--transition-fast) , padding-left var(--transition-fast);
+  }
+
+  .links-list a:hover {
+    color: var(--color-electric-blue);
+    padding-left: 4px;
+  }
+
+  .footer-socials {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .social-text {
+    font-size: 0.9rem;
+    color: var(--color-silver-dark);
+    line-height: 1.5;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: var(--space-3);
+  }
+
+  .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(230, 231, 234, 0.08);
+    color: var(--color-silver);
+    transition: all var(--transition-fast);
+  }
+
+  .social-icon:hover {
+    background: var(--color-electric-blue);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    border-color: var(--color-electric-blue);
+    box-shadow: 0 4px 12px rgba(0, 157, 255, 0.2);
+  }
+
+  .legal-disclaimer {
+    margin-top: var(--space-4);
+    font-size: 0.8rem;
+    color: var(--color-silver-dark);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(230, 231, 234, 0.05);
+    padding-block: var(--space-4);
+    background: rgba(2, 11, 24, 0.5);
+  }
+
+  .bottom-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--color-silver-dark);
+  }
+
+  .motto-text {
+    font-style: italic;
+    color: rgba(230, 231, 234, 0.45);
+  }
+
+  .legal-links a {
+    color: var(--color-silver-dark);
+  }
+
+  .legal-links a:hover {
+    color: var(--color-cyan-accent);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 900px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+    }
+
+    .brand-desc {
+      max-width: 100%;
+    }
+
+    .bottom-flex {
+      flex-direction: column;
+      gap: var(--space-2);
+      text-align: center;
+    }
+  }
+</style>

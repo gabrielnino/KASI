@@ -1,0 +1,50 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { 
+  title, 
+  description = "KASI - Kroma AI Systems Inc. Sistemas inteligentes, pipelines de datos resilientes y arquitectura de software de alta precisión en Vancouver, BC." 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title} | KASI - Kroma AI Systems Inc.</title>
+    <meta name="title" content={`${title} | KASI - Kroma AI Systems Inc.`} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={`${title} | KASI - Kroma AI Systems Inc.`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/assets/logo/KASI.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={`${title} | KASI - Kroma AI Systems Inc.`} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="/assets/logo/KASI.png" />
+
+    <!-- Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <ClientRouter />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,528 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Sistemas de Inteligencia Artificial & Pipelines Técnicos" 
+  description="Arquitectura de sistemas inteligentes y tuberías de datos de alta resiliencia. Descubre nuestras capacidades en modelos locales, ETL y robustez arquitectónica."
+>
+  <Navbar />
+
+  <!-- Hero with digital network visual -->
+  <section class="solutions-hero">
+    <div class="glow-blur glow-cyan" style="top: 15%; right: 10%;"></div>
+    <div class="container hero-grid grid-12">
+      <div class="hero-left">
+        <span class="badge">Sistemas AI Especializados</span>
+        <h1>Soluciones AI & Arquitecturas de Datos</h1>
+        <p class="large">
+          Desplegamos infraestructura inteligente a la medida. Desde agentes autónomos locales hasta flujos de extracción masiva tolerantes a bloqueos.
+        </p>
+        <a href="#capabilities" class="btn-primary">Ver Capacidades</a>
+      </div>
+      <div class="hero-right">
+        <!-- Animated Neural Network Visual -->
+        <div class="neural-network-svg">
+          <svg viewBox="0 0 400 400" width="100%" height="100%" class="neural-svg">
+            <!-- Connection lines -->
+            <line x1="100" y1="100" x2="200" y2="70" stroke="rgba(0, 157, 255, 0.4)" stroke-width="1.5" class="net-line line-1" />
+            <line x1="100" y1="100" x2="200" y2="150" stroke="rgba(0, 157, 255, 0.4)" stroke-width="1.5" class="net-line line-2" />
+            <line x1="100" y1="250" x2="200" y2="150" stroke="rgba(0, 200, 255, 0.4)" stroke-width="1.5" class="net-line line-3" />
+            <line x1="100" y1="250" x2="200" y2="300" stroke="rgba(0, 200, 255, 0.4)" stroke-width="1.5" class="net-line line-4" />
+            
+            <line x1="200" y1="70" x2="300" y2="120" stroke="rgba(0, 157, 255, 0.4)" stroke-width="2" class="net-line line-5" />
+            <line x1="200" y1="150" x2="300" y2="120" stroke="rgba(0, 157, 255, 0.4)" stroke-width="2" class="net-line line-6" />
+            <line x1="200" y1="150" x2="300" y2="250" stroke="rgba(0, 200, 255, 0.4)" stroke-width="2" class="net-line line-7" />
+            <line x1="200" y1="300" x2="300" y2="250" stroke="rgba(0, 200, 255, 0.4)" stroke-width="2" class="net-line line-8" />
+            
+            <line x1="300" y1="120" x2="350" y2="185" stroke="var(--color-cyan-accent)" stroke-width="2" class="net-line line-9" />
+            <line x1="300" y1="250" x2="350" y2="185" stroke="var(--color-cyan-accent)" stroke-width="2" class="net-line line-10" />
+
+            <!-- Orbit nodes -->
+            <circle cx="100" cy="100" r="10" fill="var(--color-primary-navy)" stroke="var(--color-electric-blue)" stroke-width="3" class="net-node node-a" />
+            <circle cx="100" cy="250" r="10" fill="var(--color-primary-navy)" stroke="var(--color-electric-blue)" stroke-width="3" class="net-node node-b" />
+            
+            <circle cx="200" cy="70" r="12" fill="var(--color-primary-navy)" stroke="var(--color-cyan-accent)" stroke-width="3" class="net-node node-c" />
+            <circle cx="200" cy="150" r="12" fill="var(--color-primary-navy)" stroke="var(--color-electric-blue)" stroke-width="3" class="net-node node-d" />
+            <circle cx="200" cy="300" r="12" fill="var(--color-primary-navy)" stroke="var(--color-cyan-accent)" stroke-width="3" class="net-node node-e" />
+            
+            <circle cx="300" cy="120" r="14" fill="var(--color-primary-navy)" stroke="var(--color-electric-blue)" stroke-width="3" class="net-node node-f" />
+            <circle cx="300" cy="250" r="14" fill="var(--color-primary-navy)" stroke="var(--color-cyan-accent)" stroke-width="3" class="net-node node-g" />
+            
+            <circle cx="350" cy="185" r="18" fill="var(--color-bg-dark)" stroke="var(--color-white)" stroke-width="4" class="net-node node-h" />
+            <circle cx="350" cy="185" r="6" fill="var(--color-cyan-accent)" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities Section (2x3 Grid) -->
+  <section class="capabilities-section" id="capabilities">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Nuestras Capacidades</span>
+        <h2>Ingeniería técnica sin límites comerciales</h2>
+        <p>Diseñamos componentes desacoplados y eficientes preparados para interactuar bajo escenarios de alta exigencia.</p>
+      </div>
+
+      <div class="capabilities-grid">
+        <div class="card cap-card">
+          <span class="cap-number">01</span>
+          <div>
+            <h3>LLMs Locales & Seguros</h3>
+            <p>Implementación de modelos Llama, Mistral y Phi en hardware on-premises, garantizando privacidad absoluta bajo normativas estrictas de datos sin depender de APIs de terceros.</p>
+          </div>
+        </div>
+
+        <div class="card cap-card">
+          <span class="cap-number">02</span>
+          <div>
+            <h3>Agentes de Extracción Estructurada</h3>
+            <p>Modelos cognitivos especializados en procesar PDFs, facturas y manifiestos de aduana semiestructurados, convirtiéndolos en registros JSON limpios con esquemas validados.</p>
+          </div>
+        </div>
+
+        <div class="card cap-card">
+          <span class="cap-number">03</span>
+          <div>
+            <h3>Crawlers Resilientes a Captchas</h3>
+            <p>Bots de extracción web con rotación inteligente de proxies residenciales, simulación de navegación humana y adaptabilidad dinámica ante modificaciones del código fuente de destino.</p>
+          </div>
+        </div>
+
+        <div class="card cap-card">
+          <span class="cap-number">04</span>
+          <div>
+            <h3>Pipelines de Procesamiento Concurrente</h3>
+            <p>Sistemas distribuidos de cola de mensajería (RabbitMQ, Apache Kafka) que procesan millones de registros diarios con consistencia garantizada y tolerancia a interrupciones.</p>
+          </div>
+        </div>
+
+        <div class="card cap-card">
+          <span class="cap-number">05</span>
+          <div>
+            <h3>Integraciones API & Automatización RPA</h3>
+            <p>Conexión fluida de sistemas antiguos mediante emulación lógica y bots RPA robustos cuando no existen APIs disponibles o los sistemas legados están cerrados.</p>
+          </div>
+        </div>
+
+        <div class="card cap-card">
+          <span class="cap-number">06</span>
+          <div>
+            <h3>Instrumentación y Alarmas Técnicas</h3>
+            <p>Monitoreo profundo de salud a nivel de red, consumo de RAM y tasa de rendimiento de datos con mecanismos de alerta predictiva ante anomalías.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Section: 5/7 Layout -->
+  <section class="technical-deep-dive">
+    <div class="container grid-12 tech-grid">
+      <!-- Left: Technical Text (5 cols) -->
+      <div class="tech-text-block">
+        <span class="badge">Arquitectura del Pipeline</span>
+        <h2>Cómo estructuramos un pipeline tolerante a fallos</h2>
+        <p>
+          No escribimos scripts improvisados. Nuestros sistemas siguen principios rigurosos de **Clean Architecture** y patrones de diseño consolidados:
+        </p>
+        <ul class="tech-feature-list">
+          <li>
+            <strong>Desacoplamiento Total:</strong> La lógica de negocio está aislada de la base de datos, APIs de terceros y frameworks web.
+          </li>
+          <li>
+            <strong>Circuit Breakers:</strong> Si un servicio externo falla, el sistema se aísla automáticamente y re-intenta cuando se recupera, previniendo cuellos de botella generalizados.
+          </li>
+          <li>
+            <strong>Capa de Validación Rigurosa:</strong> Cada dato que ingresa es sometido a validaciones de esquema (Zod/Pydantic) antes de interactuar con el dominio principal.
+          </li>
+          <li>
+            <strong>Re-intentos Exponenciales:</strong> Algoritmos de retry con "jitter" para suavizar los picos de peticiones y evitar baneos de IPs.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right: Technical Diagram (7 cols) -->
+      <div class="tech-diagram-block">
+        <div class="diagram-wrapper">
+          <div class="diagram-header">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="diagram-title">KASI Resilient Pipeline Flow</span>
+          </div>
+          <div class="diagram-body">
+            
+            <div class="diagram-node source-node">
+              <span class="node-tag">IN</span>
+              <span>Fuentes de Datos No Estructuradas</span>
+            </div>
+            
+            <div class="diagram-arrow">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+            </div>
+            
+            <div class="diagram-node filter-node">
+              <span class="node-tag">STEP 1</span>
+              <span>Proxy / Desencriptación / Extracción</span>
+            </div>
+
+            <div class="diagram-arrow">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+            </div>
+
+            <div class="diagram-node validation-node">
+              <span class="node-tag">STEP 2</span>
+              <span>Esquema & Validación (Tolerancia a fallos)</span>
+            </div>
+
+            <div class="diagram-arrow">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+            </div>
+
+            <div class="diagram-node ai-node">
+              <span class="node-tag">STEP 3</span>
+              <span>Agente AI Local (Llama Parse & Normalización)</span>
+            </div>
+
+            <div class="diagram-arrow">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+            </div>
+
+            <div class="diagram-node destination-node">
+              <span class="node-tag">OUT</span>
+              <span>Destino Limpio (Data Warehouse / CRM / ERP)</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Big Final CTA: Build Intelligent Systems -->
+  <section class="solutions-cta-section">
+    <div class="container solutions-cta-box">
+      <h2>¿Preparado para construir sistemas de ingeniería real?</h2>
+      <p class="large">
+        Diseñamos sistemas resilientes a medida que minimizan pérdidas operativas y optimizan el procesamiento de datos corporativos.
+      </p>
+      <a href="/contact?ref=solutions" class="btn-primary">Construir Mis Sistemas Inteligentes</a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero */
+  .solutions-hero {
+    padding-top: calc(var(--space-12) + 40px);
+    padding-bottom: var(--space-10);
+    align-items: center;
+  }
+
+  .hero-left {
+    grid-column: 1 / 7;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    justify-content: center;
+  }
+
+  .hero-right {
+    grid-column: 7 / 13;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .neural-network-svg {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+  }
+
+  /* Neural connections animations */
+  .net-line {
+    stroke-dasharray: 8;
+    animation: dashLine 30s infinite linear;
+  }
+
+  .net-node {
+    transform-origin: center;
+    transition: transform var(--transition-fast);
+  }
+
+  .net-node:hover {
+    transform: scale(1.2);
+  }
+
+  @keyframes dashLine {
+    to {
+      stroke-dashoffset: -1000;
+    }
+  }
+
+  /* Capabilities Grid (2x3) */
+  .capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .cap-card {
+    min-height: 240px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-5);
+    padding: var(--space-6);
+  }
+
+  .cap-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-cyan-accent);
+    line-height: 1;
+    font-family: var(--font-primary);
+  }
+
+  .cap-card h3 {
+    margin-bottom: var(--space-2);
+    font-size: 1.25rem;
+  }
+
+  .cap-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* Technical Deep Dive (5/7) */
+  .technical-deep-dive {
+    background: rgba(2, 11, 24, 0.4);
+    border-block: 1px solid rgba(230, 231, 234, 0.08);
+  }
+
+  .tech-grid {
+    align-items: center;
+  }
+
+  .tech-text-block {
+    grid-column: 1 / 6;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .tech-feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-top: var(--space-2);
+  }
+
+  .tech-feature-list li {
+    font-family: var(--font-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    position: relative;
+    padding-left: var(--space-5);
+    color: var(--color-silver);
+  }
+
+  .tech-feature-list li strong {
+    color: var(--color-white);
+  }
+
+  .tech-feature-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-cyan-accent);
+  }
+
+  .tech-diagram-block {
+    grid-column: 6 / 13;
+    padding-left: var(--space-5);
+  }
+
+  /* Diagram styles */
+  .diagram-wrapper {
+    background: rgba(6, 27, 51, 0.6);
+    border: 1px solid rgba(230, 231, 234, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  }
+
+  .diagram-header {
+    background: rgba(2, 11, 24, 0.8);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid rgba(230, 231, 234, 0.08);
+  }
+
+  .diagram-header .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .diagram-header .dot.red { background-color: var(--color-error); }
+  .diagram-header .dot.yellow { background-color: var(--color-warning); }
+  .diagram-header .dot.green { background-color: var(--color-success); }
+
+  .diagram-title {
+    font-size: 0.75rem;
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    color: var(--color-silver-dark);
+    margin-left: var(--space-2);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .diagram-body {
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .diagram-node {
+    width: 100%;
+    max-width: 480px;
+    background: rgba(2, 11, 24, 0.8);
+    border: 1px solid rgba(230, 231, 234, 0.1);
+    padding: 14px 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    font-family: var(--font-secondary);
+    font-size: 0.9rem;
+    color: var(--color-white);
+    transition: all var(--transition-fast);
+  }
+
+  .diagram-node:hover {
+    border-color: var(--color-electric-blue);
+    transform: scale(1.01);
+    box-shadow: 0 4px 15px rgba(0, 157, 255, 0.15);
+  }
+
+  .node-tag {
+    font-size: 0.65rem;
+    font-weight: 700;
+    background: rgba(0, 200, 255, 0.1);
+    border: 1px solid rgba(0, 200, 255, 0.2);
+    color: var(--color-cyan-accent);
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .source-node { border-left: 4px solid var(--color-silver-dark); }
+  .filter-node { border-left: 4px solid var(--color-electric-blue); }
+  .validation-node { border-left: 4px solid var(--color-warning); }
+  .ai-node { border-left: 4px solid var(--color-cyan-accent); }
+  .destination-node { border-left: 4px solid var(--color-success); }
+
+  .diagram-arrow {
+    color: rgba(230, 231, 234, 0.3);
+    animation: floatArrow 2s infinite ease-in-out;
+  }
+
+  @keyframes floatArrow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(4px); color: var(--color-electric-blue); }
+  }
+
+  /* Solutions CTA Box */
+  .solutions-cta-section {
+    padding-block: var(--space-8);
+  }
+
+  .solutions-cta-box {
+    background: radial-gradient(circle at top right, rgba(0, 200, 255, 0.1) 0%, transparent 60%), var(--grad-dark-card);
+    border: 1px solid rgba(230, 231, 234, 0.08);
+    border-radius: 24px;
+    padding: var(--space-8);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .solutions-cta-box h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    max-width: 700px;
+  }
+
+  .solutions-cta-box p {
+    max-width: 600px;
+    margin-bottom: var(--space-2);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .hero-left {
+      grid-column: span 12;
+      text-align: center;
+      align-items: center;
+      margin-bottom: var(--space-6);
+    }
+
+    .hero-right {
+      grid-column: span 12;
+    }
+
+    .capabilities-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .tech-text-block {
+      grid-column: span 12;
+      margin-bottom: var(--space-6);
+    }
+
+    .tech-diagram-block {
+      grid-column: span 12;
+      padding-left: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .solutions-hero {
+      padding-top: calc(var(--space-10) + 60px);
+    }
+
+    .cap-card {
+      min-height: auto;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .solutions-cta-box {
+      padding: var(--space-6) var(--space-5);
+    }
+
+    .solutions-cta-box .btn-primary {
+      width: 100%;
+    }
+  }
+</style>
