@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [Unreleased]
 
 ### Added
+*   **Structured Data Schema:** Implemented structured JSON-LD data schema (`ProfessionalService`) in `Layout.astro` `<head>` describing Kroma AI Systems Inc. details, geo-coordinates, and price specs to maximize local search indexing.
 *   **Plumbing Niche Pivot:** Re-aligned all client-facing website copy, headlines, metrics, service lists, capabilities, and case studies to target professional plumbing contractors.
 *   **Home UI/UX Audit:** Added the analytical report `documents/home-ui-ux-audit.md` detailing header, logo, and typography proportion suggestions.
 *   **Semantic HTML Main Tags:** Enwrapped the main content of all 6 pages (`index.astro`, `about.astro`, `services.astro`, `solutions.astro`, `cases.astro`, `contact.astro`) within `<main>` tags for improved SEO indexing.
