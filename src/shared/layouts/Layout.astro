@@ -11,6 +11,8 @@ const {
   title, 
   description = "KASI - Kroma AI Systems Inc. Intelligent systems, resilient data pipelines, and high-precision software architecture in Vancouver, BC." 
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, 'https://kasi.systems').href;
 ---
 
 <!doctype html>
@@ -19,6 +21,7 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
     
     <!-- Primary Meta Tags -->

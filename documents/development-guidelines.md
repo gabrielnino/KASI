@@ -92,7 +92,7 @@ A code increment is considered "Done" and ready for production if and only if it
 *   **Integration and UI Tests (E2E):** Executed in **Playwright** obligatorily simulating the target mobile devices (iOS/Android) and desktop profiles.
 *   **Code Coverage Verification:** Enforce that test coverage meets or exceeds the **80% minimum threshold** (technical debt ratio below 20%) before any deployment.
 *   **Deployment Filter (Lighthouse CI):** Automatic block of Vercel deployment if the audit yields a score below 95 in performance or SEO.
-*   **Strict Tag and Analytics Validation:** Mandatory presence of `<title>`, `meta description`, Open Graph tags (`og:*`), image `alt` attributes, and validation of correct initialization and zero performance impact of GA4 and Vercel Analytics scripts.
+*   **Strict Tag and Analytics Validation:** Mandatory presence of `<title>`, `meta description`, canonical links (`<link rel="canonical">`), Open Graph tags (`og:*`), image `alt` attributes, and validation of correct initialization and zero performance impact of GA4 and Vercel Analytics scripts.
 
 ---
 
