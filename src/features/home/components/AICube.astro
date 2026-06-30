@@ -23,6 +23,7 @@
     height: 325px;
     perspective: 1000px;
     position: relative;
+    animation: breatheCube 8s infinite ease-in-out alternate;
   }
 
   .cube-mesh {
@@ -137,5 +138,14 @@
   @keyframes spinRing {
     0% { transform: rotateX(75deg) rotateZ(0deg); }
     100% { transform: rotateX(75deg) rotateZ(360deg); }
+  }
+
+  @keyframes breatheCube {
+    0% {
+      transform: scale(0.75);
+    }
+    100% {
+      transform: scale(1.2);
+    }
   }
 </style>
