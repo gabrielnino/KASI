@@ -1,40 +1,47 @@
+---
+import { getLocaleFromUrl, getLocalizedPath, useTranslations } from '../../../shared/i18n/utils';
+
+const lang = getLocaleFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <div class="contact-form-block">
   <div class="form-wrapper" id="form-container">
     <form id="project-intake-form" class="contact-form">
       <div class="input-group">
-        <label for="name" class="label">Your Name</label>
-        <input type="text" id="name" name="name" required placeholder="e.g. Gabriel Nino" class="input" />
+        <label for="name" class="label">{t('contact.form.name')}</label>
+        <input type="text" id="name" name="name" required placeholder={t('contact.form.namePlaceholder')} class="input" />
       </div>
 
       <div class="input-group">
-        <label for="email" class="label">Email Address</label>
-        <input type="email" id="email" name="email" required placeholder="e.g. contact@yourplumbing.com" class="input" />
+        <label for="email" class="label">{t('contact.form.email')}</label>
+        <input type="email" id="email" name="email" required placeholder={t('contact.form.emailPlaceholder')} class="input" />
       </div>
 
       <div class="input-group">
-        <label for="company" class="label">Company / Plumbing Business</label>
-        <input type="text" id="company" name="company" required placeholder="e.g. Nino Plumbing & Drain" class="input" />
+        <label for="company" class="label">{t('contact.form.company')}</label>
+        <input type="text" id="company" name="company" required placeholder={t('contact.form.companyPlaceholder')} class="input" />
       </div>
 
       <div class="input-group">
-        <label for="service" class="label">Service Required</label>
+        <label for="service" class="label">{t('contact.form.service')}</label>
         <select id="service" name="service" required class="input select-input">
-          <option value="" disabled selected>Select an option</option>
-          <option value="redesign">Website Redesign (More Leads)</option>
-          <option value="assistant">AI Dispatch Assistant (24/7 Scheduling)</option>
-          <option value="voice-crm">Voice CRM Systems (Hands-Free Dictation)</option>
-          <option value="integrations">Calendar & Tool Sync</option>
-          <option value="seo">Local SEO & Visibility</option>
-          <option value="resiliency">Full Suite (Redesign + Assistant + Voice CRM)</option>
+          <option value="" disabled selected>{t('contact.form.selectOption')}</option>
+          <option value="redesign">{t('contact.form.optionRedesign')}</option>
+          <option value="assistant">{t('contact.form.optionAssistant')}</option>
+          <option value="voice-crm">{t('contact.form.optionVoiceCrm')}</option>
+          <option value="integrations">{t('contact.form.optionIntegrations')}</option>
+          <option value="seo">{t('contact.form.optionSeo')}</option>
+          <option value="resiliency">{t('contact.form.optionResiliency')}</option>
         </select>
       </div>
 
       <div class="input-group">
-        <label for="message" class="label">How can we help your plumbing business?</label>
-        <textarea id="message" name="message" rows="5" required placeholder="Tell us how many vans/technicians you operate, if you miss customer calls after hours, or which scheduling tool you want to integrate (ServiceTitan, Housecall Pro, etc.)..." class="input textarea-input"></textarea>
+        <label for="message" class="label">{t('contact.form.message')}</label>
+        <textarea id="message" name="message" rows="5" required placeholder={t('contact.form.messagePlaceholder')} class="input textarea-input"></textarea>
       </div>
 
-      <button type="submit" class="btn-primary form-submit-btn">Submit Requirements</button>
+      <button type="submit" class="btn-primary form-submit-btn">{t('contact.form.submit')}</button>
     </form>
   </div>
 
@@ -46,11 +53,11 @@
         <polyline points="22 4 12 14.01 9 11.01"/>
       </svg>
     </div>
-    <h2>Requirements Received!</h2>
+    <h2>{t('contact.form.successTitle')}</h2>
     <p class="large">
-      We have logged your request. A senior engineer will audit your notes and send you an email with an initial diagnostic within 24 business hours.
+      {t('contact.form.successDesc')}
     </p>
-    <a href="/" class="btn-secondary">Back to Home</a>
+    <a href={getLocalizedPath('/', lang)} class="btn-secondary">{t('contact.form.backHome')}</a>
   </div>
 </div>
 

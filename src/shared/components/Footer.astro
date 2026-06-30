@@ -1,48 +1,52 @@
 ---
+import { getLocaleFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
+
 const year = new Date().getFullYear();
+const lang = getLocaleFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <footer class="footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <a href="/" class="footer-logo">
+      <a href={getLocalizedPath('/', lang)} class="footer-logo">
         <img src="/assets/logos/kasi_white.png" alt="KASI Logo" />
       </a>
       <p class="brand-desc">
-        Kroma AI Systems Inc. designs and deploys intelligent systems, high-resiliency data pipelines, and enterprise-grade software architectures.
+        {t('footer.brandDesc')}
       </p>
       <div class="brand-location">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="loc-icon"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span>Vancouver, BC, Canada</span>
+        <span>{t('footer.location')}</span>
       </div>
     </div>
 
     <div class="footer-links">
-      <h4 class="footer-title">Navigation</h4>
+      <h4 class="footer-title">{t('footer.navigation')}</h4>
       <ul class="links-list">
-        <li><a href="/">Home</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/solutions">AI Systems</a></li>
-        <li><a href="/cases">Case Studies</a></li>
-        <li><a href="/about">About KASI</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href={getLocalizedPath('/', lang)}>{t('nav.home')}</a></li>
+        <li><a href={getLocalizedPath('/services', lang)}>{t('nav.services')}</a></li>
+        <li><a href={getLocalizedPath('/solutions', lang)}>{t('nav.solutions')}</a></li>
+        <li><a href={getLocalizedPath('/cases', lang)}>{t('nav.cases')}</a></li>
+        <li><a href={getLocalizedPath('/about', lang)}>{t('nav.about')}</a></li>
+        <li><a href={getLocalizedPath('/contact', lang)}>{t('nav.consultation')}</a></li>
       </ul>
     </div>
 
     <div class="footer-solutions">
-      <h4 class="footer-title">Core Services</h4>
+      <h4 class="footer-title">{t('footer.coreServices')}</h4>
       <ul class="links-list">
-        <li><a href="/services#ai-solutions">Integrated AI Solutions</a></li>
-        <li><a href="/services#automation">Automation & Pipelines</a></li>
-        <li><a href="/services#cloud">Cloud Infrastructure</a></li>
-        <li><a href="/services#security">Security & Resiliency</a></li>
-        <li><a href="/services#dev">Software Architecture</a></li>
+        <li><a href={getLocalizedPath('/services#ai-solutions', lang)}>Integrated AI Solutions</a></li>
+        <li><a href={getLocalizedPath('/services#automation', lang)}>Automation & Pipelines</a></li>
+        <li><a href={getLocalizedPath('/services#cloud', lang)}>Cloud Infrastructure</a></li>
+        <li><a href={getLocalizedPath('/services#security', lang)}>Security & Resiliency</a></li>
+        <li><a href={getLocalizedPath('/services#dev', lang)}>Software Architecture</a></li>
       </ul>
     </div>
 
     <div class="footer-socials">
-      <h4 class="footer-title">Connectivity</h4>
-      <p class="social-text">Follow our channels to read our technical breakdowns:</p>
+      <h4 class="footer-title">{t('footer.connectivity')}</h4>
+      <p class="social-text">{t('footer.followUs')}</p>
       <div class="social-icons">
         <a href="#" aria-label="LinkedIn" class="social-icon">
           <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
@@ -58,7 +62,7 @@ const year = new Date().getFullYear();
         </a>
       </div>
       <div class="legal-disclaimer">
-        <span>Kroma AI Systems Inc. © {year}</span>
+        <span>Kroma AI Systems Inc. © {year} | {t('footer.rights')}</span>
       </div>
     </div>
   </div>
@@ -66,7 +70,7 @@ const year = new Date().getFullYear();
   <div class="footer-bottom">
     <div class="container bottom-flex">
       <span class="motto-text">"We are not perfect, but we KASI always deliver."</span>
-      <span class="legal-links"><a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></span>
+      <span class="legal-links"><a href={getLocalizedPath('/privacy', lang)}>Privacy Policy</a> | <a href={getLocalizedPath('/terms', lang)}>Terms of Service</a></span>
     </div>
   </div>
 </footer>

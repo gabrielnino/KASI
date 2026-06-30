@@ -2,6 +2,10 @@
 import Layout from '../shared/layouts/Layout.astro';
 import Navbar from '../shared/components/Navbar.astro';
 import Footer from '../shared/components/Footer.astro';
+import { getLocaleFromUrl, getLocalizedPath, useTranslations } from '../shared/i18n/utils';
+
+const lang = getLocaleFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout 
@@ -15,171 +19,98 @@ import Footer from '../shared/components/Footer.astro';
   <section class="viewport-section services-hero">
     <div class="glow-blur glow-blue" style="top: 20%; left: 10%;"></div>
     <div class="container hero-container-compact">
-      <span class="badge">Our Specialty</span>
-      <h1>High-Performance Systems for <span class="text-gradient">Plumbing</span> Businesses</h1>
+      <span class="badge">{t('services.hero.badge')}</span>
+      <h1>{t('services.hero.title')}<span class="text-gradient">{t('services.hero.titleGradient')}</span></h1>
       <p class="large">
-        We build custom websites, AI virtual schedulers, and voice CRM integrations to keep your plumbing vans running and eliminate office admin.
+        {t('services.hero.desc')}
       </p>
     </div>
   </section>
 
-  <!-- Services Grid Section -->
+  <!-- Services Grid Section 1 (Cards 1-3) -->
   <section class="viewport-section services-grid-section">
     <div class="container">
       <div class="services-columns-grid">
-        
-        <!-- Service 1: Website Redesign -->
-        <div class="card service-page-card" id="redesign">
-          <div class="card-top">
-            <div class="circular-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
-                <path d="M12 6v12M6 12h12M7.5 7.5l9 9M7.5 16.5l9-9"/>
-              </svg>
+        {t('services.cards').slice(0, 3).map((card: any) => (
+          <div class="card service-page-card" id={card.id}>
+            <div class="card-top">
+              <div class="circular-icon">
+                {card.id === 'redesign' && (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                    <path d="M12 6v12M6 12h12M7.5 7.5l9 9M7.5 16.5l9-9"/>
+                  </svg>
+                )}
+                {card.id === 'assistant' && (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                    <path d="M16 18l6-6-6-6M8 6l-6 6 6 6M12 4l-4 16"/>
+                  </svg>
+                )}
+                {card.id === 'voice-crm' && (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                    <path d="M17.5 19A5.5 5.5 0 0 0 18 8h-1.26a8 8 0 1 0-11.62 3.58"/>
+                    <path d="M12 12v9M9 18l3 3 3-3"/>
+                  </svg>
+                )}
+              </div>
+              <h3>{card.title}</h3>
+              <p>{card.desc}</p>
             </div>
-            <h3>Website Redesign</h3>
-            <p>
-              Custom mobile-first websites engineered for speed and conversion. We integrate click-to-call buttons, trust badge displays, and interactive schedulers to convert local searchers into booked jobs.
-            </p>
-          </div>
-          <div class="card-bottom">
-            <ul class="bullet-tech">
-              <li>Mobile-First Layouts</li>
-              <li>Local SEO Optimization</li>
-              <li>High Lead Conversion</li>
-            </ul>
-            <a href="/contact?service=redesign" class="btn-secondary compact-btn">Request Quote</a>
-          </div>
-        </div>
-
-        <!-- Service 2: AI Dispatch Assistant -->
-        <div class="card service-page-card" id="assistant">
-          <div class="card-top">
-            <div class="circular-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-                <path d="M16 18l6-6-6-6M8 6l-6 6 6 6M12 4l-4 16"/>
-              </svg>
+            <div class="card-bottom">
+              <ul class="bullet-tech">
+                {card.bullets.map((b: string) => (
+                  <li>{b}</li>
+                ))}
+              </ul>
+              <a href={getLocalizedPath(`/contact?service=${card.slug}`, lang)} class="btn-secondary compact-btn">{card.cta}</a>
             </div>
-            <h3>AI Dispatch Assistant</h3>
-            <p>
-              A 24/7 natural-language virtual dispatcher responding to texts and calls. Qualifies service requests, handles emergency escalations, and books jobs directly in your dispatch board.
-            </p>
           </div>
-          <div class="card-bottom">
-            <ul class="bullet-tech">
-              <li>24/7 Lead Response</li>
-              <li>Urgency Qualification</li>
-              <li>Automated Scheduling</li>
-            </ul>
-            <a href="/contact?service=assistant" class="btn-secondary compact-btn">Request Quote</a>
-          </div>
-        </div>
-
-        <!-- Service 3: Voice CRM Systems -->
-        <div class="card service-page-card" id="voice-crm">
-          <div class="card-top">
-            <div class="circular-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-                <path d="M17.5 19A5.5 5.5 0 0 0 18 8h-1.26a8 8 0 1 0-11.62 3.58"/>
-                <path d="M12 12v9M9 18l3 3 3-3"/>
-              </svg>
-            </div>
-            <h3>Voice CRM Systems</h3>
-            <p>
-              Dictate client notes, log materials used, update job status, and initiate invoicing directly on-site using only your voice. Eliminates manual typing on mobile screens while working.
-            </p>
-          </div>
-          <div class="card-bottom">
-            <ul class="bullet-tech">
-              <li>Hands-free Dictation</li>
-              <li>Acoustic Filtering</li>
-              <li>Trade Term Recognition</li>
-            </ul>
-            <a href="/contact?service=voice-crm" class="btn-secondary compact-btn">Request Quote</a>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Services Grid Section 2 -->
+  <!-- Services Grid Section 2 (Cards 4-6) -->
   <section class="viewport-section services-grid-section">
     <div class="container">
       <div class="services-columns-grid">
-
-        <!-- Service 4: Calendar & Tool Sync -->
-        <div class="card service-page-card" id="integrations">
-          <div class="card-top">
-            <div class="circular-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-                <path d="M2 17h20M2 12h20M2 7h20"/>
-                <circle cx="5" cy="7" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="17" r="1"/>
-              </svg>
+        {t('services.cards').slice(3, 6).map((card: any) => (
+          <div class="card service-page-card" id={card.id}>
+            <div class="card-top">
+              <div class="circular-icon">
+                {card.id === 'integrations' && (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                    <path d="M2 17h20M2 12h20M2 7h20"/>
+                    <circle cx="5" cy="7" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="17" r="1"/>
+                  </svg>
+                )}
+                {card.id === 'seo' && (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                  </svg>
+                )}
+                {card.id === 'resiliency' && (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                    <line x1="12" y1="22.08" x2="12" y2="12"/>
+                  </svg>
+                )}
+              </div>
+              <h3>{card.title}</h3>
+              <p>{card.desc}</p>
             </div>
-            <h3>Calendar & Tool Sync</h3>
-            <p>
-              Automatic real-time synchronization between your website, AI assistant, and trade software. We connect directly to ServiceTitan, Housecall Pro, Google Calendar, and Quickbooks.
-            </p>
-          </div>
-          <div class="card-bottom">
-            <ul class="bullet-tech">
-              <li>ServiceTitan Integration</li>
-              <li>Housecall Pro API</li>
-              <li>Quickbooks Invoicing</li>
-            </ul>
-            <a href="/contact?service=integrations" class="btn-secondary compact-btn">Request Quote</a>
-          </div>
-        </div>
-
-        <!-- Service 5: Local SEO & Visibility -->
-        <div class="card service-page-card" id="seo">
-          <div class="card-top">
-            <div class="circular-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-              </svg>
+            <div class="card-bottom">
+              <ul class="bullet-tech">
+                {card.bullets.map((b: string) => (
+                  <li>{b}</li>
+                ))}
+              </ul>
+              <a href={getLocalizedPath(`/contact?service=${card.slug}`, lang)} class="btn-secondary compact-btn">{card.cta}</a>
             </div>
-            <h3>Local SEO & Visibility</h3>
-            <p>
-              Optimization of local keyword targets and metadata to lift your plumbing business to the top of Google Maps and local search results, driving organic telephone calls.
-            </p>
           </div>
-          <div class="card-bottom">
-            <ul class="bullet-tech">
-              <li>Google Maps SEO</li>
-              <li>Local Keyword Tuning</li>
-              <li>Structured Schema Markup</li>
-            </ul>
-            <a href="/contact?service=seo" class="btn-secondary compact-btn">Request Quote</a>
-          </div>
-        </div>
-
-        <!-- Service 6: Outage & Lead Resiliency -->
-        <div class="card service-page-card" id="resiliency">
-          <div class="card-top">
-            <div class="circular-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                <line x1="12" y1="22.08" x2="12" y2="12"/>
-              </svg>
-            </div>
-            <h3>Outage & Lead Resiliency</h3>
-            <p>
-              Hardened hosting infrastructure with zero server downtime. Offline fallback systems capture and log customer booking inquiries even during network outages, ensuring zero lead loss.
-            </p>
-          </div>
-          <div class="card-bottom">
-            <ul class="bullet-tech">
-              <li>99.99% Guaranteed Uptime</li>
-              <li>Offline Intake Fallbacks</li>
-              <li>Zero Lead Leakage</li>
-            </ul>
-            <a href="/contact?service=resiliency" class="btn-secondary compact-btn">Request Quote</a>
-          </div>
-        </div>
-
+        ))}
       </div>
     </div>
   </section>
@@ -189,13 +120,13 @@ import Footer from '../shared/components/Footer.astro';
     <div class="container">
       <div class="friction-box">
         <div class="friction-content">
-          <h3>Engineering Built for Trade Velocity</h3>
+          <h3>{t('services.banner.title')}</h3>
           <p>
-            We eliminate low-value meetings and inflated tech budgets. We focus on clean systems that keep your plumbing vans booked, backed by documentation so any developer can maintain it.
+            {t('services.banner.desc')}
           </p>
         </div>
         <div class="friction-action">
-          <a href="/contact" class="btn-primary">Start Project Without Bureaucracy</a>
+          <a href={getLocalizedPath('/contact', lang)} class="btn-primary">{t('services.banner.cta')}</a>
         </div>
       </div>
     </div>

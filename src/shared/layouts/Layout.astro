@@ -12,11 +12,14 @@ const {
   description = "KASI - Kroma AI Systems Inc. Intelligent systems, resilient data pipelines, and high-precision software architecture in Vancouver, BC." 
 } = Astro.props;
 
+import { getLocaleFromUrl } from '../i18n/utils';
+
 const canonicalURL = new URL(Astro.url.pathname, 'https://kasi.systems').href;
+const lang = getLocaleFromUrl(Astro.url);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

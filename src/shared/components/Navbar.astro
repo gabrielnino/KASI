@@ -1,10 +1,14 @@
 ---
+import { getLocaleFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
+
 const currentPath = Astro.url.pathname;
+const lang = getLocaleFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <header class="navbar" id="main-navbar">
   <div class="container nav-container">
-    <a href="/" class="nav-logo" aria-label="KASI Home">
+    <a href={getLocalizedPath('/', lang)} class="nav-logo" aria-label="KASI Home">
       <img src="/assets/logos/kasi_white.png" alt="KASI Logo" class="logo-img" />
     </a>
 
@@ -17,19 +21,52 @@ const currentPath = Astro.url.pathname;
 
     <!-- Navigation links -->
     <nav class="nav-menu" id="nav-menu">
-      <a href="/" class={`nav-link ${currentPath === '/' ? 'active' : ''}`}>Home</a>
-      <a href="/services" class={`nav-link ${currentPath.startsWith('/services') ? 'active' : ''}`}>Services</a>
-      <a href="/solutions" class={`nav-link ${currentPath.startsWith('/solutions') ? 'active' : ''}`}>AI Systems</a>
-      <a href="/cases" class={`nav-link ${currentPath.startsWith('/cases') ? 'active' : ''}`}>Cases</a>
-      <a href="/about" class={`nav-link ${currentPath.startsWith('/about') ? 'active' : ''}`}>About Us</a>
+      <a href={getLocalizedPath('/', lang)} class={`nav-link ${currentPath === getLocalizedPath('/', lang) ? 'active' : ''}`}>{t('nav.home')}</a>
+      <a href={getLocalizedPath('/services', lang)} class={`nav-link ${currentPath.startsWith(getLocalizedPath('/services', lang)) ? 'active' : ''}`}>{t('nav.services')}</a>
+      <a href={getLocalizedPath('/solutions', lang)} class={`nav-link ${currentPath.startsWith(getLocalizedPath('/solutions', lang)) ? 'active' : ''}`}>{t('nav.solutions')}</a>
+      <a href={getLocalizedPath('/cases', lang)} class={`nav-link ${currentPath.startsWith(getLocalizedPath('/cases', lang)) ? 'active' : ''}`}>{t('nav.cases')}</a>
+      <a href={getLocalizedPath('/about', lang)} class={`nav-link ${currentPath.startsWith(getLocalizedPath('/about', lang)) ? 'active' : ''}`}>{t('nav.about')}</a>
+      
+      <!-- Mobile Language Selector wrapper -->
+      <div class="mobile-lang-wrapper">
+        <span class="mobile-lang-title">Language / ਭਾਸ਼ਾ / 语言</span>
+        <div class="mobile-lang-grid">
+          <a href={getLocalizedPath(currentPath, 'en')} class={`mobile-lang-btn ${lang === 'en' ? 'active' : ''}`}>English</a>
+          <a href={getLocalizedPath(currentPath, 'es')} class={`mobile-lang-btn ${lang === 'es' ? 'active' : ''}`}>Español</a>
+          <a href={getLocalizedPath(currentPath, 'zh')} class={`mobile-lang-btn ${lang === 'zh' ? 'active' : ''}`}>中文 (普通话)</a>
+          <a href={getLocalizedPath(currentPath, 'pa')} class={`mobile-lang-btn ${lang === 'pa' ? 'active' : ''}`}>ਪੰਜਾਬੀ (Punjabi)</a>
+        </div>
+      </div>
+      
       <div class="mobile-cta-wrapper">
-        <a href="/contact" class="btn-primary btn-nav-cta">Free Consultation</a>
+        <a href={getLocalizedPath('/contact', lang)} class="btn-primary btn-nav-cta">{t('nav.consultation')}</a>
       </div>
     </nav>
 
-    <!-- Desktop CTA -->
-    <div class="nav-cta">
-      <a href="/contact" class="btn-primary">Free Consultation</a>
+    <!-- Desktop Language Selector & CTA Wrapper -->
+    <div class="nav-desktop-right">
+      <div class="lang-selector">
+        <a href={getLocalizedPath(currentPath, 'en')} class={`lang-btn ${lang === 'en' ? 'active' : ''}`} title="English">
+          <svg class="flag-svg" viewBox="0 0 20 10"><rect width="5" height="10" fill="#d80621"/><rect x="5" width="10" height="10" fill="#fff"/><rect x="15" width="5" height="10" fill="#d80621"/><path d="M10 2 L9 5 L6 4 L8 6 L5 9 L10 8 L15 9 L12 6 L14 4 L11 5 Z" fill="#d80621"/></svg>
+          <span>English</span>
+        </a>
+        <a href={getLocalizedPath(currentPath, 'es')} class={`lang-btn ${lang === 'es' ? 'active' : ''}`} title="Español">
+          <svg class="flag-svg" viewBox="0 0 3 2"><rect width="1" height="2" fill="#006847"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#c8102e"/><circle cx="1.5" cy="1" r="0.15" fill="#c89d3c"/></svg>
+          <span>Español</span>
+        </a>
+        <a href={getLocalizedPath(currentPath, 'zh')} class={`lang-btn ${lang === 'zh' ? 'active' : ''}`} title="中文 (普通话)">
+          <svg class="flag-svg" viewBox="0 0 30 20"><rect width="30" height="20" fill="#de2910"/><circle cx="5" cy="5" r="3" fill="#ffde00"/></svg>
+          <span>中文 (普通话)</span>
+        </a>
+        <a href={getLocalizedPath(currentPath, 'pa')} class={`lang-btn ${lang === 'pa' ? 'active' : ''}`} title="ਪੰਜਾਬੀ (Punjabi)">
+          <svg class="flag-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#FF9933"/><text x="12" y="16.5" font-family="'Montserrat', sans-serif" font-size="12" font-weight="900" fill="#FFF" text-anchor="middle">ੴ</text></svg>
+          <span>ਪੰਜਾਬੀ (Punjabi)</span>
+        </a>
+      </div>
+
+      <div class="nav-cta">
+        <a href={getLocalizedPath('/contact', lang)} class="btn-primary">{t('nav.consultation')}</a>
+      </div>
     </div>
   </div>
 </header>
@@ -61,6 +98,8 @@ const currentPath = Astro.url.pathname;
     align-items: center;
     justify-content: space-between;
     position: relative;
+    max-width: 1440px;
+    gap: 2.25rem;
   }
 
   .nav-logo {
@@ -90,38 +129,42 @@ const currentPath = Astro.url.pathname;
   .nav-menu {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(230, 231, 234, 0.08);
+    border-radius: 50px;
+    padding: 3px 12px;
+    margin-inline: auto;
   }
 
   .nav-link {
-    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 0.85rem;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.75);
-    font-family: var(--font-secondary);
-    letter-spacing: -0.02em;
-    position: relative;
-    padding: var(--space-2) 0;
-    transition: color var(--transition-fast);
+    color: var(--color-silver-dark);
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    white-space: nowrap;
   }
 
   .nav-link:hover {
     color: var(--color-white);
+    background: rgba(255, 255, 255, 0.05);
   }
 
   .nav-link.active {
-    color: var(--color-cyan-accent);
-    font-weight: 700;
+    color: var(--color-white);
+    background: var(--grad-primary);
+    box-shadow: 0 2px 8px rgba(111, 53, 252, 0.3);
   }
 
-  .nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--grad-primary);
-    border-radius: 2px;
+  .nav-desktop-right {
+    display: flex;
+    align-items: center;
+    gap: 2.25rem;
   }
 
   .nav-cta {
@@ -132,6 +175,108 @@ const currentPath = Astro.url.pathname;
   .nav-cta .btn-primary {
     padding: 8px 18px;
     font-size: 0.9rem;
+  }
+
+  /* Desktop i18n switcher */
+  .lang-selector {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(230, 231, 234, 0.08);
+    border-radius: 50px;
+    padding: 3px 12px;
+  }
+
+  .lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-silver-dark);
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .lang-btn:hover {
+    color: var(--color-white);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .lang-btn.active {
+    color: var(--color-white);
+    background: var(--grad-primary);
+    box-shadow: 0 2px 8px rgba(111, 53, 252, 0.3);
+  }
+
+  .flag-svg {
+    width: 18px;
+    height: 12px;
+    border-radius: 2px;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 1360px) {
+    .lang-btn span {
+      display: none;
+    }
+    .lang-btn {
+      padding: 6px;
+      gap: 0;
+    }
+  }
+
+  /* Mobile i18n Switcher */
+  .mobile-lang-wrapper {
+    display: none;
+    width: 100%;
+    margin-top: var(--space-4);
+    border-top: 1px solid rgba(230, 231, 234, 0.08);
+    padding-top: var(--space-4);
+  }
+
+  .mobile-lang-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-cyan-accent);
+    display: block;
+    margin-bottom: var(--space-2);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .mobile-lang-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    width: 100%;
+  }
+
+  .mobile-lang-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(230, 231, 234, 0.08);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-silver);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  .mobile-lang-btn.active {
+    background: var(--grad-primary);
+    border-color: transparent;
+    color: var(--color-white);
   }
 
   .btn-nav-cta {
@@ -166,8 +311,19 @@ const currentPath = Astro.url.pathname;
     transition: all var(--transition-fast);
   }
 
-  /* Responsive Design */
-  @media (max-width: 900px) {
+  @media (max-width: 1080px) {
+    .nav-desktop-right {
+      display: none;
+    }
+
+    .lang-selector {
+      display: none;
+    }
+
+    .mobile-lang-wrapper {
+      display: block;
+    }
+
     .nav-cta {
       display: none;
     }
@@ -183,9 +339,9 @@ const currentPath = Astro.url.pathname;
       right: 0;
       background: rgba(2, 11, 24, 0.98);
       backdrop-filter: blur(20px);
+      border: none;
       border-bottom: 1px solid rgba(230, 231, 234, 0.1);
-      flex-direction: column;
-      align-items: flex-start;
+      border-radius: 0;
       padding: var(--space-5) var(--space-6) var(--space-7);
       gap: var(--space-4);
       transform: translateY(-100%);
@@ -193,6 +349,7 @@ const currentPath = Astro.url.pathname;
       pointer-events: none;
       transition: all var(--transition-normal);
       z-index: 999;
+      margin-inline: unset;
     }
 
     .nav-menu.open {
@@ -205,11 +362,21 @@ const currentPath = Astro.url.pathname;
       font-size: 1.1rem;
       width: 100%;
       padding-block: var(--space-2);
+      padding-inline: 0;
+      border-radius: 0;
+      color: rgba(255, 255, 255, 0.75);
+      background: transparent !important;
+      box-shadow: none !important;
     }
 
-    .nav-link.active::after {
-      bottom: 0;
-      width: 20px;
+    .nav-link:hover {
+      background: transparent;
+      color: var(--color-white);
+    }
+
+    .nav-link.active {
+      color: var(--color-cyan-accent);
+      font-weight: 700;
     }
 
     .mobile-cta-wrapper {

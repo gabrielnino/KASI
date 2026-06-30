@@ -3,6 +3,10 @@ import Layout from '../shared/layouts/Layout.astro';
 import Navbar from '../shared/components/Navbar.astro';
 import Footer from '../shared/components/Footer.astro';
 import AICube from '../features/home/components/AICube.astro';
+import { getLocaleFromUrl, getLocalizedPath, useTranslations } from '../shared/i18n/utils';
+
+const lang = getLocaleFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout 
@@ -19,23 +23,23 @@ import AICube from '../features/home/components/AICube.astro';
     
     <div class="container hero-container grid-12">
       <div class="hero-content">
-        <span class="badge">Specialized Trade Systems</span>
+        <span class="badge">{t('home.badge')}</span>
         <h1 class="hero-title">
-          Never Miss a Plumbing Call. <span class="text-gradient">Automatic</span> Bookings.
+          {t('home.heroTitle')}<span class="text-gradient">{t('home.heroTitleGradient')}</span>{t('home.heroTitleEnd')}
         </h1>
         <p class="large hero-subtitle">
-          High-conversion website redesign, 24/7 AI virtual dispatchers, and hands-free Voice CRM systems. Designed specifically for professional plumbing contractors.
+          {t('home.heroSubtitle')}
         </p>
         
         <!-- Semantic Ju-Jitsu Irony Alert -->
         <div class="irony-banner">
           <span class="irony-quote">"We are not perfect, but we KASI always deliver."</span>
-          <span class="irony-badge">Plumbing Automation</span>
+          <span class="irony-badge">{t('home.ironyBadge')}</span>
         </div>
 
         <div class="hero-actions">
-          <a href="/contact" class="btn-primary">Request Free Consultation</a>
-          <a href="/services" class="btn-secondary">Explore Services</a>
+          <a href={getLocalizedPath('/contact', lang)} class="btn-primary">{t('home.ctaConsultation')}</a>
+          <a href={getLocalizedPath('/services', lang)} class="btn-secondary">{t('home.ctaServices')}</a>
         </div>
       </div>
 
@@ -51,22 +55,22 @@ import AICube from '../features/home/components/AICube.astro';
       <div class="metrics-grid">
         <div class="metric-item">
           <span class="metric-num">98%</span>
-          <span class="metric-label">Missed Calls Captured</span>
+          <span class="metric-label">{t('home.metrics.captured')}</span>
         </div>
         <div class="metric-divider"></div>
         <div class="metric-item">
           <span class="metric-num">+250%</span>
-          <span class="metric-label">Local SEO traffic</span>
+          <span class="metric-label">{t('home.metrics.seo')}</span>
         </div>
         <div class="metric-divider"></div>
         <div class="metric-item">
           <span class="metric-num">45m</span>
-          <span class="metric-label">Daily Admin Time Saved</span>
+          <span class="metric-label">{t('home.metrics.timeSaved')}</span>
         </div>
         <div class="metric-divider"></div>
         <div class="metric-item">
           <span class="metric-num">18%+</span>
-          <span class="metric-label">Web Conversion Rate</span>
+          <span class="metric-label">{t('home.metrics.conversion')}</span>
         </div>
       </div>
     </div>
@@ -76,9 +80,9 @@ import AICube from '../features/home/components/AICube.astro';
   <section class="viewport-section services-strip">
     <div class="container">
       <div class="section-header">
-        <span class="badge">Our Capabilities</span>
-        <h2>Frictionless systems to scale your plumbing business</h2>
-        <p>Solutions engineered to capture every lead, optimize search ranking, and eliminate paperwork.</p>
+        <span class="badge">{t('home.capabilities.badge')}</span>
+        <h2>{t('home.capabilities.title')}</h2>
+        <p>{t('home.capabilities.desc')}</p>
       </div>
 
       <div class="services-grid grid-12">
@@ -87,10 +91,10 @@ import AICube from '../features/home/components/AICube.astro';
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-svg"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
           </div>
           <div>
-            <h3>Website Redesign</h3>
-            <p>Modern contractor sites optimized for local Google Search, fast mobile loading, and direct phone calls.</p>
+            <h3>{t('home.capabilities.cards.redesign.title')}</h3>
+            <p>{t('home.capabilities.cards.redesign.desc')}</p>
           </div>
-          <a href="/services#redesign" class="card-link">Explore Website Redesign →</a>
+          <a href={getLocalizedPath('/services#redesign', lang)} class="card-link">{t('home.capabilities.cards.redesign.link')}</a>
         </div>
 
         <div class="card service-strip-card">
@@ -98,10 +102,10 @@ import AICube from '../features/home/components/AICube.astro';
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-svg"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           </div>
           <div>
-            <h3>AI Dispatch Assistant</h3>
-            <p>24/7 AI agents responding to service texts and calls, booking appointments directly in your calendar.</p>
+            <h3>{t('home.capabilities.cards.assistant.title')}</h3>
+            <p>{t('home.capabilities.cards.assistant.desc')}</p>
           </div>
-          <a href="/services#assistant" class="card-link">Explore AI Dispatch Assistant →</a>
+          <a href={getLocalizedPath('/services#assistant', lang)} class="card-link">{t('home.capabilities.cards.assistant.link')}</a>
         </div>
 
         <div class="card service-strip-card">
@@ -109,10 +113,10 @@ import AICube from '../features/home/components/AICube.astro';
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
           </div>
           <div>
-            <h3>Voice CRM Systems</h3>
-            <p>Hands-free admin. Dictate job notes, update customer files, and trigger invoices while on-site.</p>
+            <h3>{t('home.capabilities.cards.voiceCrm.title')}</h3>
+            <p>{t('home.capabilities.cards.voiceCrm.desc')}</p>
           </div>
-          <a href="/services#voice-crm" class="card-link">Explore Voice CRM →</a>
+          <a href={getLocalizedPath('/services#voice-crm', lang)} class="card-link">{t('home.capabilities.cards.voiceCrm.link')}</a>
         </div>
 
         <div class="card service-strip-card">
@@ -120,10 +124,10 @@ import AICube from '../features/home/components/AICube.astro';
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <div>
-            <h3>Calendar & Tool Sync</h3>
-            <p>Direct integration with ServiceTitan, Housecall Pro, Google Calendar, and invoicing platforms.</p>
+            <h3>{t('home.capabilities.cards.sync.title')}</h3>
+            <p>{t('home.capabilities.cards.sync.desc')}</p>
           </div>
-          <a href="/services#integrations" class="card-link">Explore Calendar Sync →</a>
+          <a href={getLocalizedPath('/services#integrations', lang)} class="card-link">{t('home.capabilities.cards.sync.link')}</a>
         </div>
       </div>
     </div>
@@ -134,75 +138,37 @@ import AICube from '../features/home/components/AICube.astro';
     <div class="glow-blur glow-cyan" style="top: 30%; right: 10%;"></div>
     <div class="container">
       <div class="section-header">
-        <span class="badge">Our Achievements</span>
-        <h2>Successfully Deployed Systems</h2>
-        <p>Advanced engineering systems designed to drive real-world business results for plumbing contractors.</p>
+        <span class="badge">{t('home.achievements.badge')}</span>
+        <h2>{t('home.achievements.title')}</h2>
+        <p>{t('home.achievements.desc')}</p>
       </div>
 
       <div class="solutions-grid">
-        <div class="card solution-card">
-          <div class="solution-header-info">
-            <span class="solution-tag">Lead Generation</span>
-            <h3>Vancouver Plumbing & Drain Co.</h3>
-          </div>
-          <p class="solution-desc">
-            Deployed a complete website redesign and a custom SMS AI booking assistant to capture inbound local search leads. The system operates 24/7, booking jobs even when dispatchers are off.
-          </p>
-          <div class="solution-stats">
-            <div>
-              <span class="stat-num">+45%</span>
-              <span class="stat-lbl">Booked service calls</span>
+        {t('home.achievements.cards').map((card: any) => (
+          <div class="card solution-card">
+            <div class="solution-header-info">
+              <span class="solution-tag">{card.tag}</span>
+              <h3>{card.title}</h3>
             </div>
-            <div>
-              <span class="stat-num">98.2%</span>
-              <span class="stat-lbl">Response rate</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="card solution-card">
-          <div class="solution-header-info">
-            <span class="solution-tag">Voice Operations</span>
-            <h3>Fraser Valley Drain Technicians</h3>
-          </div>
-          <p class="solution-desc">
-            Integrated a voice-to-text pipeline into the field team's CRM. Plumbers dictate job summaries and list materials used on-site, generating immediate billing sheets.
-          </p>
-          <div class="solution-stats">
-            <div>
-              <span class="stat-num">1.5 hrs</span>
-              <span class="stat-lbl">Daily admin saved/tech</span>
-            </div>
-            <div>
-              <span class="stat-num">-80%</span>
-              <span class="stat-lbl">Billing delay</span>
+            <p class="solution-desc">
+              {card.desc}
+            </p>
+            <div class="solution-stats">
+              <div>
+                <span class="stat-num">{card.stat1Num}</span>
+                <span class="stat-lbl">{card.stat1Lbl}</span>
+              </div>
+              <div>
+                <span class="stat-num">{card.stat2Num}</span>
+                <span class="stat-lbl">{card.stat2Lbl}</span>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="card solution-card">
-          <div class="solution-header-info">
-            <span class="solution-tag">24/7 Dispatching</span>
-            <h3>Apex Emergency Plumbing</h3>
-          </div>
-          <p class="solution-desc">
-            Implemented a natural-language voice assistant that handles after-hours emergency calls, screens caller urgency, and schedules dispatch runs directly into the on-call plumber's calendar.
-          </p>
-          <div class="solution-stats">
-            <div>
-              <span class="stat-num">$18,000</span>
-              <span class="stat-lbl">Revenue saved in Month 1</span>
-            </div>
-            <div>
-              <span class="stat-num">99.9%</span>
-              <span class="stat-lbl">Call answer rate</span>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
 
       <div class="solutions-action">
-        <a href="/cases" class="btn-secondary">View Full Case Studies</a>
+        <a href={getLocalizedPath('/cases', lang)} class="btn-secondary">{t('home.achievements.ctaCases')}</a>
       </div>
     </div>
   </section>
@@ -211,43 +177,21 @@ import AICube from '../features/home/components/AICube.astro';
   <section class="viewport-section process-section">
     <div class="container">
       <div class="section-header">
-        <span class="badge">The Flow</span>
-        <h2>How do we eliminate friction from your project?</h2>
-        <p>A transparent path focused on robust code and zero endless bureaucratic processes.</p>
+        <span class="badge">{t('home.process.badge')}</span>
+        <h2>{t('home.process.title')}</h2>
+        <p>{t('home.process.desc')}</p>
       </div>
 
       <div class="process-steps">
-        <div class="step-card">
-          <div class="step-number">01</div>
-          <div class="step-content">
-            <h4>System Audit</h4>
-            <p>We review your current website, local SEO maps standing, and booking dispatch flow to find missed lead leak points.</p>
+        {t('home.process.steps').map((step: any) => (
+          <div class="step-card">
+            <div class="step-number">{step.num}</div>
+            <div class="step-content">
+              <h4>{step.title}</h4>
+              <p>{step.desc}</p>
+            </div>
           </div>
-        </div>
-
-        <div class="step-card">
-          <div class="step-number">02</div>
-          <div class="step-content">
-            <h4>Redesign & AI Setup</h4>
-            <p>We design a high-speed website and construct your custom AI receptionist to respond to texts and book calls instantly.</p>
-          </div>
-        </div>
-
-        <div class="step-card">
-          <div class="step-number">03</div>
-          <div class="step-content">
-            <h4>Voice CRM & App Sync</h4>
-            <p>We integrate hands-free voice transcription with your existing service software (ServiceTitan, Google Calendar, etc.).</p>
-          </div>
-        </div>
-
-        <div class="step-card">
-          <div class="step-number">04</div>
-          <div class="step-content">
-            <h4>Local Launch & Scale</h4>
-            <p>We go live, optimize local search tags to push you up on Google Maps, and ensure your vans stay fully booked.</p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>
@@ -256,13 +200,13 @@ import AICube from '../features/home/components/AICube.astro';
   <section class="viewport-section final-cta">
     <div class="glow-blur glow-blue" style="bottom: -20%; left: 30%;"></div>
     <div class="container cta-container">
-      <h2>Ready to keep your plumbing vans fully booked?</h2>
+      <h2>{t('home.finalCta.title')}</h2>
       <p class="large">
-        Get a modern high-conversion website, a 24/7 AI virtual scheduler, and a hands-free Voice CRM custom-built for your business.
+        {t('home.finalCta.desc')}
       </p>
       <div class="cta-buttons">
-        <a href="/contact" class="btn-primary">Request Free Consultation</a>
-        <a href="/cases" class="btn-secondary">View Plumber Case Studies</a>
+        <a href={getLocalizedPath('/contact', lang)} class="btn-primary">{t('home.finalCta.cta1')}</a>
+        <a href={getLocalizedPath('/cases', lang)} class="btn-secondary">{t('home.finalCta.cta2')}</a>
       </div>
     </div>
   </section>

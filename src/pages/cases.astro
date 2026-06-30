@@ -2,70 +2,19 @@
 import Layout from '../shared/layouts/Layout.astro';
 import Navbar from '../shared/components/Navbar.astro';
 import Footer from '../shared/components/Footer.astro';
+import { getLocaleFromUrl, getLocalizedPath, useTranslations } from '../shared/i18n/utils';
 
-// Case Studies Data
-const cases = [
-  {
-    id: "case-1",
-    category: "automation",
-    categoryLabel: "Website Redesign & SEO",
-    title: "Vancouver Plumbing & Drain Co.",
-    metrics: "+45% service bookings",
-    metricsSub: "Organic leads via Google Maps SEO",
-    desc: "A complete website redesign optimized for page speed, local search keywords, and a mobile-friendly click-to-call flow. Integrated trust badges and emergency scheduling links.",
-    stack: ["Astro", "Tailwind CSS", "Lighthouse SEO", "Vercel"],
-  },
-  {
-    id: "case-2",
-    category: "ai",
-    categoryLabel: "AI Dispatch Assistant",
-    title: "Apex Emergency Plumbing",
-    metrics: "$18,000 booked in Month 1",
-    metricsSub: "99.9% after-hours response rate",
-    desc: "Deployed a natural-language voice and SMS virtual dispatcher that handles weekend calls, queries booking urgency, and registers technician appointments 24/7.",
-    stack: ["OpenAI API", "Twilio Voice", "Node.js", "Housecall Pro API"],
-  },
-  {
-    id: "case-3",
-    category: "automation",
-    categoryLabel: "Voice CRM Integration",
-    title: "Fraser Valley Drain Technicians",
-    metrics: "1.5 hours saved/day per tech",
-    metricsSub: "-80% billing dispatch delay",
-    desc: "Integrated a custom hands-free voice transcription pipeline. On-site technicians dictate summaries directly into the CRM without manual typing under constraints.",
-    stack: ["Whisper Speech API", "FastAPI", "ServiceTitan API", "TypeScript"],
-  },
-  {
-    id: "case-4",
-    category: "infrastructure",
-    categoryLabel: "Cloud & Resiliency",
-    title: "Tri-Cities Plumbing Group",
-    metrics: "99.99% website uptime",
-    metricsSub: "No customer lost during peak storms",
-    desc: "Migrated legacy shared hosting to a serverless Edge-based static platform with an offline fallback lead vault. Bookings are preserved even if database connections drop.",
-    stack: ["Vercel Edge", "AWS DynamoDB", "Astro SSG", "Terraform"],
-  },
-  {
-    id: "case-5",
-    category: "ai",
-    categoryLabel: "AI Virtual Assistant",
-    title: "North Shore Plumbing & Heating",
-    metrics: "-60% office booking workload",
-    metricsSub: "Direct sync with technician boards",
-    desc: "Created a conversational SMS booking agent that coordinates with clients to confirm time slots, send technician arrival updates, and gather initial job photos.",
-    stack: ["LangChain", "Twilio SMS", "FastAPI", "Google Calendar API"],
-  },
-  {
-    id: "case-6",
-    category: "infrastructure",
-    categoryLabel: "Local SEO & Visibility",
-    title: "Metro Vancouver Plumbing Solutions",
-    metrics: "+250% maps visibility",
-    metricsSub: "Top 3 spot on high-value terms",
-    desc: "Structured schema markup and local SEO optimizations across suburban service landing pages, driving organic phone call leads with zero pay-per-click ad budget.",
-    stack: ["JSON-LD Schema", "Lighthouse", "Vercel Analytics", "Astro"],
-  }
-];
+const lang = getLocaleFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const techStacks: Record<string, string[]> = {
+  cases1: ["Astro", "Tailwind CSS", "Lighthouse SEO", "Vercel"],
+  cases2: ["OpenAI API", "Twilio Voice", "Node.js", "Housecall Pro API"],
+  cases3: ["Whisper Speech API", "FastAPI", "ServiceTitan API", "TypeScript"],
+  cases4: ["Vercel Edge", "AWS DynamoDB", "Astro SSG", "Terraform"],
+  cases5: ["LangChain", "Twilio SMS", "FastAPI", "Google Calendar API"],
+  cases6: ["JSON-LD Schema", "Lighthouse", "Vercel Analytics", "Astro"]
+};
 ---
 
 <Layout 
@@ -79,10 +28,10 @@ const cases = [
   <section class="viewport-section cases-hero">
     <div class="glow-blur glow-blue" style="top: 15%; left: 5%;"></div>
     <div class="container hero-container-compact">
-      <span class="badge">Our Achievements</span>
-      <h1>Code that delivers <span class="text-gradient">measurable</span> results</h1>
+      <span class="badge">{t('cases.hero.badge')}</span>
+      <h1>{t('cases.hero.title')}<span class="text-gradient">{t('cases.hero.titleGradient')}</span>{t('cases.hero.titleEnd')}</h1>
       <p class="large">
-        We do not rely on speculation. We measure our success based on the speed of your website, local SEO rankings, and dispatcher automation.
+        {t('cases.hero.desc')}
       </p>
     </div>
   </section>
@@ -94,36 +43,40 @@ const cases = [
       <!-- Filter Bar -->
       <div class="filter-bar-wrapper">
         <div class="filter-bar" id="filter-bar">
-          <button class="filter-chip active" data-filter="all">All</button>
-          <button class="filter-chip" data-filter="automation">Website & SEO</button>
-          <button class="filter-chip" data-filter="ai">AI Dispatch Assistants</button>
-          <button class="filter-chip" data-filter="infrastructure">Resiliency & CRM</button>
+          <button class="filter-chip active" data-filter="all">{t('cases.filters.all')}</button>
+          <button class="filter-chip" data-filter="web">{t('cases.filters.web')}</button>
+          <button class="filter-chip" data-filter="voice">{t('cases.filters.voice')}</button>
+          <button class="filter-chip" data-filter="crm">{t('cases.filters.crm')}</button>
         </div>
       </div>
 
       <!-- Grid of Cases Section 1 -->
       <div class="cases-grid grid-12">
-        {cases.slice(0, 3).map((c) => (
+        {t('cases.cards').slice(0, 3).map((c: any) => (
           <div class="card case-card-item" data-category={c.category} id={c.id}>
             <div class="case-card-header">
-              <span class="badge case-badge">{c.categoryLabel}</span>
+              <span class="badge case-badge">
+                {c.category === 'web' && t('cases.filters.web')}
+                {c.category === 'voice' && t('cases.filters.voice')}
+                {c.category === 'crm' && t('cases.filters.crm')}
+              </span>
               <h3>{c.title}</h3>
             </div>
             
             <div class="case-metrics-box">
-              <span class="case-metric-main">{c.metrics}</span>
-              <span class="case-metric-sub">{c.metricsSub}</span>
+              <span class="case-metric-main">{c.statNum}</span>
+              <span class="case-metric-sub">{c.statLbl}</span>
             </div>
 
             <p class="case-desc">{c.desc}</p>
 
             <div class="case-footer">
               <div class="case-stack">
-                {c.stack.map(tech => (
+                {techStacks[c.id]?.map((tech: string) => (
                   <span class="tech-tag">{tech}</span>
                 ))}
               </div>
-              <a href="/contact" class="case-action-link">Discuss similar solution →</a>
+              <a href={getLocalizedPath('/contact', lang)} class="case-action-link">{t('cases.outcomeLabel')} →</a>
             </div>
           </div>
         ))}
@@ -138,27 +91,31 @@ const cases = [
       
       <!-- Grid of Cases Section 2 -->
       <div class="cases-grid grid-12">
-        {cases.slice(3).map((c) => (
+        {t('cases.cards').slice(3, 6).map((c: any) => (
           <div class="card case-card-item" data-category={c.category} id={c.id}>
             <div class="case-card-header">
-              <span class="badge case-badge">{c.categoryLabel}</span>
+              <span class="badge case-badge">
+                {c.category === 'web' && t('cases.filters.web')}
+                {c.category === 'voice' && t('cases.filters.voice')}
+                {c.category === 'crm' && t('cases.filters.crm')}
+              </span>
               <h3>{c.title}</h3>
             </div>
             
             <div class="case-metrics-box">
-              <span class="case-metric-main">{c.metrics}</span>
-              <span class="case-metric-sub">{c.metricsSub}</span>
+              <span class="case-metric-main">{c.statNum}</span>
+              <span class="case-metric-sub">{c.statLbl}</span>
             </div>
 
             <p class="case-desc">{c.desc}</p>
 
             <div class="case-footer">
               <div class="case-stack">
-                {c.stack.map(tech => (
+                {techStacks[c.id]?.map((tech: string) => (
                   <span class="tech-tag">{tech}</span>
                 ))}
               </div>
-              <a href="/contact" class="case-action-link">Discuss similar solution →</a>
+              <a href={getLocalizedPath('/contact', lang)} class="case-action-link">{t('cases.outcomeLabel')} →</a>
             </div>
           </div>
         ))}
@@ -170,11 +127,11 @@ const cases = [
   <!-- Frictionless CTA -->
   <section class="viewport-section cases-cta-section">
     <div class="container text-center">
-      <h2>Want to see similar results in your plumbing business?</h2>
+      <h2>{t('home.finalCta.title')}</h2>
       <p class="large max-width-600">
-        We design a preliminary analysis of your website, local SEO, and scheduling workflow with no commitments. We identify bottlenecks immediately.
+        {t('home.finalCta.desc')}
       </p>
-      <a href="/contact?ref=cases" class="btn-primary">Start Free Diagnostic</a>
+      <a href={getLocalizedPath('/contact?ref=cases', lang)} class="btn-primary">{t('home.finalCta.cta1')}</a>
     </div>
   </section>
   </main>

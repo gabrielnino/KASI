@@ -2,6 +2,10 @@
 import Layout from '../shared/layouts/Layout.astro';
 import Navbar from '../shared/components/Navbar.astro';
 import Footer from '../shared/components/Footer.astro';
+import { getLocaleFromUrl, useTranslations } from '../shared/i18n/utils';
+
+const lang = getLocaleFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout 
@@ -15,10 +19,10 @@ import Footer from '../shared/components/Footer.astro';
   <section class="viewport-section about-hero">
     <div class="glow-blur glow-blue" style="top: 20%; left: -5%;"></div>
     <div class="container hero-container-compact">
-      <span class="badge">About KASI</span>
-      <h1>Technical pragmatism & structural <span class="text-gradient">integrity</span></h1>
+      <span class="badge">{t('about.hero.badge')}</span>
+      <h1>{t('about.hero.title')}<span class="text-gradient">{t('about.hero.titleGradient')}</span></h1>
       <p class="large">
-        We were born in Vancouver, BC, under a simple premise: unnecessary complexity in software is the worst enemy of business profitability.
+        {t('about.hero.desc')}
       </p>
     </div>
   </section>
@@ -28,26 +32,26 @@ import Footer from '../shared/components/Footer.astro';
     <div class="container grid-12 narrative-grid">
       <!-- Left: Corporate Vision (6 cols) -->
       <div class="narrative-left">
-        <span class="badge">Our Mission</span>
-        <h2>The vision of Kroma AI Systems Inc.</h2>
+        <span class="badge">{t('about.narrative.badge')}</span>
+        <h2>{t('about.narrative.title')}</h2>
         <p>
-          Plumbing contractors often suffer from outdated websites, missed customer calls, and manual paperwork that delays billing. At Kroma AI Systems Inc. (KASI), we build high-precision systems to automate your office operations.
+          {t('about.narrative.para1')}
         </p>
         <p>
-          We do not believe in endless meetings or bloated budgets. We focus on modern web redesign, 24/7 AI virtual assistant receptionists, and voice CRM integrations to keep your vans booked and your hands free.
+          {t('about.narrative.para2')}
         </p>
       </div>
 
       <!-- Right: Narrative and Vancouver Matrix (6 cols) -->
       <div class="narrative-right">
         <div class="matrix-card">
-          <span class="matrix-tag">Geographical & Cultural Context</span>
-          <h3>The Vancouver Matrix</h3>
+          <span class="matrix-tag">{t('about.vancouverMatrix.tag')}</span>
+          <h3>{t('about.vancouverMatrix.title')}</h3>
           <p>
-            We operate from Vancouver, BC, helping local plumbing contractors scale their businesses. We understand the local trade environment, the urgency of emergency dispatching, and the need for hands-free systems for technicians on site.
+            {t('about.vancouverMatrix.para1')}
           </p>
           <p>
-            Our visual and strategic identity stems from this local and global duality, channeling a silent message of trust, solidity, and connectivity into every system we build.
+            {t('about.vancouverMatrix.para2')}
           </p>
         </div>
       </div>
@@ -59,74 +63,50 @@ import Footer from '../shared/components/Footer.astro';
     <div class="glow-blur glow-cyan" style="bottom: 10%; right: 10%;"></div>
     <div class="container">
       <div class="section-header">
-        <span class="badge">Our Brand</span>
-        <h2>Symbolic Fusion & Identity Philosophy</h2>
+        <span class="badge">{t('about.brand.badge')}</span>
+        <h2>{t('about.brand.title')}</h2>
         <p>
-          KASI is not just a brand; it is a manifesto of technical realism and cultural alignment.
+          {t('about.brand.desc')}
         </p>
       </div>
 
       <div class="emblem-grid grid-12">
         <div class="emblem-card left-card">
-          <span class="emblem-tag">Layer A: Semantic Irony</span>
-          <h3>"KASI" as Practical Realism</h3>
+          <span class="emblem-tag">{t('about.brand.layerA')}</span>
+          <h3>{t('about.brand.layerATitle')}</h3>
           <p class="irony-desc">
-            In Spanish, KASI sounds exactly like <em>"casi"</em> (almost). Instead of hiding this, we weaponized it as our greatest strength:
+            {t('about.brand.layerADesc')}
           </p>
           <div class="irony-box">
-            <span class="quote">"We are not perfect, but we KASI always deliver."</span>
+            <span class="quote">{t('about.brand.layerAQuote')}</span>
           </div>
           <p>
-            It acknowledges that in real-world engineering, there are no magical, bulletproof systems; there are only senior teams capable of anticipating failures and programming systems that self-recover under any adversity.
+            {t('about.brand.layerAPara')}
           </p>
         </div>
       </div>
     </div>
   </section>
 
-
-
   <!-- Technical Timeline -->
   <section class="viewport-section timeline-section">
     <div class="container">
       <div class="section-header">
-        <span class="badge">Evolution</span>
-        <h2>Our Technical Trajectory</h2>
-        <p>From local software engineering integrations to specialized automations for the trades.</p>
+        <span class="badge">{t('about.timeline.badge')}</span>
+        <h2>{t('about.timeline.title')}</h2>
+        <p>{t('about.timeline.desc')}</p>
       </div>
 
       <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-badge">2023</div>
-          <div class="timeline-panel">
-            <h4>Founding of Kroma AI Systems Inc.</h4>
-            <p>Legal registration in British Columbia, Canada, providing custom high-precision software integrations.</p>
+        {t('about.timeline.events').map((evt: any) => (
+          <div class="timeline-item">
+            <div class="timeline-badge">{evt.year}</div>
+            <div class="timeline-panel">
+              <h4>{evt.title}</h4>
+              <p>{evt.desc}</p>
+            </div>
           </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-badge">2024</div>
-          <div class="timeline-panel">
-            <h4>Birth of Web Redesigns & Contractor SEO</h4>
-            <p>Developing ultra-fast, local search-optimized contractor websites to maximize lead phone calls.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-badge">2025</div>
-          <div class="timeline-panel">
-            <h4>Launch of Voice CRM Dictation Pipelines</h4>
-            <p>Deploying advanced Whispering speech pipelines to log job materials and client history hands-free on-site.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-badge">2026</div>
-          <div class="timeline-panel">
-            <h4>KASI Plumber Tech Suite Launch</h4>
-            <p>Unifying Web Redesign, AI Dispatch Reception, and Voice CRM into a single resilient suite for plumbers across North America.</p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>
@@ -135,35 +115,19 @@ import Footer from '../shared/components/Footer.astro';
   <section class="viewport-section values-section">
     <div class="container">
       <div class="section-header">
-        <span class="badge">Our Values</span>
-        <h2>Rigid Engineering Pillars</h2>
-        <p>Principles that define how we write code and how we engage with your business.</p>
+        <span class="badge">{t('about.values.badge')}</span>
+        <h2>{t('about.values.title')}</h2>
+        <p>{t('about.values.desc')}</p>
       </div>
 
       <div class="values-grid grid-12">
-        <div class="card value-card">
-          <div class="val-num">I</div>
-          <h3>Technical Precision</h3>
-          <p>We write clean, typed, and well-documented systems specifically built for the trade operations.</p>
-        </div>
-
-        <div class="card value-card">
-          <div class="val-num">II</div>
-          <h3>Data Resiliency</h3>
-          <p>No customer inquiry or booking is ever lost. We build robust databases with offline capabilities.</p>
-        </div>
-
-        <div class="card value-card">
-          <div class="val-num">III</div>
-          <h3>Clean Architecture</h3>
-          <p>We decouple your CRM, calendars, and website from physical servers for high stability and security.</p>
-        </div>
-
-        <div class="card value-card">
-          <div class="val-num">IV</div>
-          <h3>Total Automation</h3>
-          <p>We automate booking, calendar dispatch, and client logging, saving hours of manual administrative office work.</p>
-        </div>
+        {t('about.values.items').map((val: any) => (
+          <div class="card value-card">
+            <div class="val-num">{val.num}</div>
+            <h3>{val.title}</h3>
+            <p>{val.desc}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>

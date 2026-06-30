@@ -3,6 +3,10 @@ import Layout from '../shared/layouts/Layout.astro';
 import Navbar from '../shared/components/Navbar.astro';
 import Footer from '../shared/components/Footer.astro';
 import PipelineDiagram from '../features/solutions/components/PipelineDiagram.astro';
+import { getLocaleFromUrl, getLocalizedPath, useTranslations } from '../shared/i18n/utils';
+
+const lang = getLocaleFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout 
@@ -17,12 +21,12 @@ import PipelineDiagram from '../features/solutions/components/PipelineDiagram.as
     <div class="glow-blur glow-cyan" style="top: 15%; right: 10%;"></div>
     <div class="container hero-grid grid-12">
       <div class="hero-left">
-        <span class="badge">Specialized Trade Systems</span>
-        <h1>AI Solutions & Data Architectures</h1>
+        <span class="badge">{t('solutions.hero.badge')}</span>
+        <h1>{t('solutions.hero.title')}</h1>
         <p class="large">
-          We build custom trade automation. From local AI scheduling agents to hands-free voice CRM dictation interfaces designed for plumbers on the field.
+          {t('solutions.hero.desc')}
         </p>
-        <a href="#capabilities" class="btn-primary">View Capabilities</a>
+        <a href="#capabilities" class="btn-primary">{t('solutions.hero.cta')}</a>
       </div>
       <div class="hero-right">
         <PipelineDiagram />
@@ -30,70 +34,42 @@ import PipelineDiagram from '../features/solutions/components/PipelineDiagram.as
     </div>
   </section>
 
-  <!-- Capabilities Section (2x3 Grid) -->
+  <!-- Capabilities Section (2x3 Grid) - Part 1 -->
   <section class="viewport-section capabilities-section" id="capabilities">
     <div class="container">
       <div class="section-header">
-        <span class="badge">Our Capabilities</span>
-        <h2>Technical Engineering Without Sales Pitch Boundaries</h2>
-        <p>We design decoupled, efficient components prepared to perform under high-demand scenarios.</p>
+        <span class="badge">{t('solutions.capabilities.badge')}</span>
+        <h2>{t('solutions.capabilities.title')}</h2>
+        <p>{t('solutions.capabilities.desc')}</p>
       </div>
 
       <div class="capabilities-grid">
-        <div class="card cap-card">
-          <span class="cap-number">01</span>
-          <div>
-            <h3>High-Speed Website Redesign</h3>
-            <p>Rebuilding outdated contractor websites to load in under 1 second, rank on local Google search, and optimize for mobile tap-to-call leads.</p>
+        {t('solutions.capabilities.cards').slice(0, 4).map((card: any, idx: number) => (
+          <div class="card cap-card" id={card.id}>
+            <span class="cap-number">{String(idx + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{card.title}</h3>
+              <p>{card.desc}</p>
+            </div>
           </div>
-        </div>
-
-        <div class="card cap-card">
-          <span class="cap-number">02</span>
-          <div>
-            <h3>24/7 Voice AI Reception</h3>
-            <p>Natural-language voice dispatch agents answering missed calls, routing plumbing emergencies, and scheduling service calls into your calendar.</p>
-          </div>
-        </div>
-
-        <div class="card cap-card">
-          <span class="cap-number">03</span>
-          <div>
-            <h3>Plumbing Term Recognition</h3>
-            <p>Speech-to-text models custom-trained to recognize local trade terminology such as sump pumps, backflow valves, and P-traps in noisy environments.</p>
-          </div>
-        </div>
-
-        <div class="card cap-card">
-          <span class="cap-number">04</span>
-          <div>
-            <h3>Hands-free CRM Updates</h3>
-            <p>Plumbers dictate job progress, materials used, and billing details directly into the Voice CRM without manually typing on screen.</p>
-          </div>
-        </div>
+        ))}
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Capabilities Section 2 -->
-    <section class="viewport-section capabilities-section">
-      <div class="container">
-        <div class="capabilities-grid">
-
-          <div class="card cap-card">
-          <span class="cap-number">05</span>
-          <div>
-            <h3>Calendar Conflict Check</h3>
-            <p>Real-time integration with ServiceTitan, Housecall Pro, and Google Calendar to automatically check technician availability and schedule routes.</p>
+  <!-- Capabilities Section 2 -->
+  <section class="viewport-section capabilities-section">
+    <div class="container">
+      <div class="capabilities-grid">
+        {t('solutions.capabilities.cards').slice(4, 6).map((card: any, idx: number) => (
+          <div class="card cap-card" id={card.id}>
+            <span class="cap-number">{String(idx + 5).padStart(2, '0')}</span>
+            <div>
+              <h3>{card.title}</h3>
+              <p>{card.desc}</p>
+            </div>
           </div>
-        </div>
-
-        <div class="card cap-card">
-          <span class="cap-number">06</span>
-          <div>
-            <h3>Offline Lead Vault</h3>
-            <p>In-memory storage mechanisms logging client details during network dropouts, ensuring no customer contact information is lost.</p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>
@@ -103,24 +79,17 @@ import PipelineDiagram from '../features/solutions/components/PipelineDiagram.as
     <div class="container grid-12 tech-grid">
       <!-- Left: Technical Text (5 cols) -->
       <div class="tech-text-block">
-        <span class="badge">Voice & Scheduler Architecture</span>
-        <h2>How We Structure a Resilient Plumber System</h2>
+        <span class="badge">{t('solutions.deepDive.badge')}</span>
+        <h2>{t('solutions.deepDive.title')}</h2>
         <p>
-          We do not write simple scripts. Our integrations use robust **Clean Architecture** principles and established design patterns:
+          {t('solutions.deepDive.desc')}
         </p>
         <ul class="tech-feature-list">
-          <li>
-            <strong>Voice-to-Text Pipeline:</strong> Decoupled speech-to-text components that filter ambient noise (basements, running pipes) and transcribe voice notes instantly.
-          </li>
-          <li>
-            <strong>Synchronized Calendars:</strong> API links that poll technician slots dynamically, preventing double-bookings and schedule overlap.
-          </li>
-          <li>
-            <strong>Fail-Safe Lead Routing:</strong> Resilient queues that retry database updates if your CRM or ServiceTitan drops connection.
-          </li>
-          <li>
-            <strong>Security & Privacy:</strong> Encrypted transcribing that conforms to standard privacy guidelines, preserving local NDAs.
-          </li>
+          {t('solutions.deepDive.bullets').map((bullet: any) => (
+            <li>
+              <strong>{bullet.bold}</strong> {bullet.normal}
+            </li>
+          ))}
         </ul>
       </div>
 
@@ -129,13 +98,13 @@ import PipelineDiagram from '../features/solutions/components/PipelineDiagram.as
         <div class="diagram-wrapper">
           <div class="diagram-header">
             <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-            <span class="diagram-title">KASI Resilient Plumber Pipeline</span>
+            <span class="diagram-title">{t('solutions.diagram.title')}</span>
           </div>
           <div class="diagram-body">
             
             <div class="diagram-node source-node">
               <span class="node-tag">IN</span>
-              <span>Customer Call / SMS / Onsite Plumber Dictation</span>
+              <span>{t('solutions.diagram.inVal')}</span>
             </div>
             
             <div class="diagram-arrow">
@@ -144,7 +113,7 @@ import PipelineDiagram from '../features/solutions/components/PipelineDiagram.as
             
             <div class="diagram-node filter-node">
               <span class="node-tag">STEP 1</span>
-              <span>Acoustic Filtering & Transcription</span>
+              <span>{t('solutions.diagram.step1')}</span>
             </div>
             
             <div class="diagram-arrow">
@@ -153,7 +122,7 @@ import PipelineDiagram from '../features/solutions/components/PipelineDiagram.as
             
             <div class="diagram-node validation-node">
               <span class="node-tag">STEP 2</span>
-              <span>Plumbing Entity Recognition (sump pumps, valves)</span>
+              <span>{t('solutions.diagram.step2')}</span>
             </div>
             
             <div class="diagram-arrow">
@@ -162,7 +131,7 @@ import PipelineDiagram from '../features/solutions/components/PipelineDiagram.as
             
             <div class="diagram-node ai-node">
               <span class="node-tag">STEP 3</span>
-              <span>Availability Conflict Resolution & Auto-Booking</span>
+              <span>{t('solutions.diagram.step3')}</span>
             </div>
             
             <div class="diagram-arrow">
@@ -171,7 +140,7 @@ import PipelineDiagram from '../features/solutions/components/PipelineDiagram.as
             
             <div class="diagram-node destination-node">
               <span class="node-tag">OUT</span>
-              <span>Clean Update (ServiceTitan / Housecall Pro / CRM)</span>
+              <span>{t('solutions.diagram.outVal')}</span>
             </div>
  
           </div>
@@ -183,11 +152,11 @@ import PipelineDiagram from '../features/solutions/components/PipelineDiagram.as
   <!-- Big Final CTA: Build Intelligent Systems -->
   <section class="viewport-section solutions-cta-section">
     <div class="container solutions-cta-box">
-      <h2>Ready to eliminate your plumbing office backlog?</h2>
+      <h2>{t('solutions.finalCta.title')}</h2>
       <p class="large">
-        We design custom resilient systems that capture calls, schedule technicians, and log job notes automatically.
+        {t('solutions.finalCta.desc')}
       </p>
-      <a href="/contact?ref=solutions" class="btn-primary">Build My Intelligent Systems</a>
+      <a href={getLocalizedPath('/contact?ref=solutions', lang)} class="btn-primary">{t('solutions.finalCta.btn')}</a>
     </div>
   </section>
   </main>
