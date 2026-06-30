@@ -6,9 +6,19 @@
 
 ---
 
+## Table of Contents
+1. [Statement of Principles and Governance](#1-statement-of-principles-and-governance)
+2. [Project Innegotiables (Golden Rules)](#2-project-innegotiables-golden-rules)
+3. [Technology Stack and Infrastructure](#3-technology-stack-and-infrastructure)
+4. [Information Architecture and Code Structure](#4-information-architecture-and-code-structure)
+5. [Quality Contract: Antigravity Pipeline](#5-quality-contract-antigravity-pipeline)
+6. [Naming Standards and Directory Structure](#6-naming-standards-and-directory-structure)
+
+---
+
 ## 1. Statement of Principles and Governance
 
-This document establishes the strict and non-negotiable methodological framework under which **Antigravity** and any AI agent will operate for the construction, evolution, and maintenance of the institutional website. 
+This document establishes the strict and non-negotiable methodological framework under which **Antigravity** and any AI agent will operate for the construction, evolution, and maintenance of the institutional website.
 
 Development is governed under a philosophy of **clean architecture, radical time optimization, and absolute elimination of cognitive dispersion**. The AI acts as the executing arm and tool user; strategic control and decision-making remain with the Human Founder.
 
