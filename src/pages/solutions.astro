@@ -1,7 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
+import Layout from '../shared/layouts/Layout.astro';
+import Navbar from '../shared/components/Navbar.astro';
+import Footer from '../shared/components/Footer.astro';
+import PipelineDiagram from '../features/solutions/components/PipelineDiagram.astro';
 ---
 
 <Layout 
@@ -23,38 +24,7 @@ import Footer from '../components/Footer.astro';
         <a href="#capabilities" class="btn-primary">Ver Capacidades</a>
       </div>
       <div class="hero-right">
-        <!-- Animated Neural Network Visual -->
-        <div class="neural-network-svg">
-          <svg viewBox="0 0 400 400" width="100%" height="100%" class="neural-svg">
-            <!-- Connection lines -->
-            <line x1="100" y1="100" x2="200" y2="70" stroke="rgba(0, 157, 255, 0.4)" stroke-width="1.5" class="net-line line-1" />
-            <line x1="100" y1="100" x2="200" y2="150" stroke="rgba(0, 157, 255, 0.4)" stroke-width="1.5" class="net-line line-2" />
-            <line x1="100" y1="250" x2="200" y2="150" stroke="rgba(0, 200, 255, 0.4)" stroke-width="1.5" class="net-line line-3" />
-            <line x1="100" y1="250" x2="200" y2="300" stroke="rgba(0, 200, 255, 0.4)" stroke-width="1.5" class="net-line line-4" />
-            
-            <line x1="200" y1="70" x2="300" y2="120" stroke="rgba(0, 157, 255, 0.4)" stroke-width="2" class="net-line line-5" />
-            <line x1="200" y1="150" x2="300" y2="120" stroke="rgba(0, 157, 255, 0.4)" stroke-width="2" class="net-line line-6" />
-            <line x1="200" y1="150" x2="300" y2="250" stroke="rgba(0, 200, 255, 0.4)" stroke-width="2" class="net-line line-7" />
-            <line x1="200" y1="300" x2="300" y2="250" stroke="rgba(0, 200, 255, 0.4)" stroke-width="2" class="net-line line-8" />
-            
-            <line x1="300" y1="120" x2="350" y2="185" stroke="var(--color-cyan-accent)" stroke-width="2" class="net-line line-9" />
-            <line x1="300" y1="250" x2="350" y2="185" stroke="var(--color-cyan-accent)" stroke-width="2" class="net-line line-10" />
-
-            <!-- Orbit nodes -->
-            <circle cx="100" cy="100" r="10" fill="var(--color-primary-navy)" stroke="var(--color-electric-blue)" stroke-width="3" class="net-node node-a" />
-            <circle cx="100" cy="250" r="10" fill="var(--color-primary-navy)" stroke="var(--color-electric-blue)" stroke-width="3" class="net-node node-b" />
-            
-            <circle cx="200" cy="70" r="12" fill="var(--color-primary-navy)" stroke="var(--color-cyan-accent)" stroke-width="3" class="net-node node-c" />
-            <circle cx="200" cy="150" r="12" fill="var(--color-primary-navy)" stroke="var(--color-electric-blue)" stroke-width="3" class="net-node node-d" />
-            <circle cx="200" cy="300" r="12" fill="var(--color-primary-navy)" stroke="var(--color-cyan-accent)" stroke-width="3" class="net-node node-e" />
-            
-            <circle cx="300" cy="120" r="14" fill="var(--color-primary-navy)" stroke="var(--color-electric-blue)" stroke-width="3" class="net-node node-f" />
-            <circle cx="300" cy="250" r="14" fill="var(--color-primary-navy)" stroke="var(--color-cyan-accent)" stroke-width="3" class="net-node node-g" />
-            
-            <circle cx="350" cy="185" r="18" fill="var(--color-bg-dark)" stroke="var(--color-white)" stroke-width="4" class="net-node node-h" />
-            <circle cx="350" cy="185" r="6" fill="var(--color-cyan-accent)" />
-          </svg>
-        </div>
+        <PipelineDiagram />
       </div>
     </div>
   </section>
@@ -237,33 +207,6 @@ import Footer from '../components/Footer.astro';
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  .neural-network-svg {
-    width: 100%;
-    max-width: 360px;
-    height: auto;
-  }
-
-  /* Neural connections animations */
-  .net-line {
-    stroke-dasharray: 8;
-    animation: dashLine 30s infinite linear;
-  }
-
-  .net-node {
-    transform-origin: center;
-    transition: transform var(--transition-fast);
-  }
-
-  .net-node:hover {
-    transform: scale(1.2);
-  }
-
-  @keyframes dashLine {
-    to {
-      stroke-dashoffset: -1000;
-    }
   }
 
   /* Capabilities Grid (2x3) */

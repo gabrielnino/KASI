@@ -1,0 +1,221 @@
+<div class="contact-form-block">
+  <div class="form-wrapper" id="form-container">
+    <form id="project-intake-form" class="contact-form">
+      <div class="input-group">
+        <label for="name" class="label">Tu Nombre</label>
+        <input type="text" id="name" name="name" required placeholder="Ej. Gabriel Niño" class="input" />
+      </div>
+
+      <div class="input-group">
+        <label for="email" class="label">Correo Profesional</label>
+        <input type="email" id="email" name="email" required placeholder="Ej. gabriel@empresa.com" class="input" />
+      </div>
+
+      <div class="input-group">
+        <label for="company" class="label">Empresa / Organización</label>
+        <input type="text" id="company" name="company" required placeholder="Ej. Kroma Logistics" class="input" />
+      </div>
+
+      <div class="input-group">
+        <label for="service" class="label">Servicio Requerido</label>
+        <select id="service" name="service" required class="input select-input">
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="ai">Sistemas AI & Modelos Locales</option>
+          <option value="automation">Automatización & Pipelines ETL</option>
+          <option value="cloud">Infraestructura Cloud & DevOps</option>
+          <option value="security">Seguridad & Resiliencia</option>
+          <option value="dev">Arquitectura Clean de Software</option>
+          <option value="consulting">Consultoría Estratégica</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="message" class="label">Cuéntanos sobre tu cuello de botella</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Describe brevemente qué sistema está fallando, qué volumen de datos manejas o qué flujo deseas automatizar..." class="input textarea-input"></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary form-submit-btn">Enviar Requerimientos Técnicos</button>
+    </form>
+  </div>
+
+  <!-- Success Message (Hidden initially) -->
+  <div class="form-success-wrapper hidden" id="success-container">
+    <div class="success-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-success">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+        <polyline points="22 4 12 14.01 9 11.01"/>
+      </svg>
+    </div>
+    <h2>¡Requerimientos Recibidos!</h2>
+    <p class="large">
+      Hemos registrado tu solicitud. Un ingeniero senior auditará tus notas y te enviará un correo con un diagnóstico inicial en menos de 24 horas hábiles.
+    </p>
+    <a href="/" class="btn-secondary">Volver al Inicio</a>
+  </div>
+</div>
+
+<style>
+  /* Right Block */
+  .contact-form-block {
+    grid-column: 6 / 13;
+    padding-left: var(--space-4);
+  }
+
+  .form-wrapper {
+    background: var(--grad-dark-card);
+    border: 1px solid rgba(230, 231, 234, 0.1);
+    border-radius: 20px;
+    padding: var(--space-6);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .select-input {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+    padding-right: 40px;
+    cursor: pointer;
+  }
+
+  .select-input option {
+    background-color: var(--color-bg-dark);
+    color: var(--color-white);
+  }
+
+  .textarea-input {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .form-submit-btn {
+    width: 100%;
+    margin-top: var(--space-2);
+  }
+
+  /* Success Block */
+  .form-success-wrapper {
+    background: var(--grad-dark-card);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: 20px;
+    padding: var(--space-8) var(--space-6);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    animation: fadeInSuccess 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .form-wrapper.hidden,
+  .form-success-wrapper.hidden {
+    display: none;
+  }
+
+  .success-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(34, 197, 94, 0.1);
+    border: 2px solid var(--color-success);
+    color: var(--color-success);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
+  }
+
+  .svg-success {
+    width: 32px;
+    height: 32px;
+  }
+
+  .form-success-wrapper p {
+    max-width: 480px;
+    margin-bottom: var(--space-2);
+  }
+
+  @keyframes fadeInSuccess {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .contact-form-block {
+      grid-column: span 12;
+      padding-left: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact-form-block {
+      width: 100%;
+      margin-bottom: var(--space-6);
+    }
+
+    .form-wrapper {
+      padding: var(--space-5);
+    }
+  }
+</style>
+
+<script>
+  function handleForm() {
+    const form = document.getElementById('project-intake-form') as HTMLFormElement | null;
+    const formContainer = document.getElementById('form-container');
+    const successContainer = document.getElementById('success-container');
+    const selectService = document.getElementById('service') as HTMLSelectElement | null;
+
+    if (!form || !formContainer || !successContainer) return;
+
+    // Check query params for service pre-selection
+    const params = new URLSearchParams(window.location.search);
+    const serviceParam = params.get('service') || params.get('ref');
+    
+    if (serviceParam && selectService) {
+      // Map params to select value
+      const validOptions = ['ai', 'automation', 'cloud', 'security', 'dev', 'consulting'];
+      if (validOptions.includes(serviceParam)) {
+        selectService.value = serviceParam;
+      }
+    }
+
+    // Submit listener
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Get form data
+      const formData = new FormData(form);
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        company: formData.get('company'),
+        service: formData.get('service'),
+        message: formData.get('message')
+      };
+
+      console.log('Intake submission captured:', data);
+      
+      // Simulate API submission
+      formContainer.classList.add('hidden');
+      successContainer.classList.remove('hidden');
+
+      // Scroll to top of section for visibility
+      const section = document.querySelector('.contact-section');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  document.addEventListener('astro:page-load', handleForm);
+</script>

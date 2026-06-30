@@ -30,17 +30,40 @@ const {
     <meta property="og:type" content="website" />
     <meta property="og:title" content={`${title} | KASI - Kroma AI Systems Inc.`} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/assets/logo/KASI.png" />
+    <meta property="og:image" content="/assets/logos/kasi.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content={`${title} | KASI - Kroma AI Systems Inc.`} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content="/assets/logo/KASI.png" />
+    <meta property="twitter:image" content="/assets/logos/kasi.png" />
 
     <!-- Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Real-world analytics deferred to protect Lighthouse performance metrics -->
+    <script is:inline>
+      window.addEventListener('load', () => {
+        // Google Analytics 4 (GA4)
+        const ga = document.createElement('script');
+        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+        ga.async = true;
+        document.head.appendChild(ga);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true });
+
+        // Vercel Analytics
+        const va = document.createElement('script');
+        va.src = '/_vercel/insights/script.js';
+        va.defer = true;
+        document.head.appendChild(va);
+      });
+    </script>
 
     <ClientRouter />
   </head>
