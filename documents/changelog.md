@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [Unreleased]
 
 ### Added
+*   **Spanish & Mandarin Chinese Writing Guidelines:** Created [writing-guidelines-es.md](file:///f:/KASI/documents/writing-guidelines-es.md) and [writing-guidelines-zh.md](file:///f:/KASI/documents/writing-guidelines-zh.md) translating and adapting style policies to identify and reduce AI-writing patterns in both languages, specifying connective words, buzzwords, passive structures, and filler phrases to avoid.
 *   **Structured Data Schema:** Implemented structured JSON-LD data schema (`ProfessionalService`) in `Layout.astro` `<head>` describing Kroma AI Systems Inc. details, geo-coordinates, and price specs to maximize local search indexing.
 *   **Plumbing Niche Pivot:** Re-aligned all client-facing website copy, headlines, metrics, service lists, capabilities, and case studies to target professional plumbing contractors.
 *   **Home UI/UX Audit:** Added the analytical report `documents/home-ui-ux-audit.md` detailing header, logo, and typography proportion suggestions.
