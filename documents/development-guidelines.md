@@ -92,6 +92,7 @@ Un incremento de código se considera "Hecho" y listo para producción si y solo
 /
 ├── documents/                  # Documentación estratégica y lineamientos
 │   └── *.md (kebab-case.md)
+├── logos/                      # Recursos originales de marca (snake_case)
 ├── public/                     # Recursos estáticos de la raíz
 │   ├── favicon.png             # Icono de pestaña (256x256)
 │   ├── favicon.ico             # Fallback para compatibilidad
