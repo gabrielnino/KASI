@@ -66,6 +66,10 @@ html {
   overflow-x: hidden;
 }
 
+html:has(.viewport-section) {
+  scroll-snap-type: y mandatory;
+}
+
 body {
   min-height: 100vh;
   display: flex;
@@ -177,6 +181,8 @@ section {
   position: relative;
   overflow-y: auto;
   scrollbar-width: none; /* Firefox */
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .viewport-section::-webkit-scrollbar {
