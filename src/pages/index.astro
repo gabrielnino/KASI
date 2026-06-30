@@ -13,7 +13,7 @@ import AICube from '../features/home/components/AICube.astro';
 
   <main>
   <!-- Hero Section -->
-  <section class="hero-section">
+  <section class="viewport-section hero-section">
     <div class="glow-blur glow-blue" style="top: 10%; left: -10%;"></div>
     <div class="glow-blur glow-cyan" style="bottom: 10%; right: -10%;"></div>
     
@@ -46,7 +46,7 @@ import AICube from '../features/home/components/AICube.astro';
   </section>
 
   <!-- Trust & Metrics Strip -->
-  <section class="metrics-section">
+  <section class="viewport-section metrics-section">
     <div class="container">
       <div class="metrics-grid">
         <div class="metric-item">
@@ -73,7 +73,7 @@ import AICube from '../features/home/components/AICube.astro';
   </section>
 
   <!-- Services Strip (4 Cards) -->
-  <section class="services-strip">
+  <section class="viewport-section services-strip">
     <div class="container">
       <div class="section-header">
         <span class="badge">Our Capabilities</span>
@@ -130,7 +130,7 @@ import AICube from '../features/home/components/AICube.astro';
   </section>
 
   <!-- Featured Solutions -->
-  <section class="solutions-featured">
+  <section class="viewport-section solutions-featured">
     <div class="glow-blur glow-cyan" style="top: 30%; right: 10%;"></div>
     <div class="container">
       <div class="section-header">
@@ -208,7 +208,7 @@ import AICube from '../features/home/components/AICube.astro';
   </section>
 
   <!-- Process Section (4 steps) -->
-  <section class="process-section">
+  <section class="viewport-section process-section">
     <div class="container">
       <div class="section-header">
         <span class="badge">The Flow</span>
@@ -253,7 +253,7 @@ import AICube from '../features/home/components/AICube.astro';
   </section>
 
   <!-- Final CTA Section -->
-  <section class="final-cta">
+  <section class="viewport-section final-cta">
     <div class="glow-blur glow-blue" style="bottom: -20%; left: 30%;"></div>
     <div class="container cta-container">
       <h2>Ready to keep your plumbing vans fully booked?</h2>
@@ -274,9 +274,6 @@ import AICube from '../features/home/components/AICube.astro';
 <style>
   /* Hero Section styles */
   .hero-section {
-    padding-top: calc(var(--space-12) + 40px);
-    padding-bottom: var(--space-11);
-    min-height: 90vh;
     display: flex;
     align-items: center;
   }
@@ -358,9 +355,7 @@ import AICube from '../features/home/components/AICube.astro';
 
   /* Metrics Section */
   .metrics-section {
-    background: rgba(2, 11, 24, 0.6);
-    border-block: 1px solid rgba(230, 231, 234, 0.05);
-    padding-block: var(--space-6);
+    background: rgba(16, 8, 36, 0.6);
   }
 
   .metrics-grid {
@@ -421,6 +416,10 @@ import AICube from '../features/home/components/AICube.astro';
     font-size: clamp(2rem, 3.5vw, 2.75rem);
   }
 
+  .solutions-featured {
+    background: rgba(16, 8, 36, 0.2);
+  }
+
   /* Services Strip Grid */
   .services-grid {
     gap: 24px;
@@ -432,7 +431,7 @@ import AICube from '../features/home/components/AICube.astro';
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    padding: var(--space-6);
+    padding: var(--space-5);
     gap: var(--space-4);
   }
 
@@ -466,20 +465,17 @@ import AICube from '../features/home/components/AICube.astro';
     color: var(--color-cyan-accent);
   }
 
-  /* Solutions Featured */
-  .solutions-featured {
-    background: rgba(2, 11, 24, 0.3);
-  }
+
 
   .solutions-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    margin-bottom: var(--space-7);
+    gap: 24px;
+    margin-bottom: var(--space-6);
   }
 
   .solution-card {
-    padding: var(--space-6) var(--space-6) var(--space-5);
+    padding: var(--space-5);
     gap: var(--space-4);
   }
 
@@ -585,8 +581,7 @@ import AICube from '../features/home/components/AICube.astro';
   /* Final CTA */
   .final-cta {
     text-align: center;
-    border-top: 1px solid rgba(230, 231, 234, 0.08);
-    background: radial-gradient(circle at center, rgba(10, 45, 86, 0.2) 0%, transparent 70%);
+    background: radial-gradient(circle at center, rgba(111, 53, 252, 0.15) 0%, transparent 70%);
   }
 
   .cta-container {
@@ -690,4 +685,5 @@ import AICube from '../features/home/components/AICube.astro';
       width: 100%;
     }
   }
+
 </style>

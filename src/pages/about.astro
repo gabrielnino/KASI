@@ -12,7 +12,7 @@ import Footer from '../shared/components/Footer.astro';
 
   <main>
   <!-- Institutional Hero -->
-  <section class="about-hero">
+  <section class="viewport-section about-hero">
     <div class="glow-blur glow-blue" style="top: 20%; left: -5%;"></div>
     <div class="container hero-container-compact">
       <span class="badge">About KASI</span>
@@ -24,7 +24,7 @@ import Footer from '../shared/components/Footer.astro';
   </section>
 
   <!-- Narrative Section (6/6 Grid) -->
-  <section class="narrative-section">
+  <section class="viewport-section narrative-section">
     <div class="container grid-12 narrative-grid">
       <!-- Left: Corporate Vision (6 cols) -->
       <div class="narrative-left">
@@ -55,7 +55,7 @@ import Footer from '../shared/components/Footer.astro';
   </section>
 
   <!-- Visual Emblem Breakdown: Dual-Layer Identity -->
-  <section class="emblem-section">
+  <section class="viewport-section emblem-section">
     <div class="glow-blur glow-cyan" style="bottom: 10%; right: 10%;"></div>
     <div class="container">
       <div class="section-header">
@@ -80,34 +80,14 @@ import Footer from '../shared/components/Footer.astro';
             It acknowledges that in real-world engineering, there are no magical, bulletproof systems; there are only senior teams capable of anticipating failures and programming systems that self-recover under any adversity.
           </p>
         </div>
-
-        <div class="emblem-card right-card">
-          <span class="emblem-tag">Layer B: Cultural Shield</span>
-          <h3>Encrypted Symbols of Trust</h3>
-          <p>
-            The geometric design of our logo (available in our local brand kits) fuses three key concepts for Vancouver's commercial engine:
-          </p>
-          <ul class="emblem-bullets">
-            <li>
-              <strong>South Asian Resonance (Punjabi/Sikh):</strong> Traces lines evoking the sacred geometry of <em>Ek Onkar</em> (ੴ), conveying absolute moral integrity and reliability.
-            </li>
-            <li>
-              <strong>East Asian Core (Chinese 卡 - Kǎ):</strong> Internal structure inspired by the Chinese ideogram for "card" or "integrated circuit", representing technological foundations.
-            </li>
-            <li>
-              <strong>The Silk Network (Chinese 丝 - Sī):</strong> Flowing strokes simulating silk threads, representing connection networks and continuous data pipelines.
-            </li>
-          </ul>
-          <div class="brand-kits-images">
-            <img src="/assets/logos/logo_varians.png" alt="KASI Brand Variations" class="about-brand-img" />
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
+
+
   <!-- Technical Timeline -->
-  <section class="timeline-section">
+  <section class="viewport-section timeline-section">
     <div class="container">
       <div class="section-header">
         <span class="badge">Evolution</span>
@@ -152,7 +132,7 @@ import Footer from '../shared/components/Footer.astro';
   </section>
 
   <!-- Core Values -->
-  <section class="values-section">
+  <section class="viewport-section values-section">
     <div class="container">
       <div class="section-header">
         <span class="badge">Our Values</span>
@@ -195,8 +175,6 @@ import Footer from '../shared/components/Footer.astro';
 <style>
   /* Hero */
   .about-hero {
-    padding-top: calc(var(--space-12) + 40px);
-    padding-bottom: var(--space-6);
     text-align: center;
   }
 
@@ -247,7 +225,6 @@ import Footer from '../shared/components/Footer.astro';
   /* Emblem Section */
   .emblem-section {
     background: rgba(2, 11, 24, 0.5);
-    border-block: 1px solid rgba(230, 231, 234, 0.08);
   }
 
   .emblem-grid {
@@ -255,7 +232,7 @@ import Footer from '../shared/components/Footer.astro';
   }
 
   .emblem-card {
-    grid-column: span 6;
+    grid-column: 3 / 11;
     background: var(--grad-dark-card);
     border: 1px solid rgba(230, 231, 234, 0.1);
     border-radius: 20px;
@@ -263,6 +240,12 @@ import Footer from '../shared/components/Footer.astro';
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
+  }
+
+  @media (max-width: 1024px) {
+    .emblem-card {
+      grid-column: 2 / 12;
+    }
   }
 
   .emblem-tag {

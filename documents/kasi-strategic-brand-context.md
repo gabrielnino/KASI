@@ -51,7 +51,7 @@ The brand analyst must audit and execute all corporate visual assets against the
 *   Utilize sharp, geometric lines that reinforce architectural stability, backend precision, and enterprise-grade automation.
 
 ### 2. Color Palette Fidelity
-*   The palette must be anchored in high-fidelity, industrial tech tones: deep navy/oxford blues, stark blacks, metallic silvers, and precision electrical accents. This firmly grounds the brand as an engineering powerhouse, detaching it from casual prose.
+*   The palette must be anchored in high-fidelity, modern high-end agency tones: deep purple-blacks, stark blacks, metallic silvers, and precision purple/violet/lavender electrical accents. This firmly grounds the brand as an engineering powerhouse, detaching it from casual prose.
 
 ### 3. Abstract Symbolic Preservation
 *   The emblem's power relies entirely on its **subliminal, abstract fusion**. 

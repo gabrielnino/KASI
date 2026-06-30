@@ -12,7 +12,7 @@ import Footer from '../shared/components/Footer.astro';
 
   <main>
   <!-- Mini Compact Hero -->
-  <section class="services-hero">
+  <section class="viewport-section services-hero">
     <div class="glow-blur glow-blue" style="top: 20%; left: 10%;"></div>
     <div class="container hero-container-compact">
       <span class="badge">Our Specialty</span>
@@ -24,7 +24,7 @@ import Footer from '../shared/components/Footer.astro';
   </section>
 
   <!-- Services Grid Section -->
-  <section class="services-grid-section">
+  <section class="viewport-section services-grid-section">
     <div class="container">
       <div class="services-columns-grid">
         
@@ -98,6 +98,14 @@ import Footer from '../shared/components/Footer.astro';
             <a href="/contact?service=voice-crm" class="btn-secondary compact-btn">Request Quote</a>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid Section 2 -->
+  <section class="viewport-section services-grid-section">
+    <div class="container">
+      <div class="services-columns-grid">
 
         <!-- Service 4: Calendar & Tool Sync -->
         <div class="card service-page-card" id="integrations">
@@ -177,7 +185,7 @@ import Footer from '../shared/components/Footer.astro';
   </section>
 
   <!-- Focus Banner: Minimal Friction -->
-  <section class="friction-banner-section">
+  <section class="viewport-section friction-banner-section">
     <div class="container">
       <div class="friction-box">
         <div class="friction-content">
@@ -200,8 +208,6 @@ import Footer from '../shared/components/Footer.astro';
 <style>
   /* Compact Hero */
   .services-hero {
-    padding-top: calc(var(--space-12) + 40px);
-    padding-bottom: var(--space-8);
     text-align: center;
   }
 
@@ -218,26 +224,26 @@ import Footer from '../shared/components/Footer.astro';
   .services-columns-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    gap: 24px;
   }
 
   .service-page-card {
-    min-height: 480px;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: var(--space-6);
+    padding: var(--space-5);
   }
 
   .card-top {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-3);
   }
 
   .circular-icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: rgba(0, 157, 255, 0.05);
     border: 1px solid rgba(0, 157, 255, 0.2);
@@ -256,8 +262,8 @@ import Footer from '../shared/components/Footer.astro';
   }
 
   .svg-icon {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
   }
 
   .service-page-card h3 {
@@ -305,7 +311,6 @@ import Footer from '../shared/components/Footer.astro';
 
   /* Friction Box */
   .friction-banner-section {
-    padding-block: var(--space-8);
   }
 
   .friction-box {

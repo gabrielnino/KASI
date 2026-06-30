@@ -2,11 +2,11 @@
 
 :root {
   /* Color Palette */
-  --color-primary-blue: #0A2D56;
-  --color-primary-navy: #061B33;
-  --color-bg-dark: #020B18;
-  --color-electric-blue: #009DFF;
-  --color-cyan-accent: #00C8FF;
+  --color-primary-blue: #1A0D36;
+  --color-primary-navy: #100824;
+  --color-bg-dark: #080510;
+  --color-electric-blue: #6F35FC;
+  --color-cyan-accent: #A259FF;
 
   --color-silver: #E6E7EA;
   --color-silver-dark: #9CA3AF;
@@ -18,13 +18,13 @@
   --color-error: #EF4444;
 
   --color-border: rgba(230, 231, 234, 0.12);
-  --color-border-glow: rgba(0, 200, 255, 0.25);
+  --color-border-glow: rgba(111, 53, 252, 0.25);
 
   /* Gradients */
-  --grad-primary: linear-gradient(90deg, #007BFF, #00C8FF);
-  --grad-dark-card: linear-gradient(180deg, #061B33, #020B18);
-  --grad-text: linear-gradient(135deg, #FFFFFF 30%, #9CA3AF 100%);
-  --grad-glow: linear-gradient(135deg, #009DFF, #00C8FF);
+  --grad-primary: linear-gradient(90deg, #5E17EB, #A259FF);
+  --grad-dark-card: linear-gradient(180deg, #100824, #080510);
+  --grad-text: linear-gradient(135deg, #FFFFFF 30%, #D8C3FF 100%);
+  --grad-glow: linear-gradient(135deg, #6F35FC, #A259FF);
 
   /* Typography */
   --font-primary: 'Montserrat', 'Inter', Arial, sans-serif;
@@ -162,6 +162,27 @@ section {
   position: relative;
 }
 
+/* Full-Screen Scroll Sections */
+.viewport-section {
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-top: 80px; /* fixed header offset */
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(162, 89, 255, 0.12);
+  border-bottom: 1px solid rgba(162, 89, 255, 0.12);
+  position: relative;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+}
+
+.viewport-section::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
 /* Glassmorphism background highlights */
 .glow-blur {
   position: absolute;
@@ -192,20 +213,20 @@ section {
   background: var(--grad-primary);
   color: var(--color-white) !important;
   border: 1px solid transparent;
-  border-radius: 10px;
-  padding: 14px 24px;
+  border-radius: 50px;
+  padding: 14px 28px;
   font-weight: 700;
   font-family: var(--font-primary);
   font-size: 1rem;
   cursor: pointer;
   transition: all var(--transition-fast);
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 157, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(111, 53, 252, 0.15);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(0, 157, 255, 0.35);
+  box-shadow: 0 12px 32px rgba(111, 53, 252, 0.35);
 }
 
 .btn-primary:active {
@@ -226,8 +247,8 @@ section {
   background: rgba(255, 255, 255, 0.03);
   color: var(--color-white) !important;
   border: 1px solid var(--color-border);
-  border-radius: 10px;
-  padding: 14px 24px;
+  border-radius: 50px;
+  padding: 14px 28px;
   font-weight: 700;
   font-family: var(--font-primary);
   font-size: 1rem;

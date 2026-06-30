@@ -13,7 +13,7 @@ import PipelineDiagram from '../features/solutions/components/PipelineDiagram.as
 
   <main>
   <!-- Hero with digital network visual -->
-  <section class="solutions-hero">
+  <section class="viewport-section solutions-hero">
     <div class="glow-blur glow-cyan" style="top: 15%; right: 10%;"></div>
     <div class="container hero-grid grid-12">
       <div class="hero-left">
@@ -31,7 +31,7 @@ import PipelineDiagram from '../features/solutions/components/PipelineDiagram.as
   </section>
 
   <!-- Capabilities Section (2x3 Grid) -->
-  <section class="capabilities-section" id="capabilities">
+  <section class="viewport-section capabilities-section" id="capabilities">
     <div class="container">
       <div class="section-header">
         <span class="badge">Our Capabilities</span>
@@ -71,8 +71,15 @@ import PipelineDiagram from '../features/solutions/components/PipelineDiagram.as
             <p>Plumbers dictate job progress, materials used, and billing details directly into the Voice CRM without manually typing on screen.</p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="card cap-card">
+    <!-- Capabilities Section 2 -->
+    <section class="viewport-section capabilities-section">
+      <div class="container">
+        <div class="capabilities-grid">
+
+          <div class="card cap-card">
           <span class="cap-number">05</span>
           <div>
             <h3>Calendar Conflict Check</h3>
@@ -92,7 +99,7 @@ import PipelineDiagram from '../features/solutions/components/PipelineDiagram.as
   </section>
 
   <!-- Technical Section: 5/7 Layout -->
-  <section class="technical-deep-dive">
+  <section class="viewport-section technical-deep-dive">
     <div class="container grid-12 tech-grid">
       <!-- Left: Technical Text (5 cols) -->
       <div class="tech-text-block">
@@ -174,7 +181,7 @@ import PipelineDiagram from '../features/solutions/components/PipelineDiagram.as
   </section>
 
   <!-- Big Final CTA: Build Intelligent Systems -->
-  <section class="solutions-cta-section">
+  <section class="viewport-section solutions-cta-section">
     <div class="container solutions-cta-box">
       <h2>Ready to eliminate your plumbing office backlog?</h2>
       <p class="large">
@@ -191,8 +198,6 @@ import PipelineDiagram from '../features/solutions/components/PipelineDiagram.as
 <style>
   /* Hero */
   .solutions-hero {
-    padding-top: calc(var(--space-12) + 40px);
-    padding-bottom: var(--space-10);
     align-items: center;
   }
 
@@ -247,7 +252,6 @@ import PipelineDiagram from '../features/solutions/components/PipelineDiagram.as
   /* Technical Deep Dive (5/7) */
   .technical-deep-dive {
     background: rgba(2, 11, 24, 0.4);
-    border-block: 1px solid rgba(230, 231, 234, 0.08);
   }
 
   .tech-grid {
@@ -397,7 +401,6 @@ import PipelineDiagram from '../features/solutions/components/PipelineDiagram.as
 
   /* Solutions CTA Box */
   .solutions-cta-section {
-    padding-block: var(--space-8);
   }
 
   .solutions-cta-box {

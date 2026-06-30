@@ -76,7 +76,7 @@ const cases = [
 
   <main>
   <!-- Compact Hero -->
-  <section class="cases-hero">
+  <section class="viewport-section cases-hero">
     <div class="glow-blur glow-blue" style="top: 15%; left: 5%;"></div>
     <div class="container hero-container-compact">
       <span class="badge">Our Achievements</span>
@@ -88,7 +88,7 @@ const cases = [
   </section>
 
   <!-- Interactive Filters & Case Studies Grid -->
-  <section class="cases-gallery-section">
+  <section class="viewport-section cases-gallery-section">
     <div class="container">
       
       <!-- Filter Bar -->
@@ -101,9 +101,44 @@ const cases = [
         </div>
       </div>
 
-      <!-- Grid of Cases -->
-      <div class="cases-grid grid-12" id="cases-grid">
-        {cases.map((c) => (
+      <!-- Grid of Cases Section 1 -->
+      <div class="cases-grid grid-12">
+        {cases.slice(0, 3).map((c) => (
+          <div class="card case-card-item" data-category={c.category} id={c.id}>
+            <div class="case-card-header">
+              <span class="badge case-badge">{c.categoryLabel}</span>
+              <h3>{c.title}</h3>
+            </div>
+            
+            <div class="case-metrics-box">
+              <span class="case-metric-main">{c.metrics}</span>
+              <span class="case-metric-sub">{c.metricsSub}</span>
+            </div>
+
+            <p class="case-desc">{c.desc}</p>
+
+            <div class="case-footer">
+              <div class="case-stack">
+                {c.stack.map(tech => (
+                  <span class="tech-tag">{tech}</span>
+                ))}
+              </div>
+              <a href="/contact" class="case-action-link">Discuss similar solution →</a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Case Studies Grid Section 2 -->
+  <section class="viewport-section cases-gallery-section">
+    <div class="container">
+      
+      <!-- Grid of Cases Section 2 -->
+      <div class="cases-grid grid-12">
+        {cases.slice(3).map((c) => (
           <div class="card case-card-item" data-category={c.category} id={c.id}>
             <div class="case-card-header">
               <span class="badge case-badge">{c.categoryLabel}</span>
@@ -133,7 +168,7 @@ const cases = [
   </section>
 
   <!-- Frictionless CTA -->
-  <section class="cases-cta-section">
+  <section class="viewport-section cases-cta-section">
     <div class="container text-center">
       <h2>Want to see similar results in your plumbing business?</h2>
       <p class="large max-width-600">
@@ -150,8 +185,6 @@ const cases = [
 <style>
   /* Hero */
   .cases-hero {
-    padding-top: calc(var(--space-12) + 40px);
-    padding-bottom: var(--space-6);
     text-align: center;
   }
 
@@ -209,16 +242,16 @@ const cases = [
 
   /* Grid & Card Item */
   .cases-grid {
-    gap: 32px;
+    gap: 24px;
   }
 
   .case-card-item {
     grid-column: span 4;
-    min-height: 460px;
+    min-height: 390px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: var(--space-6);
+    padding: var(--space-5);
     transition: all var(--transition-normal);
   }
 
@@ -309,8 +342,6 @@ const cases = [
 
   /* CTA Section */
   .cases-cta-section {
-    padding-block: var(--space-10);
-    border-top: 1px solid rgba(230, 231, 234, 0.08);
   }
 
   .text-center {
