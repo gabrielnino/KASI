@@ -19,6 +19,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 *   **Clean Architecture Shared Folder:** Reorganized common assets by moving layout templates to `src/shared/layouts/Layout.astro` and global styles to `src/shared/styles/global.css`.
 
 ### Changed
+*   **Descriptive Anchor Links:** Replaced vague "Learn more →" links on the Home Page with highly descriptive anchor texts matching their target services (*Explore Website Redesign →*, *Explore AI Dispatch Assistant →*, *Explore Voice CRM →*, *Explore Calendar Sync →*) to satisfy SEO rules.
 *   **Asset Standardization:** Renamed all root brand resources in `logo/` -> `logos/` and public assets in `public/assets/logo/` -> `public/assets/logos/` to follow a lowercase, snake_case convention.
 *   **Document Standardization:** Renamed business documents in `documents/` to follow a lowercase, kebab-case convention.
 *   **Contact Form Select Options:** Changed the dropdown choices to offer specialized trade services (*Website Redesign*, *AI Dispatch Assistant*, *Voice CRM*, *Tool Sync*, *SEO*, *Full Suite*).
