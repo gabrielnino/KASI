@@ -60,7 +60,7 @@ const techStacks: Record<string, string[]> = {
                 {c.category === 'voice' && t('cases.filters.voice')}
                 {c.category === 'crm' && t('cases.filters.crm')}
               </span>
-              <h3>{c.title}</h3>
+              <h2>{c.title}</h2>
             </div>
             
             <div class="case-metrics-box">
@@ -99,7 +99,7 @@ const techStacks: Record<string, string[]> = {
                 {c.category === 'voice' && t('cases.filters.voice')}
                 {c.category === 'crm' && t('cases.filters.crm')}
               </span>
-              <h3>{c.title}</h3>
+              <h2>{c.title}</h2>
             </div>
             
             <div class="case-metrics-box">
@@ -192,9 +192,9 @@ const techStacks: Record<string, string[]> = {
   }
 
   .filter-chip.active {
-    background: rgba(0, 157, 255, 0.1);
+    background: rgba(111, 53, 252, 0.12);
     color: var(--color-cyan-accent);
-    border: 1px solid rgba(0, 157, 255, 0.15);
+    border: 1px solid rgba(111, 53, 252, 0.25);
   }
 
   /* Grid & Card Item */
@@ -224,12 +224,12 @@ const techStacks: Record<string, string[]> = {
   }
 
   .case-badge {
-    background: rgba(0, 200, 255, 0.06);
-    border-color: rgba(0, 200, 255, 0.15);
+    background: rgba(111, 53, 252, 0.08);
+    border-color: rgba(111, 53, 252, 0.25);
     color: var(--color-cyan-accent);
   }
 
-  .case-card-header h3 {
+  .case-card-header h2 {
     font-size: 1.35rem;
     line-height: 1.25;
   }
@@ -292,7 +292,7 @@ const techStacks: Record<string, string[]> = {
   .case-action-link {
     font-size: 0.85rem;
     font-weight: 700;
-    color: var(--color-electric-blue);
+    color: #C084FC;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }

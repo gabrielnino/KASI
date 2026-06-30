@@ -136,13 +136,13 @@ small {
 
 /* Links */
 a {
-  color: var(--color-electric-blue);
+  color: #C084FC;
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 a:hover {
-  color: var(--color-cyan-accent);
+  color: #FFFFFF;
 }
 
 /* Grid & Layout System */
@@ -342,9 +342,9 @@ section {
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  background: rgba(0, 157, 255, 0.1);
-  border: 1px solid rgba(0, 157, 255, 0.2);
-  color: var(--color-electric-blue);
+  background: rgba(111, 53, 252, 0.12);
+  border: 1px solid rgba(111, 53, 252, 0.25);
+  color: #C084FC;
   width: fit-content;
 }
 
