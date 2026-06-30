@@ -8,69 +8,69 @@ const cases = [
   {
     id: "case-1",
     category: "automation",
-    categoryLabel: "Automatización & ETL",
-    title: "Procesamiento de Manifiestos en Puerto de Vancouver",
-    metrics: "+350% de rendimiento",
-    metricsSub: "Procesado en segundos, no horas",
-    desc: "Rediseño completo de la ingesta de manifiestos aduaneros para terminales portuarias. Implementamos un pipeline resiliente desacoplado de las fuentes.",
+    categoryLabel: "Automation & ETL",
+    title: "Manifest Processing at Port of Vancouver",
+    metrics: "+350% performance",
+    metricsSub: "Processed in seconds, not hours",
+    desc: "Complete redesign of customs manifest intake for port terminals. We implemented a resilient pipeline decoupled from data sources.",
     stack: ["Go", "RabbitMQ", "Python LLM", "Docker"],
   },
   {
     id: "case-2",
     category: "automation",
-    categoryLabel: "Extracción de Datos",
-    title: "Extracción Inmobiliaria Resiliente a Escala Nacional",
-    metrics: "12M+ registros diarios",
-    metricsSub: "Tolerancia del 100% a bloqueos de IP",
-    desc: "Desarrollo de un crawler distribuido para escanear registros y catastros públicos, incorporando simulación humana y resolución automatizada de CAPTCHAs.",
+    categoryLabel: "Data Extraction",
+    title: "Resilient Nationwide Real Estate Scraping",
+    metrics: "12M+ daily records",
+    metricsSub: "100% tolerance to IP blocks",
+    desc: "Development of a distributed crawler to scan public registries and property records, incorporating human simulation and automated CAPTCHA solving.",
     stack: ["Node.js", "Playwright", "Kubernetes", "Redis"],
   },
   {
     id: "case-3",
     category: "ai",
-    categoryLabel: "Inteligencia Artificial",
-    title: "Motor Semántico Local para Auditorías Médicas",
+    categoryLabel: "Artificial Intelligence",
+    title: "Local Semantic Engine for Medical Auditing",
     metrics: "100% On-Premises",
-    metricsSub: "Cero dependencias de APIs externas",
-    desc: "Despliegue de modelos Llama-3 locales para etiquetar y clasificar expedientes médicos confidenciales, cumpliendo estrictas leyes de protección de datos.",
+    metricsSub: "Zero external API dependencies",
+    desc: "Deployment of local Llama-3 models to tag and classify confidential medical records, complying with strict data protection laws.",
     stack: ["Llama-3", "PyTorch", "FastAPI", "PostgreSQL"],
   },
   {
     id: "case-4",
     category: "infrastructure",
     categoryLabel: "Cloud & DevOps",
-    title: "Migración Serverless Rust para Plataforma Retail",
-    metrics: "-62% de costos en AWS",
-    metricsSub: "Soporte de 10k req/segundo",
-    desc: "Migración de una arquitectura legacy a AWS Lambda utilizando microservicios optimizados en Rust. Eliminamos costos fijos y tiempos muertos del servidor.",
+    title: "Serverless Rust Migration for Retail Platform",
+    metrics: "-62% AWS costs",
+    metricsSub: "Supports 10k req/second",
+    desc: "Migration of legacy architecture to AWS Lambda using optimized microservices in Rust. Removed fixed costs and server downtime.",
     stack: ["AWS Lambda", "Terraform", "Rust", "DynamoDB"],
   },
   {
     id: "case-5",
     category: "ai",
-    categoryLabel: "Inteligencia Artificial",
-    title: "Motor Conversacional RAG para Soporte Técnico API",
-    metrics: "-70% de tickets escalados",
-    metricsSub: "Integración directa con Vector DB",
-    desc: "Creación de un agente inteligente de soporte técnico capaz de responder dudas complejas sobre integraciones de API utilizando bases vectoriales actualizadas.",
+    categoryLabel: "Artificial Intelligence",
+    title: "RAG Conversational Engine for API Tech Support",
+    metrics: "-70% escalated tickets",
+    metricsSub: "Direct Vector DB integration",
+    desc: "Creation of a smart technical support agent capable of answering complex API integration queries using updated vector databases.",
     stack: ["LangChain", "Pinecone", "TypeScript", "OpenAI"],
   },
   {
     id: "case-6",
     category: "infrastructure",
-    categoryLabel: "Seguridad & Resiliencia",
-    title: "Blindaje de Pasarela Financiera Multi-Proveedor",
-    metrics: "0 caídas de pasarela",
-    metricsSub: "Mitigación automática en 200ms",
-    desc: "Instrumentación de patrones circuit-breaker en pasarela de pagos, alternando dinámicamente entre proveedores bancarios caídos sin afectar la compra.",
+    categoryLabel: "Security & Resiliency",
+    title: "Multi-Provider Financial Gateway Hardening",
+    metrics: "0 gateway downtime",
+    metricsSub: "Automatic mitigation within 200ms",
+    desc: "Instrumentation of circuit-breaker patterns in a payment gateway, dynamically switching between failed bank providers without disrupting transactions.",
     stack: ["TypeScript", "Redis", "NGINX WAF", "Jest"],
   }
 ];
 ---
 
 <Layout 
-  title="Casos de Éxito & Resultados de Ingeniería" 
-  description="Revisa los resultados medibles que hemos entregado a nuestros clientes. Automatización, Inteligencia Artificial e Infraestructura de alta disponibilidad."
+  title="Case Studies & Engineering Results" 
+  description="Review the measurable results we have delivered to our clients. Automation, Artificial Intelligence, and high-availability Infrastructure."
 >
   <Navbar />
 
@@ -78,10 +78,10 @@ const cases = [
   <section class="cases-hero">
     <div class="glow-blur glow-blue" style="top: 15%; left: 5%;"></div>
     <div class="container hero-container-compact">
-      <span class="badge">Nuestros Logros</span>
-      <h1>Código que entrega resultados <span class="text-gradient">medibles</span></h1>
+      <span class="badge">Our Achievements</span>
+      <h1>Code that delivers <span class="text-gradient">measurable</span> results</h1>
       <p class="large">
-        No nos basamos en especulaciones. Evaluamos nuestro éxito en base a la velocidad de tus procesos, la reducción de costos en la nube y la resiliencia de tus datos.
+        We do not rely on speculation. We measure our success based on the speed of your processes, cloud cost reductions, and data resiliency.
       </p>
     </div>
   </section>
@@ -93,10 +93,10 @@ const cases = [
       <!-- Filter Bar -->
       <div class="filter-bar-wrapper">
         <div class="filter-bar" id="filter-bar">
-          <button class="filter-chip active" data-filter="all">Todos</button>
-          <button class="filter-chip" data-filter="automation">Automatización & ETL</button>
-          <button class="filter-chip" data-filter="ai">Inteligencia Artificial</button>
-          <button class="filter-chip" data-filter="infrastructure">Cloud & Resiliencia</button>
+          <button class="filter-chip active" data-filter="all">All</button>
+          <button class="filter-chip" data-filter="automation">Automation & ETL</button>
+          <button class="filter-chip" data-filter="ai">Artificial Intelligence</button>
+          <button class="filter-chip" data-filter="infrastructure">Cloud & Resiliency</button>
         </div>
       </div>
 
@@ -122,7 +122,7 @@ const cases = [
                   <span class="tech-tag">{tech}</span>
                 ))}
               </div>
-              <a href="/contact" class="case-action-link">Discutir solución similar →</a>
+              <a href="/contact" class="case-action-link">Discuss similar solution →</a>
             </div>
           </div>
         ))}
@@ -134,11 +134,11 @@ const cases = [
   <!-- Frictionless CTA -->
   <section class="cases-cta-section">
     <div class="container text-center">
-      <h2>¿Quieres ver resultados similares en tus sistemas?</h2>
+      <h2>Want to see similar results in your systems?</h2>
       <p class="large max-width-600">
-        Diseñamos un análisis preliminar de tus sistemas actuales sin compromiso de permanencia. Identificamos cuellos de botella de inmediato.
+        We design a preliminary analysis of your current systems with no lock-in commitments. We identify bottlenecks immediately.
       </p>
-      <a href="/contact?ref=cases" class="btn-primary">Iniciar Diagnóstico Gratuito</a>
+      <a href="/contact?ref=cases" class="btn-primary">Start Free Diagnostic</a>
     </div>
   </section>
 

@@ -1,47 +1,48 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Flujo de Captación y Formulario de Contacto', () => {
-  test('debe cargar la página de contacto, permitir rellenar el formulario de admisión y mostrar el mensaje de éxito', async ({ page }) => {
-    // 1. Navegar a la página de contacto
+test.describe('Intake Flow and Contact Form', () => {
+  test('should load contact page, allow filling out the form, and display success message', async ({ page }) => {
+    // 1. Navigate to contact page
     await page.goto('/contact');
 
-    // 2. Verificar que la cabecera e información inicial cargan correctamente en el bloque de contenido
+    // 2. Verify header is visible and correct
     const mainHeader = page.locator('.contact-info-block h1');
     await expect(mainHeader).toBeVisible();
-    await expect(mainHeader).toContainText('Hablemos de ingeniería real');
+    await expect(mainHeader).toContainText("Let's talk real engineering");
 
-    // 3. Rellenar los campos del formulario
-    await page.fill('#name', 'Luis Gabriel Niño');
+    // 3. Fill form inputs
+    await page.fill('#name', 'Luis Gabriel Nino');
     await page.fill('#email', 'gabriel@kroma.ai');
     await page.fill('#company', 'Kroma AI Systems Inc.');
     await page.selectOption('#service', 'ai');
-    await page.fill('#message', 'Necesitamos instrumentar un pipeline de datos tolerante a fallas con procesamiento de volumen masivo diario.');
+    await page.fill('#message', 'We need to engineer a fault-tolerant data pipeline with massive daily data volume processing.');
 
-    // 4. Enviar el formulario
+    // 4. Submit form
     const submitBtn = page.locator('button[type="submit"]');
     await expect(submitBtn).toBeEnabled();
     await submitBtn.click();
 
-    // 5. Validar que aparece el contenedor de éxito
+    // 5. Verify success container is visible
     const successContainer = page.locator('#success-container');
     await expect(successContainer).toBeVisible();
-    await expect(successContainer).toContainText('¡Requerimientos Recibidos!');
+    await expect(successContainer).toContainText('Requirements Received!');
 
-    // 6. Validar que el formulario original se ha ocultado
+    // 6. Verify original form is hidden
     const formContainer = page.locator('#form-container');
     await expect(formContainer).toBeHidden();
   });
 
-  test('debe bloquear envíos con campos incompletos por validación HTML nativa', async ({ page }) => {
+  test('should block submission with incomplete fields due to native HTML validation', async ({ page }) => {
     await page.goto('/contact');
 
-    // Rellenamos solo el nombre y dejamos los demás vacíos
-    await page.fill('#name', 'Usuario de Prueba');
+    // Fill only name, leave email empty
+    await page.fill('#name', 'Test User');
     
-    // Al intentar enviar, el validador nativo debería bloquear el submit (el éxito no debe aparecer)
+    // Attempt submit
     const submitBtn = page.locator('button[type="submit"]');
     await submitBtn.click();
     
+    // Success container should not be shown
     const successContainer = page.locator('#success-container');
     await expect(successContainer).toBeHidden();
   });

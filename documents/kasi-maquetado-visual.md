@@ -1,21 +1,20 @@
-1. EL MAQUETADO VISUAL (UI LAYOUTS) & ESTRUCTURA DE GRILLAS
-Páginas principales del sitio KASI
+# 1. Visual Layouts (UI Layouts) & Grid System
+Primary pages of the KASI website.
 
-Páginas base:
+Base pages:
+* Home
+* Services
+* Solutions / AI Systems
+* Case Studies
+* About Us
+* Contact
 
-Home
-Services
-Solutions / AI Systems
-Case Studies
-About
-Contact
+The brand must maintain a technical, corporate, and high-precision presence, aligned with KASI as the commercial brand of Kroma AI Systems Inc., focusing on software architecture, pipeline automation, and resilient systems.
 
-La marca debe mantener una presencia técnica, corporativa y de alta precisión, alineada con KASI como marca comercial de Kroma AI Systems Inc. y su enfoque en arquitectura de software, automatización de pipelines y sistemas resilientes.
+## Grid System
 
-Grid System
-
-Desktop
-
+### Desktop
+```css
 .container {
   max-width: 1280px;
   margin-inline: auto;
@@ -27,9 +26,10 @@ Desktop
   grid-template-columns: repeat(12, 1fr);
   gap: 24px;
 }
+```
 
-Tablet
-
+### Tablet
+```css
 .container {
   padding-inline: 24px;
 }
@@ -38,9 +38,10 @@ Tablet
   grid-template-columns: repeat(6, 1fr);
   gap: 20px;
 }
+```
 
-Mobile
-
+### Mobile
+```css
 .container {
   padding-inline: 20px;
 }
@@ -49,131 +50,144 @@ Mobile
   grid-template-columns: 1fr;
   gap: 16px;
 }
-Home Page
+```
 
-Desktop Layout
+---
 
-Navbar: logo horizontal izquierda, navegación centro, CTA derecha.
-Hero: 12 columnas.
-Col 1–6: headline, subtítulo, botones CTA.
-Col 7–12: visual 3D/AI cube, red neuronal o silueta digital.
-Services Strip: 4 cards en fila.
-Trust Section: logos, métricas o claims técnicos.
-Featured Solutions: layout 3 columnas.
-Process Section: 4 pasos horizontales.
-CTA Final: fondo navy, texto blanco, botón azul eléctrico.
-Footer: logo, links, contacto, social icons.
+## Home Page
 
-Mobile Layout
+### Desktop Layout
+* **Navbar:** Horizontal logo on the left, navigation menu in the center, CTA button on the right.
+* **Hero:** 12 columns.
+  * Col 1–6: Headline, subtitle, CTA buttons.
+  * Col 7–12: 3D visual / AI cube, neural network, or digital silhouette.
+* **Services Strip:** 4 cards in a row.
+* **Trust Section:** Client logos, technical metrics, or claims.
+* **Featured Solutions:** 3-column layout.
+* **Process Section:** 4 horizontal steps.
+* **Final CTA:** Navy background, white text, electric blue button.
+* **Footer:** Logo, links, contact info, social media icons.
 
-Navbar colapsa a menú hamburguesa.
-Hero en 1 columna: texto arriba, visual abajo.
-Cards apiladas.
-CTA full-width.
-Footer en bloques verticales.
-Services Page
+### Mobile Layout
+* Navbar collapses to a hamburger menu.
+* Hero in 1 column: text on top, visual on bottom.
+* Cards stacked vertically.
+* CTA full-width.
+* Footer in vertical blocks.
 
-Desktop
+---
 
-Hero interno compacto.
-Grid de servicios en 3 columnas:
-AI Solutions
-Development & Integration
-Cloud & Infrastructure
-Security
-Strategy & Consulting
-Automation Systems
-Cada card: icono SVG circular, título, descripción, CTA secundario.
+## Services Page
 
-Mobile
+### Desktop Layout
+* Compact internal Hero section.
+* Services grid in 3 columns:
+  1. AI Solutions
+  2. Development & Integration
+  3. Cloud & Infrastructure
+  4. Security
+  5. Strategy & Consulting
+  6. Automation Systems
+* Each card: Circular SVG icon, title, description, secondary CTA.
 
-1 columna.
-Cards con altura mínima de 220px.
-Iconos arriba, texto debajo.
-Solutions / AI Systems Page
+### Mobile Layout
+* 1 column.
+* Cards with a minimum height of 220px.
+* Icons on top, text below.
 
-Desktop
+---
 
-Hero con visual de cabeza digital o estructura neural.
-Sección “Capabilities” en grid 2x3.
-Sección técnica con layout 5/7:
-izquierda: texto técnico.
-derecha: diagrama visual.
-CTA: “Build intelligent systems”.
+## Solutions / AI Systems Page
 
-Mobile
+### Desktop Layout
+* Hero with a digital skull visual or neural structure.
+* "Capabilities" section in a 2x3 grid.
+* Technical section with a 5/7 layout:
+  * Left: Technical description.
+  * Right: Visual diagram.
+* CTA: "Build intelligent systems".
 
-Hero centrado.
-Capabilities en cards verticales.
-Diagramas se muestran debajo del texto.
-Case Studies Page
+### Mobile Layout
+* Centered Hero.
+* Capabilities in vertical cards.
+* Diagrams displayed below the text.
 
-Desktop
+---
 
-Grid 3 columnas.
-Card:
-categoría
-título
-resultado medible
-stack técnico
-link
-Filtro superior por industria o servicio.
+## Case Studies Page
 
-Mobile
+### Desktop Layout
+* 3-column grid.
+* Card elements:
+  * Category
+  * Title
+  * Measurable result
+  * Tech stack
+  * Link
+* Top filter bar by industry or service.
 
-Cards 1 columna.
-Filtros como chips horizontales con scroll.
-About Page
+### Mobile Layout
+* 1-column cards.
+* Filter options displayed as horizontal scrollable chips.
 
-Desktop
+---
 
-Hero institucional.
-Sección narrativa 6/6:
-izquierda: visión corporativa.
-derecha: marca KASI / Kroma AI Systems Inc.
-Timeline técnico.
-Valores: Precision, Resilience, Clean Architecture, Automation.
+## About Us Page
 
-Mobile
+### Desktop Layout
+* Institutional Hero.
+* Narrative section with a 6/6 layout:
+  * Left: Corporate vision.
+  * Right: KASI / Kroma AI Systems Inc. brand details.
+* Technical timeline.
+* Values: Precision, Resilience, Clean Architecture, Automation.
 
-Todo en 1 columna.
-Timeline vertical.
-Contact Page
+### Mobile Layout
+* Single-column layout.
+* Vertical timeline.
 
-Desktop
+---
 
-Layout 5/7:
-izquierda: mensaje, contacto, ubicación Vancouver BC.
-derecha: formulario.
-Formulario:
-nombre
-email
-empresa
-servicio
-mensaje
-botón submit
+## Contact Page
 
-Mobile
+### Desktop Layout
+* 5/7 layout:
+  * Left: Corporate message, contact info, Vancouver BC location.
+  * Right: Form.
+* Form fields:
+  * Name
+  * Email
+  * Company
+  * Service selector
+  * Message text area
+  * Submit button
 
-Formulario primero.
-Información de contacto debajo.
-2. SISTEMA DE DISEÑO / GUÍA DE ESTILOS (DESIGN SYSTEM ATÓMICO)
-Tipografía
+### Mobile Layout
+* Form displayed first.
+* Contact info shown underneath.
 
-Fuente principal: Montserrat
-Fallback: Inter, Arial, sans-serif
+---
 
---font-primary: "Montserrat", Inter, Arial, sans-serif;
-Token	Tamaño	Peso	Line-height
-H1	64px / 4rem	800	1.05
-H2	44px / 2.75rem	700	1.15
-H3	28px / 1.75rem	700	1.25
-H4	22px / 1.375rem	600	1.3
-Body Large	18px / 1.125rem	400	1.7
-Body	16px / 1rem	400	1.65
-Small	14px / .875rem	400	1.5
-Utility	12px / .75rem	600	1.4
-Paleta de colores
+# 2. Design System / Style Guide (Atomic Design System)
+
+## Typography
+* **Primary Font:** Montserrat
+* **Fallback Fonts:** Inter, Arial, sans-serif
+* `---font-primary: "Montserrat", Inter, Arial, sans-serif;`
+
+| Token | Size | Weight | Line-height |
+| :--- | :--- | :--- | :--- |
+| H1 | 64px / 4rem | 800 | 1.05 |
+| H2 | 44px / 2.75rem | 700 | 1.15 |
+| H3 | 28px / 1.75rem | 700 | 1.25 |
+| H4 | 22px / 1.375rem | 600 | 1.3 |
+| Body Large | 18px / 1.125rem | 400 | 1.7 |
+| Body | 16px / 1rem | 400 | 1.65 |
+| Small | 14px / 0.875rem | 400 | 1.5 |
+| Utility | 12px / 0.75rem | 600 | 1.4 |
+
+## Color Palette
+```css
 :root {
   --color-primary-blue: #0A2D56;
   --color-primary-navy: #061B33;
@@ -192,26 +206,27 @@ Paleta de colores
 
   --color-border: rgba(230, 231, 234, 0.22);
 }
-Espaciados
+```
 
-Sistema basado en múltiplos de 8px.
+## Spacing System
+Based on multiples of 8px:
+* `--space-1: 4px;`
+* `--space-2: 8px;`
+* `--space-3: 12px;`
+* `--space-4: 16px;`
+* `--space-5: 24px;`
+* `--space-6: 32px;`
+* `--space-7: 40px;`
+* `--space-8: 48px;`
+* `--space-9: 64px;`
+* `--space-10: 80px;`
+* `--space-11: 96px;`
+* `--space-12: 120px;`
 
---space-1: 4px;
---space-2: 8px;
---space-3: 12px;
---space-4: 16px;
---space-5: 24px;
---space-6: 32px;
---space-7: 40px;
---space-8: 48px;
---space-9: 64px;
---space-10: 80px;
---space-11: 96px;
---space-12: 120px;
-Botones
+## Button Styling
 
-Primary Button
-
+### Primary Button
+```css
 .btn-primary {
   background: linear-gradient(90deg, #007BFF, #00C8FF);
   color: #FFFFFF;
@@ -221,26 +236,23 @@ Primary Button
   transition: all .2s ease;
 }
 
-Hover
-
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 32px rgba(0, 157, 255, .35);
 }
 
-Active
-
 .btn-primary:active {
   transform: translateY(0);
 }
-
-Disabled
 
 .btn-primary:disabled {
   opacity: .45;
   cursor: not-allowed;
 }
-Inputs
+```
+
+## Inputs
+```css
 .input {
   background: rgba(255,255,255,.04);
   border: 1px solid rgba(230,231,234,.22);
@@ -249,26 +261,23 @@ Inputs
   padding: 14px 16px;
 }
 
-Focus
-
 .input:focus {
   outline: none;
   border-color: #00C8FF;
   box-shadow: 0 0 0 3px rgba(0,200,255,.18);
 }
 
-Placeholder
-
 .input::placeholder {
   color: #9CA3AF;
 }
 
-Error
-
 .input-error {
   border-color: #EF4444;
 }
-Cards
+```
+
+## Cards
+```css
 .card {
   background: linear-gradient(180deg, #061B33, #020B18);
   border: 1px solid rgba(230,231,234,.16);
@@ -278,34 +287,25 @@ Cards
   transition: all .25s ease;
 }
 
-Hover
-
 .card:hover {
   transform: translateY(-6px);
   border-color: rgba(0,200,255,.55);
   box-shadow: 0 24px 60px rgba(0,0,0,.35);
 }
-Iconografía
-Estilo: lineal, técnico, circular.
-Grosor: 1.5px–2px.
-Formato: SVG.
-Set requerido:
-AI / Automation
-Cloud
-Security
-Development
-Consulting
-Case Studies
-About
-Contact
-Nota de entrega técnica (Handoff)
+```
 
-Assets a extraer para Dev Mode:
+## Iconography
+* **Style:** Linear, technical, circular.
+* **Stroke width:** 1.5px–2px.
+* **Format:** SVG.
+* **Required icons:** AI / Automation, Cloud, Security, Development, Consulting, Case Studies, About Us, Contact.
 
-Logo horizontal: PNG + SVG.
-Logo símbolo circular: PNG + SVG.
-Favicon: 16, 32, 48, 64, 96, 128, 180, 192, 256, 512px.
-Iconos SVG: Solutions, AI, Development, Cloud, Security, Consulting, Case Studies, About.
-Imágenes optimizadas: WebP para hero, banners y cards.
-Plantillas sociales reutilizables: Instagram, LinkedIn, Facebook, X, YouTube y TikTok.
-Variables CSS/Tailwind: colores, tipografía, espaciados, sombras, radios y estados interactivos.
+## Technical Handoff Note
+Assets to extract for Dev Mode:
+* Horizontal logo: PNG + SVG.
+* Circular icon logo: PNG + SVG.
+* Favicon: 16, 32, 48, 64, 96, 128, 180, 192, 256, 512px.
+* SVG Icons: Solutions, AI, Development, Cloud, Security, Consulting, Case Studies, About.
+* Optimized images: WebP format for hero, banners, and cards.
+* Reusable social media templates: Instagram, LinkedIn, Facebook, X, YouTube, and TikTok.
+* CSS/Tailwind variables: colors, typography, spacing, shadows, border radii, and interactive states.

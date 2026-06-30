@@ -9,7 +9,7 @@ const currentPath = Astro.url.pathname;
     </a>
 
     <!-- Hamburger menu button -->
-    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
@@ -17,19 +17,19 @@ const currentPath = Astro.url.pathname;
 
     <!-- Navigation links -->
     <nav class="nav-menu" id="nav-menu">
-      <a href="/" class={`nav-link ${currentPath === '/' ? 'active' : ''}`}>Inicio</a>
-      <a href="/services" class={`nav-link ${currentPath.startsWith('/services') ? 'active' : ''}`}>Servicios</a>
-      <a href="/solutions" class={`nav-link ${currentPath.startsWith('/solutions') ? 'active' : ''}`}>Sistemas AI</a>
-      <a href="/cases" class={`nav-link ${currentPath.startsWith('/cases') ? 'active' : ''}`}>Casos</a>
-      <a href="/about" class={`nav-link ${currentPath.startsWith('/about') ? 'active' : ''}`}>Nosotros</a>
+      <a href="/" class={`nav-link ${currentPath === '/' ? 'active' : ''}`}>Home</a>
+      <a href="/services" class={`nav-link ${currentPath.startsWith('/services') ? 'active' : ''}`}>Services</a>
+      <a href="/solutions" class={`nav-link ${currentPath.startsWith('/solutions') ? 'active' : ''}`}>AI Systems</a>
+      <a href="/cases" class={`nav-link ${currentPath.startsWith('/cases') ? 'active' : ''}`}>Cases</a>
+      <a href="/about" class={`nav-link ${currentPath.startsWith('/about') ? 'active' : ''}`}>About Us</a>
       <div class="mobile-cta-wrapper">
-        <a href="/contact" class="btn-primary btn-nav-cta">Consultoría Gratuita</a>
+        <a href="/contact" class="btn-primary btn-nav-cta">Free Consultation</a>
       </div>
     </nav>
 
     <!-- Desktop CTA -->
     <div class="nav-cta">
-      <a href="/contact" class="btn-primary">Consultoría Gratuita</a>
+      <a href="/contact" class="btn-primary">Free Consultation</a>
     </div>
   </div>
 </header>

@@ -1,34 +1,33 @@
 import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
-import { JSDOM } from 'jsdom';
 
-describe('Componente Navbar.astro', () => {
+describe('Navbar.astro Component', () => {
   const filePath = path.resolve(__dirname, '../../src/shared/components/Navbar.astro');
   const fileContent = fs.readFileSync(filePath, 'utf-8');
 
-  it('debe existir el archivo del componente', () => {
+  it('should exist', () => {
     expect(fs.existsSync(filePath)).toBe(true);
   });
 
-  it('debe incluir la ruta correcta del logotipo blanco de KASI', () => {
+  it('should include correct path for white logo', () => {
     expect(fileContent).toContain('/assets/logos/kasi_white.png');
   });
 
-  it('debe contener el botón de CTA para consultoría gratuita', () => {
-    expect(fileContent).toContain('Consultoría Gratuita');
+  it('should contain CTA button for free consultation', () => {
+    expect(fileContent).toContain('Free Consultation');
     expect(fileContent).toContain('/contact');
   });
 
-  it('debe contener las secciones del menú de navegación base', () => {
-    expect(fileContent).toContain('Inicio');
-    expect(fileContent).toContain('Servicios');
-    expect(fileContent).toContain('Sistemas AI');
-    expect(fileContent).toContain('Casos');
-    expect(fileContent).toContain('Nosotros');
+  it('should contain primary navigation sections in English', () => {
+    expect(fileContent).toContain('Home');
+    expect(fileContent).toContain('Services');
+    expect(fileContent).toContain('AI Systems');
+    expect(fileContent).toContain('Cases');
+    expect(fileContent).toContain('About Us');
   });
 
-  it('debe poseer las clases y estructuras de diseño responsive', () => {
+  it('should possess responsive structure classes and elements', () => {
     expect(fileContent).toContain('navbar');
     expect(fileContent).toContain('nav-menu');
     expect(fileContent).toContain('menu-toggle');
