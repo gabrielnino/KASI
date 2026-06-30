@@ -38,15 +38,25 @@ Any increment of code, component, or configuration that violates the following p
     7.  **Canonical URLs:** Ensure that every page/section of the site dynamically constructs and declares its canonical URL to point to the production domain (`https://kasi.systems`), preventing search engine indexing of staging or preview URLs.
     8.  **Minimal Client-Side JS:** Client-side JavaScript usage must tend to zero.
 *   **Complete Code Delivery:** The AI is strictly forbidden from generating code blocks with *placeholders*, elision comments (`// TODO: implement here`), or incomplete structures. Each delivery must be a functional, clean, and self-contained block.
-*   **Real Multi-Device Testing Focus:** Generic mock validations are not accepted. Tests must obligatorily emulate the rendering engines of the three target environments:
-    1.  **Desktop:** Google Chrome (Blink).
+*   **Real Multi-Device Testing Focus:** Generic mock validations are not accepted. E2E and UI validation suites must emulate real rendering engines, incorporating target mobile devices alongside the most representative desktop screen resolutions based on global web traffic analytics:
+
+| Resolution | Aspect Ratio | Desktop Traffic Share | Context / Use Case |
+| :--- | :--- | :--- | :--- |
+| **1920×1080 (Full HD)** | 16:9 | **17.57%** | Absolute market standard for corporate workstations and mid-range laptops. |
+| **1280×1200** | 16:15 | **9.58%** | Highly prevalent in virtualized environments and Remote Desktop (RDP) sessions. |
+| **800×600** | 4:3 | **7.26%** | Legacy infrastructure, industrial terminals, and embedded systems. |
+| **1536×864** | 16:9 | **7.15%** | Common native baseline for modern laptops applying 125% OS-level scaling. |
+| **1366×768** | 16:9 | **5.85%** | Legacy budget laptops and older enterprise hardware fleets. |
+
+    *Target Engines:*
+    1.  **Desktop:** Google Chrome (Blink) validating the core matrix layouts above.
     2.  **iOS (iPhone):** Safari (WebKit).
     3.  **Android:** Google Chrome (Blink).
 *   **Dynamic SEO Loop:** Every technical iteration or content alteration requires an automatic recalculation of the keyword map and metadata audit.
 *   **Real-World Metrics Without Penalty:** The presence of **Google Analytics 4 (GA4)** and **Vercel Analytics** is mandatory. However, their loading must be optimized (e.g., via deferred script loading) so that under no circumstances do they penalize the Time to Interactive (TTI) or degrade performance.
 *   **Language Standard (English Core):** English is and will always remain the sole language for all internal and external project development resources. This includes source code, components, CSS variables, unit and E2E tests, configuration files, git commit messages, pull requests, folders, file names, and documentation. This standard applies universally even if the public-facing user interface supports multiple languages (multilingual localization).
 *   **Test Coverage & Technical Debt Control:** The codebase must maintain a minimum of **80% code coverage**. We cannot allow technical debt to rise above 20% (preventing untested logic from exceeding 20% of the codebase). Any code submission that drops coverage below this 80% threshold will be automatically rejected.
-*   **Mandatory Changelog Logging:** Every change committed to the repository must be documented in [changelog.md](file:///f:/KASI/documents/changelog.md) under the appropriate release header, using Keep a Changelog formatting rules (Added, Changed, Deprecated, Removed, Fixed, Security).
+*   **Mandatory Changelog Logging:** Every change committed to the repository must be documented in `changelog.md` under the appropriate release header, using Keep a Changelog formatting rules (Added, Changed, Deprecated, Removed, Fixed, Security).
 
 ---
 
@@ -95,7 +105,7 @@ A code increment is considered "Done" and ready for production if and only if it
 *   **Code Coverage Verification:** Enforce that test coverage meets or exceeds the **80% minimum threshold** (technical debt ratio below 20%) before any deployment.
 *   **Deployment Filter (Lighthouse CI):** Automatic block of Vercel deployment if the audit yields a score below 95 in performance or SEO.
 *   **Strict Tag and Analytics Validation:** Mandatory presence of `<title>`, `meta description`, canonical links (`<link rel="canonical">`), Open Graph tags (`og:*`), image `alt` attributes, and validation of correct initialization and zero performance impact of GA4 and Vercel Analytics scripts.
-*   **Changelog Sync:** Verify that [changelog.md](file:///f:/KASI/documents/changelog.md) has been updated with standard entries documenting the changes before finalizing a task.
+*   **Changelog Sync:** Verify that `changelog.md` has been updated with standard entries documenting the changes before finalizing a task.
 
 ---
 
@@ -111,27 +121,3 @@ A code increment is considered "Done" and ready for production if and only if it
 *   **Images and Graphical Resources:** Lowercase and in *snake_case* format (e.g., `kasi_white.png`, `logo_texto.png`).
 
 ### Folder Structure
-```
-/
-├── documents/                  # Strategic documentation and guidelines
-│   └── *.md (kebab-case.md)
-├── logos/                      # Original brand assets (snake_case)
-├── public/                     # Root static resources
-│   ├── favicon.png             # Browser tab icon (256x256)
-│   ├── favicon.ico             # Fallback for compatibility
-│   └── assets/
-│       └── logos/              # Corporate logos (snake_case)
-├── src/
-│   ├── pages/                  # Site routing (kebab-case.astro)
-│   ├── shared/                 # Shared components and styles
-│   │   ├── components/         # Global elements (Navbar, Footer)
-│   │   ├── layouts/            # Global templates (Layout)
-│   │   └── styles/             # Shared stylesheets (global.css)
-│   └── features/               # Isolated modules oriented by features
-│       ├── home/components/
-│       ├── solutions/components/
-│       └── contact/components/
-└── tests/                      # Automated test suites
-    ├── unit/                   # Unit tests (*.test.ts)
-    └── e2e/                    # Integration tests (*.spec.ts)
-```

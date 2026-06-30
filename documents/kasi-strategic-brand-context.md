@@ -26,18 +26,17 @@ To eliminate market entry friction, KASI utilizes a **Dual-Layer Strategy**—co
 ## 3. Dual-Layer Brand Narrative
 
 ### Layer A: Semantic "Ju-Jitsu" (Hispanic Market / Founder’s Tactical Edge)
-In Spanish, the acronym **KASI** is a homophone for the adverb *"casi"* (meaning "almost" or "close but not quite"). Instead of dodging this predictable vulnerability, the brand fully weaponizes it through fine irony, converting a potential joke into a narrative of pragmatic realism, hyper-focus, and senior engineering confidence:
+In Spanish, the acronym **KASI** is a homophone for the adverb *"casi"* (meaning "almost" or "close but not quite"). In alignment with the project's **English Core** standard, the brand weaponizes this semantic irony by publishing its official English translation on the portal to show pragmatic realism and senior engineering confidence:
 
-*   **Insignia Motto:** *"No somos perfectos, pero KASI siempre lo logramos."* (We are not perfect, but KASI/almost always we deliver.)
-*   **Positioning Line:** *"KASI somos los mejores."* (KASI/We are almost the best.)
+*   **Official Insignia Motto:** `"We are not perfect, but we KASI always deliver."` (Translating: *"No somos perfectos, pero KASI siempre lo logramos."*)
 *   **Strategic Objective:** Neutralize external mockery by transforming it into internal complicity. It showcases a mature, battle-tested engineering team that focuses on flawless execution over corporate buzzwords.
 
 ### Layer B: The Silent Cultural Shield (Vancouver Local / Anglo / Global Markets)
-To an Anglo or global client, the name is processed as a clean, abstract, four-letter corporate acronym with zero phonetic friction (*"Kay-see"* or *"Cah-see"*). However, the visual emblem acts as a highly specialized, encrypted message tailored to Vancouver's economic engines:
+To an Anglo or global client, the name is processed as a clean, abstract, four-letter corporate acronym with zero phonetic friction (*"Kay-see"* or *"Cah-see"*). The visual emblem acts as a highly specialized, encrypted message tailored to Vancouver's economic engines:
 
-*   **The Punjabi (Sikh) Resonance:** The fluid lines and structural flow of the emblem subtly evoke sacred geometry reminiscent of the *Ek Onkar* (ੴ). For a South Asian business owner or logistics magnate, this visual connection instantly conveys deep-rooted integrity, absolute trust, and high reputational standing.
-*   **The Chinese (Hanzi) Resonance:** The geometric core of the logo directly mirrors the structural composition of the Chinese character **卡 (Kǎ)**—which in modern commerce and technology denotes a "card," "chip," or "integrated circuit". The surrounding fluid silver brush strokes trace the movement of **丝 (Sī)** (meaning "silk" or "threads," modernly translated in tech to network threads, smooth data pipelines, and seamless connectivity). 
-*   **The Synthesis:** Together, they read phonetically and visually as **卡丝 (Kǎ-Sī)**, matching the brand's name while projecting a top-tier, highly structured digital engineering firm.
+*   **The Punjabi (Sikh) Resonance:** The fluid lines and structural flow of the emblem evoke sacred geometry reminiscent of the *Ek Onkar* (ੴ), conveying deep-rooted integrity, absolute trust, and high reputational standing.
+*   **The Chinese (Hanzi) Resonance:** The geometric core of the logo mirrors the structural composition of the Chinese character **卡 (Kǎ)** (card, chip, integrated circuit) wrapped in the fluid strokes of **丝 (Sī)** (silk, network threads, connectivity), synthetically reading as **卡丝 (Kǎ-Sī)**.
+*   **Documentation Note:** To keep public copywriting concise and focused on services, the detailed visual breakdown of Layer B has been removed from the public About page in the portal, while preserving the original design assets in the brand kit resources.
 
 ---
 
@@ -51,7 +50,11 @@ The brand analyst must audit and execute all corporate visual assets against the
 *   Utilize sharp, geometric lines that reinforce architectural stability, backend precision, and enterprise-grade automation.
 
 ### 2. Color Palette Fidelity
-*   The palette must be anchored in high-fidelity, modern high-end agency tones: deep purple-blacks, stark blacks, metallic silvers, and precision purple/violet/lavender electrical accents. This firmly grounds the brand as an engineering powerhouse, detaching it from casual prose.
+*   The palette must be strictly anchored to the portal's CSS design tokens:
+    *   **Background (Deep Purple-Black):** `#080510` (High-end agency aesthetic)
+    *   **Primary Accent (Vibrant Purple):** `#6F35FC`
+    *   **Secondary Accent (Bright Lavender):** `#A259FF`
+    *   **Accents:** Metallic silvers, stark blacks, and neon blues/cyans. This grounds the brand as an engineering powerhouse.
 
 ### 3. Abstract Symbolic Preservation
 *   The emblem's power relies entirely on its **subliminal, abstract fusion**. 
