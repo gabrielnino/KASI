@@ -66,7 +66,7 @@ const urlPa = new URL('/pa' + (cleanPath === '/' ? '' : cleanPath), baseDomain).
       window.addEventListener('load', () => {
         // Google Analytics 4 (GA4)
         const ga = document.createElement('script');
-        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-BG4YVZ25T5';
         ga.async = true;
         document.head.appendChild(ga);
 
@@ -74,7 +74,7 @@ const urlPa = new URL('/pa' + (cleanPath === '/' ? '' : cleanPath), baseDomain).
         function gtag(){dataLayer.push(arguments);}
         window.gtag = gtag;
         gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true });
+        gtag('config', 'G-BG4YVZ25T5', { 'anonymize_ip': true });
 
         // Vercel Analytics
         const va = document.createElement('script');
