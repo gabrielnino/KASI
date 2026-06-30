@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kasi.systems/sitemap-index.xml
