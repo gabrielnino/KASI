@@ -19,9 +19,9 @@
 <style>
   /* 3D Tech Cube CSS Animation */
   .tech-cube-container {
-    width: 250px;
-    height: 250px;
-    perspective: 800px;
+    width: 325px;
+    height: 325px;
+    perspective: 1000px;
     position: relative;
   }
 
@@ -35,10 +35,10 @@
 
   .cube-side {
     position: absolute;
-    width: 200px;
-    height: 200px;
-    top: 25px;
-    left: 25px;
+    width: 260px;
+    height: 260px;
+    top: 32px;
+    left: 32px;
     background: rgba(10, 45, 86, 0.15);
     border: 2px solid rgba(0, 200, 255, 0.4);
     box-shadow: 0 0 15px rgba(0, 157, 255, 0.15);
@@ -56,23 +56,23 @@
     background: radial-gradient(circle, rgba(0,157,255,0.05) 0%, transparent 70%);
   }
 
-  .front  { transform: translateZ(100px); }
-  .back   { transform: rotateY(180deg) translateZ(100px); }
-  .left   { transform: rotateY(-90deg) translateZ(100px); }
-  .right  { transform: rotateY(90deg) translateZ(100px); }
-  .top    { transform: rotateX(90deg) translateZ(100px); }
-  .bottom { transform: rotateX(-90deg) translateZ(100px); }
+  .front  { transform: translateZ(130px); }
+  .back   { transform: rotateY(180deg) translateZ(130px); }
+  .left   { transform: rotateY(-90deg) translateZ(130px); }
+  .right  { transform: rotateY(90deg) translateZ(130px); }
+  .top    { transform: rotateX(90deg) translateZ(130px); }
+  .bottom { transform: rotateX(-90deg) translateZ(130px); }
 
   .neural-core {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 40px;
-    height: 40px;
+    width: 52px;
+    height: 52px;
     background: var(--color-cyan-accent);
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 35px var(--color-cyan-accent);
+    box-shadow: 0 0 45px var(--color-cyan-accent);
     animation: pulseCore 3s infinite ease-in-out;
   }
 
@@ -93,10 +93,10 @@
 
   .orbit-ring {
     position: absolute;
-    top: 15px;
-    left: 15px;
-    width: 220px;
-    height: 220px;
+    top: 19px;
+    left: 19px;
+    width: 286px;
+    height: 286px;
     border: 1px dashed rgba(230, 231, 234, 0.15);
     border-radius: 50%;
     transform: rotateX(75deg);
