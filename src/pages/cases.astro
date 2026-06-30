@@ -8,69 +8,69 @@ const cases = [
   {
     id: "case-1",
     category: "automation",
-    categoryLabel: "Automation & ETL",
-    title: "Manifest Processing at Port of Vancouver",
-    metrics: "+350% performance",
-    metricsSub: "Processed in seconds, not hours",
-    desc: "Complete redesign of customs manifest intake for port terminals. We implemented a resilient pipeline decoupled from data sources.",
-    stack: ["Go", "RabbitMQ", "Python LLM", "Docker"],
+    categoryLabel: "Website Redesign & SEO",
+    title: "Vancouver Plumbing & Drain Co.",
+    metrics: "+45% service bookings",
+    metricsSub: "Organic leads via Google Maps SEO",
+    desc: "A complete website redesign optimized for page speed, local search keywords, and a mobile-friendly click-to-call flow. Integrated trust badges and emergency scheduling links.",
+    stack: ["Astro", "Tailwind CSS", "Lighthouse SEO", "Vercel"],
   },
   {
     id: "case-2",
-    category: "automation",
-    categoryLabel: "Data Extraction",
-    title: "Resilient Nationwide Real Estate Scraping",
-    metrics: "12M+ daily records",
-    metricsSub: "100% tolerance to IP blocks",
-    desc: "Development of a distributed crawler to scan public registries and property records, incorporating human simulation and automated CAPTCHA solving.",
-    stack: ["Node.js", "Playwright", "Kubernetes", "Redis"],
+    category: "ai",
+    categoryLabel: "AI Dispatch Assistant",
+    title: "Apex Emergency Plumbing",
+    metrics: "$18,000 booked in Month 1",
+    metricsSub: "99.9% after-hours response rate",
+    desc: "Deployed a natural-language voice and SMS virtual dispatcher that handles weekend calls, queries booking urgency, and registers technician appointments 24/7.",
+    stack: ["OpenAI API", "Twilio Voice", "Node.js", "Housecall Pro API"],
   },
   {
     id: "case-3",
-    category: "ai",
-    categoryLabel: "Artificial Intelligence",
-    title: "Local Semantic Engine for Medical Auditing",
-    metrics: "100% On-Premises",
-    metricsSub: "Zero external API dependencies",
-    desc: "Deployment of local Llama-3 models to tag and classify confidential medical records, complying with strict data protection laws.",
-    stack: ["Llama-3", "PyTorch", "FastAPI", "PostgreSQL"],
+    category: "automation",
+    categoryLabel: "Voice CRM Integration",
+    title: "Fraser Valley Drain Technicians",
+    metrics: "1.5 hours saved/day per tech",
+    metricsSub: "-80% billing dispatch delay",
+    desc: "Integrated a custom hands-free voice transcription pipeline. On-site technicians dictate summaries directly into the CRM without manual typing under constraints.",
+    stack: ["Whisper Speech API", "FastAPI", "ServiceTitan API", "TypeScript"],
   },
   {
     id: "case-4",
     category: "infrastructure",
-    categoryLabel: "Cloud & DevOps",
-    title: "Serverless Rust Migration for Retail Platform",
-    metrics: "-62% AWS costs",
-    metricsSub: "Supports 10k req/second",
-    desc: "Migration of legacy architecture to AWS Lambda using optimized microservices in Rust. Removed fixed costs and server downtime.",
-    stack: ["AWS Lambda", "Terraform", "Rust", "DynamoDB"],
+    categoryLabel: "Cloud & Resiliency",
+    title: "Tri-Cities Plumbing Group",
+    metrics: "99.99% website uptime",
+    metricsSub: "No customer lost during peak storms",
+    desc: "Migrated legacy shared hosting to a serverless Edge-based static platform with an offline fallback lead vault. Bookings are preserved even if database connections drop.",
+    stack: ["Vercel Edge", "AWS DynamoDB", "Astro SSG", "Terraform"],
   },
   {
     id: "case-5",
     category: "ai",
-    categoryLabel: "Artificial Intelligence",
-    title: "RAG Conversational Engine for API Tech Support",
-    metrics: "-70% escalated tickets",
-    metricsSub: "Direct Vector DB integration",
-    desc: "Creation of a smart technical support agent capable of answering complex API integration queries using updated vector databases.",
-    stack: ["LangChain", "Pinecone", "TypeScript", "OpenAI"],
+    categoryLabel: "AI Virtual Assistant",
+    title: "North Shore Plumbing & Heating",
+    metrics: "-60% office booking workload",
+    metricsSub: "Direct sync with technician boards",
+    desc: "Created a conversational SMS booking agent that coordinates with clients to confirm time slots, send technician arrival updates, and gather initial job photos.",
+    stack: ["LangChain", "Twilio SMS", "FastAPI", "Google Calendar API"],
   },
   {
     id: "case-6",
     category: "infrastructure",
-    categoryLabel: "Security & Resiliency",
-    title: "Multi-Provider Financial Gateway Hardening",
-    metrics: "0 gateway downtime",
-    metricsSub: "Automatic mitigation within 200ms",
-    desc: "Instrumentation of circuit-breaker patterns in a payment gateway, dynamically switching between failed bank providers without disrupting transactions.",
-    stack: ["TypeScript", "Redis", "NGINX WAF", "Jest"],
+    categoryLabel: "Local SEO & Visibility",
+    title: "Metro Vancouver Plumbing Solutions",
+    metrics: "+250% maps visibility",
+    metricsSub: "Top 3 spot on high-value terms",
+    desc: "Structured schema markup and local SEO optimizations across suburban service landing pages, driving organic phone call leads with zero pay-per-click ad budget.",
+    stack: ["JSON-LD Schema", "Lighthouse", "Vercel Analytics", "Astro"],
   }
 ];
 ---
 
 <Layout 
-  title="Case Studies & Engineering Results" 
-  description="Review the measurable results we have delivered to our clients. Automation, Artificial Intelligence, and high-availability Infrastructure."
+  title="Plumbing Case Studies & Business Results" 
+  description="Review the measurable results we have delivered to plumbing contractors. Website redesign, AI dispatch assistants, and hands-free Voice CRMs."
 >
   <Navbar />
 
@@ -82,7 +82,7 @@ const cases = [
       <span class="badge">Our Achievements</span>
       <h1>Code that delivers <span class="text-gradient">measurable</span> results</h1>
       <p class="large">
-        We do not rely on speculation. We measure our success based on the speed of your processes, cloud cost reductions, and data resiliency.
+        We do not rely on speculation. We measure our success based on the speed of your website, local SEO rankings, and dispatcher automation.
       </p>
     </div>
   </section>
@@ -95,9 +95,9 @@ const cases = [
       <div class="filter-bar-wrapper">
         <div class="filter-bar" id="filter-bar">
           <button class="filter-chip active" data-filter="all">All</button>
-          <button class="filter-chip" data-filter="automation">Automation & ETL</button>
-          <button class="filter-chip" data-filter="ai">Artificial Intelligence</button>
-          <button class="filter-chip" data-filter="infrastructure">Cloud & Resiliency</button>
+          <button class="filter-chip" data-filter="automation">Website & SEO</button>
+          <button class="filter-chip" data-filter="ai">AI Dispatch Assistants</button>
+          <button class="filter-chip" data-filter="infrastructure">Resiliency & CRM</button>
         </div>
       </div>
 
@@ -135,9 +135,9 @@ const cases = [
   <!-- Frictionless CTA -->
   <section class="cases-cta-section">
     <div class="container text-center">
-      <h2>Want to see similar results in your systems?</h2>
+      <h2>Want to see similar results in your plumbing business?</h2>
       <p class="large max-width-600">
-        We design a preliminary analysis of your current systems with no lock-in commitments. We identify bottlenecks immediately.
+        We design a preliminary analysis of your website, local SEO, and scheduling workflow with no commitments. We identify bottlenecks immediately.
       </p>
       <a href="/contact?ref=cases" class="btn-primary">Start Free Diagnostic</a>
     </div>

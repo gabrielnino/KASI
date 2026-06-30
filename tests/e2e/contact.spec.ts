@@ -13,9 +13,9 @@ test.describe('Intake Flow and Contact Form', () => {
     // 3. Fill form inputs
     await page.fill('#name', 'Luis Gabriel Nino');
     await page.fill('#email', 'gabriel@kroma.ai');
-    await page.fill('#company', 'Kroma AI Systems Inc.');
-    await page.selectOption('#service', 'ai');
-    await page.fill('#message', 'We need to engineer a fault-tolerant data pipeline with massive daily data volume processing.');
+    await page.fill('#company', 'Nino Plumbing & Drain');
+    await page.selectOption('#service', 'redesign');
+    await page.fill('#message', 'We need to redesign our plumbing contractor website to capture more local search service calls.');
 
     // 4. Submit form
     const submitBtn = page.locator('button[type="submit"]');

@@ -7,34 +7,34 @@
       </div>
 
       <div class="input-group">
-        <label for="email" class="label">Professional Email</label>
-        <input type="email" id="email" name="email" required placeholder="e.g. gabriel@company.com" class="input" />
+        <label for="email" class="label">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="e.g. contact@yourplumbing.com" class="input" />
       </div>
 
       <div class="input-group">
-        <label for="company" class="label">Company / Organization</label>
-        <input type="text" id="company" name="company" required placeholder="e.g. Kroma Logistics" class="input" />
+        <label for="company" class="label">Company / Plumbing Business</label>
+        <input type="text" id="company" name="company" required placeholder="e.g. Nino Plumbing & Drain" class="input" />
       </div>
 
       <div class="input-group">
         <label for="service" class="label">Service Required</label>
         <select id="service" name="service" required class="input select-input">
           <option value="" disabled selected>Select an option</option>
-          <option value="ai">AI Systems & Local Models</option>
-          <option value="automation">Automation & ETL Pipelines</option>
-          <option value="cloud">Cloud Infrastructure & DevOps</option>
-          <option value="security">Security & Resiliency</option>
-          <option value="dev">Clean Software Architecture</option>
-          <option value="consulting">Strategic Consulting</option>
+          <option value="redesign">Website Redesign (More Leads)</option>
+          <option value="assistant">AI Dispatch Assistant (24/7 Scheduling)</option>
+          <option value="voice-crm">Voice CRM Systems (Hands-Free Dictation)</option>
+          <option value="integrations">Calendar & Tool Sync</option>
+          <option value="seo">Local SEO & Visibility</option>
+          <option value="resiliency">Full Suite (Redesign + Assistant + Voice CRM)</option>
         </select>
       </div>
 
       <div class="input-group">
-        <label for="message" class="label">Tell us about your system bottleneck</label>
-        <textarea id="message" name="message" rows="5" required placeholder="Briefly describe what system is failing, what data volume you handle, or what workflow you want to automate..." class="input textarea-input"></textarea>
+        <label for="message" class="label">How can we help your plumbing business?</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Tell us how many vans/technicians you operate, if you miss customer calls after hours, or which scheduling tool you want to integrate (ServiceTitan, Housecall Pro, etc.)..." class="input textarea-input"></textarea>
       </div>
 
-      <button type="submit" class="btn-primary form-submit-btn">Submit Technical Requirements</button>
+      <button type="submit" class="btn-primary form-submit-btn">Submit Requirements</button>
     </form>
   </div>
 
@@ -183,7 +183,7 @@
     
     if (serviceParam && selectService) {
       // Map params to select value
-      const validOptions = ['ai', 'automation', 'cloud', 'security', 'dev', 'consulting'];
+      const validOptions = ['redesign', 'assistant', 'voice-crm', 'integrations', 'seo', 'resiliency'];
       if (validOptions.includes(serviceParam)) {
         selectService.value = serviceParam;
       }
