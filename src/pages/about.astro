@@ -9,7 +9,7 @@ const t = useTranslations(lang);
 ---
 
 <Layout 
-  title="About KASI - Plumber Tech Partners" 
+  title="About KASI - Plumbing Technology Partners in Vancouver" 
   description="Kroma AI Systems Inc. (KASI): Discover our mission to bring high-precision web redesign, AI virtual dispatch, and Voice CRM systems to plumbers."
 >
   <Navbar />
@@ -88,7 +88,7 @@ const t = useTranslations(lang);
     </div>
   </section>
 
-  <!-- Technical Timeline -->
+  <!-- Technical Timeline Part 1 (2023-2024) -->
   <section class="viewport-section timeline-section">
     <div class="container">
       <div class="section-header">
@@ -98,7 +98,30 @@ const t = useTranslations(lang);
       </div>
 
       <div class="timeline">
-        {t('about.timeline.events').map((evt: any) => (
+        {t('about.timeline.events').slice(0, 2).map((evt: any) => (
+          <div class="timeline-item">
+            <div class="timeline-badge">{evt.year}</div>
+            <div class="timeline-panel">
+              <h3>{evt.title}</h3>
+              <p>{evt.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Timeline Part 2 (2025-2026) -->
+  <section class="viewport-section timeline-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">{t('about.timeline.badge')}</span>
+        <h2>{t('about.timeline.title')}</h2>
+        <p>{t('about.timeline.desc')}</p>
+      </div>
+
+      <div class="timeline">
+        {t('about.timeline.events').slice(2, 4).map((evt: any) => (
           <div class="timeline-item">
             <div class="timeline-badge">{evt.year}</div>
             <div class="timeline-panel">

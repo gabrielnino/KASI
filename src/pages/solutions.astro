@@ -10,7 +10,7 @@ const t = useTranslations(lang);
 ---
 
 <Layout 
-  title="Plumber AI & Voice CRM Tech | KASI" 
+  title="Plumbing AI, Voice CRM & Automation Tech in Vancouver | KASI" 
   description="Technical architectures of our plumbing systems: discover our voice-to-text pipelines, automated AI receptionists, and calendar synchronization."
 >
   <Navbar />
@@ -34,7 +34,7 @@ const t = useTranslations(lang);
     </div>
   </section>
 
-  <!-- Capabilities Section (2x3 Grid) - Part 1 -->
+  <!-- Capabilities Section - Part 1 (Cards 1-2) -->
   <section class="viewport-section capabilities-section" id="capabilities">
     <div class="container">
       <div class="section-header">
@@ -44,7 +44,7 @@ const t = useTranslations(lang);
       </div>
 
       <div class="capabilities-grid">
-        {t('solutions.capabilities.cards').slice(0, 4).map((card: any, idx: number) => (
+        {t('solutions.capabilities.cards').slice(0, 2).map((card: any, idx: number) => (
           <div class="card cap-card" id={card.id}>
             <span class="cap-number">{String(idx + 1).padStart(2, '0')}</span>
             <div>
@@ -57,7 +57,24 @@ const t = useTranslations(lang);
     </div>
   </section>
 
-  <!-- Capabilities Section 2 -->
+  <!-- Capabilities Section - Part 2 (Cards 3-4) -->
+  <section class="viewport-section capabilities-section">
+    <div class="container">
+      <div class="capabilities-grid">
+        {t('solutions.capabilities.cards').slice(2, 4).map((card: any, idx: number) => (
+          <div class="card cap-card" id={card.id}>
+            <span class="cap-number">{String(idx + 3).padStart(2, '0')}</span>
+            <div>
+              <h3>{card.title}</h3>
+              <p>{card.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities Section - Part 3 (Cards 5-6) -->
   <section class="viewport-section capabilities-section">
     <div class="container">
       <div class="capabilities-grid">
@@ -221,6 +238,8 @@ const t = useTranslations(lang);
   /* Technical Deep Dive (5/7) */
   .technical-deep-dive {
     background: rgba(2, 11, 24, 0.4);
+    padding-top: 70px;
+    padding-bottom: 10px;
   }
 
   .tech-grid {
@@ -311,11 +330,11 @@ const t = useTranslations(lang);
   }
 
   .diagram-body {
-    padding: var(--space-6);
+    padding: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--space-2);
+    gap: 6px;
   }
 
   .diagram-node {
@@ -323,13 +342,13 @@ const t = useTranslations(lang);
     max-width: 480px;
     background: rgba(2, 11, 24, 0.8);
     border: 1px solid rgba(230, 231, 234, 0.1);
-    padding: 14px 20px;
-    border-radius: 10px;
+    padding: 8px 16px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
-    gap: var(--space-4);
+    gap: var(--space-3);
     font-family: var(--font-secondary);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--color-white);
     transition: all var(--transition-fast);
   }
@@ -361,6 +380,15 @@ const t = useTranslations(lang);
   .diagram-arrow {
     color: rgba(230, 231, 234, 0.3);
     animation: floatArrow 2s infinite ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18px;
+  }
+
+  .diagram-arrow svg {
+    width: 16px;
+    height: 16px;
   }
 
   @keyframes floatArrow {

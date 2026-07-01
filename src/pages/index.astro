@@ -10,7 +10,7 @@ const t = useTranslations(lang);
 ---
 
 <Layout 
-  title="Plumber Web Redesign & AI Dispatch | KASI" 
+  title="Plumbing Web Redesign & AI Dispatch in Vancouver | KASI" 
   description="High-conversion website redesign, 24/7 AI virtual dispatchers, and hands-free Voice CRM systems for professional plumbing contractors. Maximize your booking."
 >
   <Navbar />
@@ -411,55 +411,72 @@ const t = useTranslations(lang);
 
 
 
+  .solutions-featured {
+    padding-top: 70px;
+    padding-bottom: 10px;
+  }
+
+  .solutions-featured .section-header {
+    margin-bottom: var(--space-3);
+  }
+
+  .solutions-featured .section-header h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+  }
+
+  .solutions-featured .section-header p {
+    font-size: 0.95rem;
+  }
+
   .solutions-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-bottom: var(--space-6);
+    gap: 16px;
+    margin-bottom: var(--space-4);
   }
 
   .solution-card {
-    padding: var(--space-5);
-    gap: var(--space-4);
+    padding: 18px var(--space-4);
+    gap: 10px;
   }
 
   .solution-tag {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
     color: #C084FC;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: var(--space-2);
+    margin-bottom: 2px;
     display: inline-block;
   }
 
   .solution-card h3 {
-    font-size: 1.35rem;
+    font-size: 1.15rem;
     line-height: 1.25;
   }
 
   .solution-desc {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: var(--space-3);
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin-bottom: var(--space-1);
   }
 
   .solution-stats {
     display: flex;
-    gap: var(--space-5);
+    gap: var(--space-4);
     border-top: 1px solid rgba(230, 231, 234, 0.08);
-    padding-top: var(--space-4);
+    padding-top: var(--space-3);
   }
 
   .stat-num {
-    font-size: 1.35rem;
+    font-size: 1.15rem;
     font-weight: 800;
     color: var(--color-white);
     font-family: var(--font-primary);
   }
 
   .stat-lbl {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: var(--color-silver-dark);
     display: block;
     margin-top: 2px;

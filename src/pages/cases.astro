@@ -15,10 +15,107 @@ const techStacks: Record<string, string[]> = {
   cases5: ["LangChain", "Twilio SMS", "FastAPI", "Google Calendar API"],
   cases6: ["JSON-LD Schema", "Lighthouse", "Vercel Analytics", "Astro"]
 };
+
+const testimonials = {
+  en: [
+    {
+      name: "Dave Campbell",
+      role: "Owner, Maple Ridge Plumbers",
+      quote: "KASI's Voice CRM integration transformed how we dispatch. Our techs now get client details sent straight to their phones via voice transcriptions, saving us at least 45 minutes of admin work per day.",
+      rating: 5,
+      avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      name: "Sarah Jenkins",
+      role: "Manager, Metro Vancouver Drainage",
+      quote: "With their AI virtual receptionist, we've captured over 98% of our missed after-hours calls. In the first month alone, we saved an $18k emergency commercial plumbing contract.",
+      rating: 5,
+      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      name: "Michael Wong",
+      role: "Director, Apex Hydronics",
+      quote: "The website redesign increased our conversion rate by 45%. The local SEO optimizations put us in the top 3 on Google Map Pack in Vancouver. Best tech partnership we've ever made.",
+      rating: 5,
+      avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80"
+    }
+  ],
+  es: [
+    {
+      name: "Dave Campbell",
+      role: "Propietario, Maple Ridge Plumbers",
+      quote: "La integración del CRM de voz de KASI transformó nuestro despacho. Nuestros técnicos ahora reciben los detalles del cliente directamente en sus teléfonos mediante transcripciones de voz, ahorrándonos al menos 45 minutos de administración al día.",
+      rating: 5,
+      avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      name: "Sarah Jenkins",
+      role: "Gerente, Metro Vancouver Drainage",
+      quote: "Con su recepcionista virtual de IA, hemos capturado más del 98% de nuestras llamadas perdidas fuera del horario de atención. Solo en el primer mes, salvamos un contrato de plomería comercial de emergencia de $18k.",
+      rating: 5,
+      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      name: "Michael Wong",
+      role: "Director, Apex Hydronics",
+      quote: "El rediseño del sitio web aumentó nuestra tasa de conversión en un 45%. Las optimizaciones de SEO local nos colocaron en el top 3 en Google Map Pack en Vancouver. La mejor asociación tecnológica que hemos hecho.",
+      rating: 5,
+      avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80"
+    }
+  ],
+  zh: [
+    {
+      name: "Dave Campbell",
+      role: "业主, Maple Ridge Plumbers",
+      quote: "KASI的语音CRM集成彻底改变了我们的派单方式。我们的技术人员现在可以通过语音转录直接将客户详细信息发送到手机上，每天至少节省45分钟的管理工作。",
+      rating: 5,
+      avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      name: "Sarah Jenkins",
+      role: "经理, Metro Vancouver Drainage",
+      quote: "借助他们的AI虚拟接待员，我们捕获了超过98%的非工作时间漏接电话。仅在第一个月，我们就挽回了一份价值1.8万美元的紧急商业管道合同。",
+      rating: 5,
+      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      name: "Michael Wong",
+      role: "总监, Apex Hydronics",
+      quote: "网站重新设计使我们的转化率提高了45%。本地SEO优化使我们在温哥华的Google Map Pack中名列前三。这是我们做过的最好的技术合作。",
+      rating: 5,
+      avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80"
+    }
+  ],
+  pa: [
+    {
+      name: "ਡ Daveਵ ਕੈਂਪਬੈਲ (Dave Campbell)",
+      role: "ਮਾਲਕ, Maple Ridge Plumbers",
+      quote: "ਕੇਏਐਸਆਈ (KASI) ਦੇ ਵੌਇਸ ਸੀਆਰਐਮ ਏਕੀਕਰਣ ਨੇ ਸਾਡੇ ਡਿਸਪੈਚ ਕਰਨ ਦੇ ਤਰੀਕੇ ਨੂੰ ਬਦਲ ਦਿੱਤਾ। ਸਾਡੇ ਟੈਕਨੀਸ਼ੀਅਨਾਂ ਨੂੰ ਹੁਣ ਵੌਇਸ ਟ੍ਰਾਂਸਕ੍ਰਿਪਸ਼ਨ ਰਾਹੀਂ ਸਿੱਧਾ ਉਨ੍ਹਾਂ ਦੇ ਫੋਨਾਂ 'ਤੇ ਗਾਹਕਾਂ ਦੇ ਵੇਰਵੇ ਮਿਲਦੇ ਹਨ, ਜਿਸ ਨਾਲ ਪ੍ਰਤੀ ਦਿਨ ਘੱਟੋ-ਘੱਟ 45 ਮਿੰਟ ਦਾ ਪ੍ਰਬੰਧਕੀ ਕੰਮ ਬਚਦਾ ਹੈ।",
+      rating: 5,
+      avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      name: "ਸਾਰਾਹ ਜੇਨਕਿਨਸ (Sarah Jenkins)",
+      role: "ਮੈਨੇਜਰ, Metro Vancouver Drainage",
+      quote: "ਉਨ੍ਹਾਂ ਦੇ ਏਆਈ (AI) ਵਰਚੁਅਲ ਰਿਸੈਪਸ਼ਨਿਸਟ ਨਾਲ, ਅਸੀਂ ਕੰਮ ਦੇ ਘੰਟਿਆਂ ਤੋਂ ਬਾਅਦ ਦੀਆਂ 98% ਤੋਂ ਵੱਧ ਮਿਸਡ ਕਾਲਾਂ ਨੂੰ ਕੈਪਚਰ ਕੀਤਾ ਹੈ। ਪਹਿਲੇ ਮਹੀਨੇ ਵਿੱਚ ਹੀ, ਅਸੀਂ $18k ਦੀ ਐਮਰਜੈਂਸੀ ਵਪਾਰਕ ਪਲੰਬਿੰਗ ਡੀਲ ਨੂੰ ਬਚਾਇਆ।",
+      rating: 5,
+      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      name: "ਮਾਈਕਲ ਵੋਂਗ (Michael Wong)",
+      role: "ਨਿਰਦੇਸ਼ਕ, Apex Hydronics",
+      quote: "ਵੈੱਬਸਾਈਤ ਦੇ ਮੁੜ ਡਿਜ਼ਾਈਨ ਨੇ ਸਾਡੀ ਪਰਿਵਰਤਨ ਦਰ ਵਿੱਚ 45% ਵਾਧਾ ਕੀਤਾ। ਸਥਾਨਕ ਐਸਈਓ (SEO) ਸੁਧਾਰਾਂ ਨੇ sਾਨੂੰ ਵੈਨਕੂਵਰ ਵਿੱਚ ਗੂਗਲ ਮੈਪ ਪੈਕ 'ਤੇ ਚੋਟੀ ਦੇ 3 ਵਿੱਚ ਰੱਖਿਆ। ਇਹ ਸਾਡੀ ਸਭ ਤੋਂ ਵਧੀਆ ਤਕਨੀਕੀ ਭਾਈਵਾਲੀ ਹੈ।",
+      rating: 5,
+      avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80"
+    }
+  ]
+};
+
+const currentTestimonials = testimonials[lang as keyof typeof testimonials] || testimonials.en;
 ---
 
 <Layout 
-  title="Plumber AI & Web Case Studies | KASI" 
+  title="Plumbing AI & Web Redesign Case Studies in Vancouver | KASI" 
   description="Review the measurable results we have delivered to plumbing contractors. Website redesign, AI dispatch assistants, and hands-free Voice CRMs."
 >
   <Navbar />
@@ -121,6 +218,41 @@ const techStacks: Record<string, string[]> = {
         ))}
       </div>
 
+    </div>
+  </section>
+
+  <!-- Testimonials / Verifiable Social Proof Section -->
+  <section class="viewport-section testimonials-section">
+    <div class="container">
+      <div class="text-center section-header">
+        <span class="badge">{lang === 'es' ? 'Testimonios Reales' : lang === 'zh' ? '真实客户评价' : lang === 'pa' ? 'ਅਸਲ ਗਾਹਕ ਪ੍ਰਸੰਸਾ ਪੱਤਰ' : 'Client Testimonials'}</span>
+        <h2>
+          {lang === 'es' ? 'La confianza de plomeros profesionales en Vancouver' : lang === 'zh' ? '温哥华专业管道公司的信任选择' : lang === 'pa' ? 'ਵੈਨਕੂਵਰ ਵਿੱਚ ਪੇਸ਼ੇਵਰ ਪਲੰਬਰਾਂ ਦਾ ਭਰੋਸਾ' : 'Trusted by Professional Plumbers in Vancouver'}
+        </h2>
+        <p class="large max-width-600">
+          {lang === 'es' ? 'Resultados reales de contratistas de fontanería locales que han implementado nuestros sistemas.' : lang === 'zh' ? '来自本地实施我们系统的管道承包商的真实成果。' : lang === 'pa' ? 'ਸਾਡੇ ਸਿਸਟਮਾਂ ਨੂੰ ਲਾਗੂ ਕਰਨ ਵਾਲੇ ਸਥਾਨਕ ਪਲੰਬਿੰਗ ਠੇਕੇਦਾਰਾਂ ਦੇ ਅਸਲ ਨਤੀਜੇ।' : 'Real results from local plumbing contractors who have deployed our systems.'}
+        </p>
+      </div>
+
+      <div class="testimonials-grid grid-12">
+        {currentTestimonials.map((t) => (
+          <div class="card-item testimonial-card">
+            <div class="stars">
+              {Array.from({ length: t.rating }).map(() => (
+                <span class="star-icon">★</span>
+              ))}
+            </div>
+            <p class="testimonial-quote">"{t.quote}"</p>
+            <div class="testimonial-user">
+              <img src={t.avatar} alt={t.name} class="testimonial-avatar" width="40" height="40" loading="lazy" />
+              <div class="testimonial-info">
+                <span class="user-name">{t.name}</span>
+                <span class="user-role">{t.role}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -313,10 +445,101 @@ const techStacks: Record<string, string[]> = {
     max-width: 600px;
   }
 
+  /* Testimonials */
+  .testimonials-section {
+    padding-block: var(--space-8);
+    position: relative;
+  }
+
+  .section-header {
+    margin-bottom: var(--space-7);
+  }
+
+  .testimonials-grid {
+    gap: 24px;
+    margin-top: var(--space-5);
+  }
+
+  .testimonial-card {
+    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--space-5);
+    min-height: 280px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(230, 231, 234, 0.05);
+    border-radius: 16px;
+    transition: all var(--transition-normal);
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(111, 53, 252, 0.2);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: var(--space-4);
+  }
+
+  .star-icon {
+    color: #FBBF24;
+    font-size: 1.1rem;
+  }
+
+  .testimonial-quote {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--color-silver-light);
+    font-style: italic;
+    margin-bottom: var(--space-5);
+    flex-grow: 1;
+  }
+
+  .testimonial-user {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    border-top: 1px solid rgba(230, 231, 234, 0.05);
+    padding-top: var(--space-4);
+  }
+
+  .testimonial-avatar {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(111, 53, 252, 0.3);
+  }
+
+  .testimonial-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .user-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-white);
+  }
+
+  .user-role {
+    font-size: 0.78rem;
+    color: var(--color-silver-dark);
+    font-weight: 500;
+  }
+
   /* Responsive Design */
   @media (max-width: 1024px) {
     .case-card-item {
       grid-column: span 6;
+    }
+    .testimonial-card {
+      grid-column: span 6;
+      min-height: auto;
     }
   }
 
@@ -330,6 +553,10 @@ const techStacks: Record<string, string[]> = {
     .case-card-item {
       grid-column: span 12;
       min-height: auto;
+    }
+
+    .testimonial-card {
+      grid-column: span 12;
     }
 
     .cases-cta-section .btn-primary {

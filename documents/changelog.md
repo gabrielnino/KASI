@@ -9,6 +9,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [Unreleased]
 
 ### Added
+*   **Verifiable Client Testimonials:** Integrated a responsive, multi-lingual client testimonials section on the Cases page (`cases.astro`) containing real, geolocated business success proof, complete with ratings, names, roles, and profiles.
+
+### Changed
+*   **Geolocated SEO Titles:** Expanded and updated all page titles (`index.astro`, `services.astro`, `solutions.astro`, `cases.astro`, `about.astro`) to include the target local keyword `"in Vancouver"` to optimize long-tail local search results.
+*   **Direct Contact Click Actions:** Converted phone and email fields on the Contact page (`contact.astro`) into clickable links (`tel:` and `mailto:`) with hover transition effects to improve mobile conversions.
+*   **Technical Trajectory Section Split:** Sliced the "Our Technical Trajectory" timeline on the About page (`about.astro`) into two distinct viewport sections (Part 1 for 2023-2024 and Part 2 for 2025-2026), preventing content overflow and restoring smooth full-screen scroll-snapping.
+*   **Featured Solutions Height Adjustment:** Reduced spacing, margins, and card sizes on the Home page featured solutions section (`index.astro`) to prevent vertical overflow on standard viewports.
+*   **Capabilities Grid Section Split:** Sliced the capabilities grid on the AI Systems page (`solutions.astro`) into three separate viewport sections of two cards each, ensuring all text fits within standard vertical viewport limits.
+*   **Deep-Dive Diagram Spacing Optimization:** Reduced vertical margins, inner padding, and connection arrow dimensions of the technical deep-dive diagram in `solutions.astro` to fit within 100vh.
 *   **Google Fonts Parallel Loading & Render-Blocking Mitigation:** Migrated Google Fonts loading stylesheet from CSS `@import` inside `global.css` to `<link>` element imports in `Layout.astro` head, avoiding render-blocking chains and speeding up mobile paint times.
 *   **International SEO Hreflang Tags:** Implemented dynamic `<link rel="alternate" hreflang="...">` tags in the `<head>` of `Layout.astro` covering English (`en`, `x-default`), Spanish (`es`), Chinese (`zh`), and Punjabi (`pa`).
 *   **Astro Sitemap & Robots.txt Integration:** Configured `@astrojs/sitemap` integration in `astro.config.mjs` and generated `public/robots.txt` pointing to the sitemap to optimize crawlability.

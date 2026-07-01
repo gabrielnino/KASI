@@ -10,7 +10,7 @@ const t = useTranslations(lang);
 ---
 
 <Layout 
-  title="Contact KASI - Plumber Tech Setup" 
+  title="Contact KASI - Plumbing Technology Setup in Vancouver" 
   description="Contact us today to design your plumbing website redesign, AI scheduler assistant, or voice CRM pipeline. Local support in Vancouver, BC."
 >
   <Navbar />
@@ -36,7 +36,7 @@ const t = useTranslations(lang);
             </div>
             <div>
               <span class="detail-lbl">{t('contact.details.phone')}</span>
-              <span class="detail-val">+1 (604) 555-0192</span>
+              <a href="tel:+16045550192" class="detail-val">+1 (604) 555-0192</a>
             </div>
           </div>
  
@@ -46,7 +46,7 @@ const t = useTranslations(lang);
             </div>
             <div>
               <span class="detail-lbl">{t('contact.details.email')}</span>
-              <span class="detail-val">engineering@kasi.systems</span>
+              <a href="mailto:engineering@kasi.systems" class="detail-val">engineering@kasi.systems</a>
             </div>
           </div>
  
@@ -62,6 +62,7 @@ const t = useTranslations(lang);
         </div>
  
         <div class="contact-disclaimer">
+          <span class="lock-icon">🔒</span>
           <p>
             {t('contact.details.disclaimer')}
           </p>
@@ -133,11 +134,17 @@ const t = useTranslations(lang);
     letter-spacing: 0.05em;
   }
 
-  .detail-val {
+  .detail-val, a.detail-val {
     font-size: 1rem;
     font-weight: 700;
     color: var(--color-white);
     font-family: var(--font-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  a.detail-val:hover {
+    color: #C084FC;
   }
 
   .contact-disclaimer {
